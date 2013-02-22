@@ -56,6 +56,9 @@ while True:
     elif evt.type == MOUSEBUTTONDOWN:
         px, py = mx - player.get_width()/2, my - player.get_height()/2
 
+    if(px > screen_width or px < 0): px += [-screen_width, screen_width][px < 0]
+    if(py > screen_height or py < 0): py += [-screen_height, screen_height][py < 0]
+
     # fill the background
     screen.blit(background, (0,0))
     screen.blit(player, (px,py))
