@@ -37,11 +37,14 @@ while True:
             pygame.quit()
             sys.exit()
 
+        if evt.type == MOUSEBUTTONDOWN:
+            px, py = mx - player.get_width()/2, my - player.get_height()/2
+
     # update mouse cursor
     mx, my = pygame.mouse.get_pos()
     mx -= mouse_cursor.get_width()/2
     my -= mouse_cursor.get_height()/2
-    
+
     pressed = pygame.key.get_pressed()
     if pressed[K_a]:
         px-=1
@@ -53,8 +56,6 @@ while True:
         py-=1
     elif pressed[K_s]:
         py+=1
-    elif evt.type == MOUSEBUTTONDOWN:
-        px, py = mx - player.get_width()/2, my - player.get_height()/2
 
     if(px > screen_width or px < 0): px += [-screen_width, screen_width][px < 0]
     if(py > screen_height or py < 0): py += [-screen_height, screen_height][py < 0]
