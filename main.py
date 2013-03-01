@@ -1,5 +1,7 @@
 import pygame,sys
 from pygame.locals import *
+import globalvars
+import images
 
 pygame.init()
 
@@ -16,11 +18,16 @@ screen_colorspace = 32
 #basic settings
 screen = pygame.display.set_mode(screen_size, 0, 32)
 
+
 #assign the pictures to the variables
 background = pygame.image.load(background_sample_image).convert()
 mouse_cursor = pygame.image.load(mouse_cursor_image).convert_alpha()
-player_left = pygame.image.load(player_sample_image_left).convert_alpha()
-player_right = pygame.image.load(player_sample_image_right).convert_alpha()
+#player_left = pygame.image.load(player_sample_image_left).convert_alpha()
+#player_right = pygame.image.load(player_sample_image_right).convert_alpha()
+screen.blit(background, (0,0))
+images = images.loadImages()
+player_left = images['FlynnWalk'][0].convert_alpha()
+player_right = images['FlynnWalk'][1].convert_alpha()
 player = player_left
 
 #init player position
