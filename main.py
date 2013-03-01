@@ -26,8 +26,8 @@ mouse_cursor = pygame.image.load(mouse_cursor_image).convert_alpha()
 #player_right = pygame.image.load(player_sample_image_right).convert_alpha()
 screen.blit(background, (0,0))
 images = images.loadImages()
-player_left = images['FlynnWalk'][0].convert_alpha()
-player_right = images['FlynnWalk'][1].convert_alpha()
+player_left = images['FlynnWalk'][0]
+player_right = images['FlynnWalk'][1]
 player = player_left
 
 #init player position
