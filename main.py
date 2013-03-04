@@ -2,6 +2,7 @@ import pygame,sys
 from pygame.locals import *
 import globalvars
 import images
+import pathfinder.astar
 
 pygame.init()
 
