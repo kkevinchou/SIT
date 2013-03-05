@@ -8,9 +8,6 @@ from pyCanvas import *
 #sample pic
 background_sample_image = "data/bg.png"
 mouse_cursor_image = "data/cursor.png"
-player_sample_image_left = "data/player_left.png"
-player_sample_image_right = "data/player_right.png"
-
 
 
 
@@ -31,7 +28,13 @@ mx, my = pygame.mouse.get_pos()
 px, py = globalvars.screen_width/2 - player.get_width()/2 , globalvars.screen_height/2 - player.get_height()/2
 pygame.mouse.set_visible(False)
 
-#init mouse position
+# Init AI
+enemyAI = AI()
+enemyAI.target = (500, 500)
+
+# Fixing the framerate
+clock = pygame.time.Clock()
+fps = 60
 
 pyMenu.title()
 
@@ -95,5 +98,4 @@ class pyMain:
         
 pymap = pyMain()
 pymap.run()
-
 
