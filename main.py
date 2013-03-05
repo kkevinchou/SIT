@@ -5,6 +5,12 @@ import images
 import pyMenu
 from pyCanvas import *
 
+import pathfinder.astar
+import ai.ai
+
+from ai.ai import *
+from pathfinder.astar import *
+
 #sample pic
 background_sample_image = "data/bg.png"
 mouse_cursor_image = "data/cursor.png"
@@ -49,7 +55,7 @@ class pyMain:
             if evt.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-    
+
             # update mouse cursor
             mx, my = pygame.mouse.get_pos()
             mx -= mouse_cursor.get_width()/2
@@ -59,7 +65,7 @@ class pyMain:
                 px = mx - player.get_width()/2
                 py = my - player.get_height()/2
 
-    
+
         pressed = pygame.key.get_pressed()
         if pressed[K_a]:
             px-=1
@@ -71,21 +77,21 @@ class pyMain:
             py-=1
         elif pressed[K_s]:
             py+=1
-    
+
         if(px > globalvars.screen_width or px < 0): px += [-globalvars.screen_width, globalvars.screen_width][px < 0]
         if(py > globalvars.screen_height or py < 0): py += [-globalvars.screen_height, globalvars.screen_height][py < 0]
-    
+
         globalvars.screen.fill((0,0,0))
         self.canvas.draw(globalvars.screen)
         # fill the background
         #screen.blit(background, (0,0))
         globalvars.screen.blit(player, (px,py))
         globalvars.screen.blit(mouse_cursor, (mx, my))
-        
+
         pygame.display.update()
         globalvars.clock.tick(globalvars.FPS / 2)
-        
-        
+
+
     def run(self):
         new_map = Canvas.load('dungeon', globalvars.screen, self.canvas)
         if new_map:
@@ -95,7 +101,7 @@ class pyMain:
             pygame.display.flip()
         pygame.quit()
 
-        
+
 pymap = pyMain()
 pymap.run()
 
