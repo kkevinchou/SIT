@@ -1,0 +1,11 @@
+2		#number of layers
+32,32		#width of tiles, height of tiles
+50,50		#width of map, height of map
+::Tileset	#can skipped (just to make sure the file is in the right format for pyMap)
+default		#name of tileset (this should be a folder in the Tileset directory with and image inside with the same name
+::CellInfo	#can skipped (just to make sure the file is in the right format for pyMap)
+0,0,192,0,0,0	#layer, top, left, cell_col, cell_row, z
+			-top and left refer to the top left of the rectangle inside the tileset image
+			-cell_col and cell_row refer to the column and row location of the cell inside the pyMap application
+			-z is an extra flag that can be applied to cells to tell outside apps if it is ie: destructable, moveable, etc
+::END		#can skipped (just to make sure the file is in the right format for pyMap)

@@ -8,7 +8,7 @@ from spritesheet import spritesheet
 character_pixel_size = 64
 
 # Load images from Spreadsheet
-def loadImages():
+def loadSpreadsheetImages():
     images = {}
     path = join(getcwd(), "data", "images")
     directories = listdir(path)
@@ -28,3 +28,16 @@ def loadImages():
 
             images[directory+splitext(imagefile)[0]] = anime_set
     return images
+
+def loadAllImages():
+    images = {}
+    path = join(getcwd(), "data", "images")
+    directories = listdir(path)
+    for directory in directories:
+        subpath = join(path, directory)
+        subdirectories = listdir(subpath)
+        for imagefile in subdirectories:
+            image = pygame.image.load(join(subpath, imagefile))
+            images[directory+imagefile[0:len(imagefile)-4]] = image
+    return images
+
