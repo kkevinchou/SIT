@@ -2,6 +2,7 @@ import pygame,sys
 from pygame.locals import *
 import globalvars
 import images
+import sprites
 import pyMenu
 from pyCanvas import *
 
@@ -25,8 +26,8 @@ mouse_cursor = globalvars.allImages['Misccursor']
 #player_right = pygame.image.load(player_sample_image_right).convert_alpha()
 #screen.blit(background, (0,0))
 
-player_left = globalvars.spreadsheetImages['FlynnWalk'][0]
-player_right = globalvars.spreadsheetImages['FlynnWalk'][1]
+player_left = globalvars.spreadsheetImages['FlynnLeftWalk'][1]
+player_right = globalvars.spreadsheetImages['FlynnRightWalk'][1]
 player = player_left
 mx, my = pygame.mouse.get_pos()
 
@@ -48,6 +49,8 @@ class pyMain:
     def __init__(self):
         self.canvas = Canvas((32,32),(24,22))
         self.running = True
+        self.hero = sprites.Flynn()
+
     def handle_events(self):
         global px, py, player, mx, my
         for evt in pygame.event.get():
@@ -66,6 +69,8 @@ class pyMain:
                 py = my - player.get_height()/2
 
 
+        
+        '''
         pressed = pygame.key.get_pressed()
         if pressed[K_a]:
             px-=1
@@ -80,12 +85,13 @@ class pyMain:
 
         if(px > globalvars.screen_width or px < 0): px += [-globalvars.screen_width, globalvars.screen_width][px < 0]
         if(py > globalvars.screen_height or py < 0): py += [-globalvars.screen_height, globalvars.screen_height][py < 0]
-
+        '''
         globalvars.screen.fill((0,0,0))
         self.canvas.draw(globalvars.screen)
         # fill the background
         #screen.blit(background, (0,0))
-        globalvars.screen.blit(player, (px,py))
+        #globalvars.screen.blit(player, (px,py))
+        self.hero.update()
         globalvars.screen.blit(mouse_cursor, (mx, my))
 
         pygame.display.update()

@@ -20,13 +20,18 @@ def loadSpreadsheetImages():
             ss_image = pygame.image.load(join(subpath, imagefile))
             ss_obj = spritesheet(join(subpath, imagefile))
 
-            frames = round(ss_image.get_height() / character_pixel_size)
-            anime_set = []
-            for frame in range(frames):
-                image = ss_obj.image_at((0, frame * character_pixel_size, character_pixel_size, character_pixel_size))
-                anime_set.append(image)
+            # facing direction in spritesheet order
+            facing = ['Front', 'Back', 'Left', 'Right']
 
-            images[directory+splitext(imagefile)[0]] = anime_set
+            frames = round(ss_image.get_height() / character_pixel_size)
+
+            for (idx, direction) in enumerate(facing):
+                anime_set = []
+                for frame in range(frames):
+                    image = ss_obj.image_at((idx * character_pixel_size, frame * character_pixel_size, character_pixel_size, character_pixel_size))
+                    anime_set.append(image)
+
+                images[directory+direction+splitext(imagefile)[0]] = anime_set
     return images
 
 def loadAllImages():
