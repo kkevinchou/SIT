@@ -36,10 +36,13 @@
     <path>paths\path1</path>
   </paths>
   <scripts name="scripts">
-    <script>scripts\fillGrid.gml</script>
-    <script>scripts\nodeIsOkay.gml</script>
-    <script>scripts\resetGrid.gml</script>
-    <script>scripts\getNeighbours.gml</script>
+    <scripts name="pathfinding">
+      <script>scripts\testscript.gml</script>
+      <script>scripts\fillGrid.gml</script>
+      <script>scripts\nodeIsOkay.gml</script>
+      <script>scripts\resetGrid.gml</script>
+      <script>scripts\getNeighbours.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\wall</object>

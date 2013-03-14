@@ -92,7 +92,20 @@ facing='Front'
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.pathDebug) {
+            <string>start_x = floor(fynn.x/32)
+start_y = floor(fynn.y/32)
+
+node[0] = start_x
+node[1] = start_y
+
+// FILL GRID
+
+// testscript(node)
+getNeighbours(node)
+
+/* fillGrid(global.pathGrid, node[0], node[1])
+
+if (global.pathDebug) {
     global.pathDebug = false
 
     rowPrint = ""
@@ -102,18 +115,7 @@ facing='Front'
         }
         show_debug_message(rowPrint)
     }
-}
-
-start_x = floor(fynn.x/32)
-start_y = floor(fynn.y/32)
-
-node[0] = start_x
-node[1] = start_y
-
-// FILL GRID
-
-fillGrid(global.pathGrid, node)
-
+} */
 </string>
           </argument>
         </arguments>

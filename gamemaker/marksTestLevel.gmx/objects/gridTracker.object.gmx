@@ -40,7 +40,7 @@ global.pathMaxCost = 999999
 for (i = 0; i &lt; w; i++){
     for (j = 0; j &lt; h; j++){
         ds_grid_add(global.wallGrid,i,j,0);
-        ds_grid_set(global.pathGrid, i, j, maxCost);
+        ds_grid_set(global.pathGrid, i, j, global.pathMaxCost);
     } 
 }
 </string>

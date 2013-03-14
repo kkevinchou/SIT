@@ -10,7 +10,7 @@ for (x = -1; x < 2; x++) {
         if (x == 0 && y == 0) {
             continue
         }
-        if (nodeIsOkay(neighbour)) {
+        if (nodeIsOkay(grid, neighbour[0], neighbour[1])) {
             ds_list_add(neighbours, neighbour)
         }
     }
