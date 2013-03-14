@@ -35,6 +35,12 @@
     <path>paths\path0</path>
     <path>paths\path1</path>
   </paths>
+  <scripts name="scripts">
+    <script>scripts\fillGrid.gml</script>
+    <script>scripts\nodeIsOkay.gml</script>
+    <script>scripts\resetGrid.gml</script>
+    <script>scripts\getNeighbours.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\wall</object>
     <object>objects\gridTracker</object>

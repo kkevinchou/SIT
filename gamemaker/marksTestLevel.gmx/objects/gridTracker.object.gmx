@@ -28,17 +28,19 @@
             <string>w = (room_width/32)+1
 h = (room_height/32)+1
 
-global.pathGrid = ds_grid_create(w, h)
-
-global.wallGrid = ds_grid_create(w, h)
 aa = 0
 display_reset(aa,false)
 
+global.pathDebug = true
 
+global.pathGrid = ds_grid_create(w, h)
+global.wallGrid = ds_grid_create(w, h)
+
+global.pathMaxCost = 999999
 for (i = 0; i &lt; w; i++){
     for (j = 0; j &lt; h; j++){
         ds_grid_add(global.wallGrid,i,j,0);
-        ds_grid_add(global.pathGrid, i, j, 100);
+        ds_grid_set(global.pathGrid, i, j, maxCost);
     } 
 }
 </string>
