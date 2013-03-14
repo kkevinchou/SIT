@@ -42,6 +42,14 @@
       <script>scripts\nodeIsOkay.gml</script>
       <script>scripts\resetGrid.gml</script>
       <script>scripts\getNeighbours.gml</script>
+      <script>scripts\createNode.gml</script>
+      <script>scripts\getX.gml</script>
+      <script>scripts\getY.gml</script>
+      <script>scripts\printNode.gml</script>
+      <script>scripts\getNodeValFromGrid.gml</script>
+      <script>scripts\pop_front.gml</script>
+      <script>scripts\getNextNode.gml</script>
+      <script>scripts\listHasNode.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -61,6 +69,7 @@
     <room>rooms\room0</room>
     <room>rooms\room2</room>
     <room>rooms\room1</room>
+    <room>rooms\room3</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

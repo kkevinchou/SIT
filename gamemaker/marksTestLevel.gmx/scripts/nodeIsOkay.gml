@@ -1,10 +1,13 @@
-grid = argument0
-node_x = argument1
-node_y = argument2
+var grid = argument0
+var node = argument1
 
-node[0] = node_x
-node[1] = node_y
+if (getX(node) >= 0 && getY(node) >= 0) {
+    if (getX(node) < ds_grid_width(grid) && getY(node) < ds_grid_height(grid)) {
+        if (ds_grid_get(grid, getX(node), getY(node)) >= 0) {
+            return true
+        }
+    }
+}
 
-return (node[0] >= 0 && node[1] >= 0 &&
-            node[0] < ds_grid_width(grid) && node[1] < ds_grid_height(grid) &&
-            ds_grid_get(grid, node[0], node[1]) >= 0)
+return false
+            

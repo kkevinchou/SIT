@@ -1,16 +1,15 @@
-grid = argument0
-node = argument1
+var grid = argument0
+var node = argument1
 
-neighbours = ds_list_create()
+var neighbours = ds_list_create()
 
-for (x = -1; x < 2; x++) {
-    for (y = -1; y < 2; y++) {
-        neighbour[0] = node[0] + x
-        neighbour[1] = node[1] + y
-        if (x == 0 && y == 0) {
+for (var i = -1; i < 2; i++) {
+    for (var j = -1; j < 2; j++) {
+        var neighbour = createNode(getX(node) + i, getY(node) + j)
+        if (i == 0 && j == 0) {
             continue
         }
-        if (nodeIsOkay(grid, neighbour[0], neighbour[1])) {
+        if (nodeIsOkay(grid, neighbour)) {
             ds_list_add(neighbours, neighbour)
         }
     }

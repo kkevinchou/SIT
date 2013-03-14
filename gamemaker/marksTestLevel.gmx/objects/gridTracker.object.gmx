@@ -31,18 +31,57 @@ h = (room_height/32)+1
 aa = 0
 display_reset(aa,false)
 
-global.pathDebug = true
 
-global.pathGrid = ds_grid_create(w, h)
 global.wallGrid = ds_grid_create(w, h)
 
-global.pathMaxCost = 999999
 for (i = 0; i &lt; w; i++){
     for (j = 0; j &lt; h; j++){
         ds_grid_add(global.wallGrid,i,j,0);
-        ds_grid_set(global.pathGrid, i, j, global.pathMaxCost);
     } 
 }
+
+var tw = w
+var th = h
+
+global.pathDebug = true
+global.pathMaxCost = 1000
+
+global.pathGrid = ds_grid_create(tw, th)
+
+for (var v = 0; v &lt; ds_grid_height(global.pathGrid); v++) {
+    for (var u = 0; u &lt; ds_grid_width(global.pathGrid); u++) {
+        ds_grid_set(global.pathGrid, u, v, global.pathMaxCost);
+    }
+}
+
+/*ds_grid_set(global.pathGrid, 5, 5, -1);
+ds_grid_set(global.pathGrid, 6, 5, -1);
+ds_grid_set(global.pathGrid, 7, 5, -1);
+ds_grid_set(global.pathGrid, 8, 5, -1);
+ds_grid_set(global.pathGrid, 1, 9, -1);
+ds_grid_set(global.pathGrid, 4, 2, -1);
+
+var pos = createNode(3, 5)
+fillGrid(global.pathGrid, pos)
+
+if (global.pathDebug) {
+    global.pathDebug = false
+
+    for (var u = 0; u &lt; ds_grid_width(global.pathGrid); u++) {
+        var rowPrint = ""
+        for (var v = 0; v &lt; ds_grid_height(global.pathGrid); v++) {
+            var newStr = string(ds_grid_get(global.pathGrid, v, u))
+            var len = string_length(newStr)
+            for (var k = 0; k &lt; 6 - len; k++) {
+                newStr = " " + newStr
+            }
+            rowPrint += newStr + " "
+        }
+        show_debug_message(rowPrint)
+    }
+}*/
+
+
 </string>
           </argument>
         </arguments>

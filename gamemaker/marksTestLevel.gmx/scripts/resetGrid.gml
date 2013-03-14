@@ -1,9 +1,9 @@
-grid = argument0
+var grid = argument0
 
-for (x = 0; x < ds_grid_width(grid); x++) {
-    for (y = 0; y < ds_grid_height(grid); y++) {
-        if (ds_grid_get(grid, x, y) != -1) {
-            ds_grid_set(grid, x, y, global.pathMaxCost)
+for (var i = 0; i < ds_grid_width(grid); i++) {
+    for (var j = 0; j < ds_grid_height(grid); j++) {
+        if (ds_grid_get(grid, i, j) != -1) {
+            ds_grid_set(grid, i, j, global.pathMaxCost)
         }
     }
 }

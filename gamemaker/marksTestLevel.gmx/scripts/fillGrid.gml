@@ -1,55 +1,56 @@
-grid = argument0
-goal_x = argument1
-goal_y = argument2
-
-goal[0] = goal_x
-goal[1] = goal_y
+var grid = argument0
+var goal = argument1
 
 resetGrid(grid)
-open_list = ds_list_create()
-closed_list = ds_list_create()
 
-ds_grid_set(grid, goal[0], goal[1], 0)
-ds_list_add(open_list, node)
+var open_list = ds_list_create()
+var closed_list = ds_list_create()
+
+ds_grid_set(grid, getX(goal), getY(goal), 0)
+ds_list_add(open_list, goal)
+
+var firstrun = true
+var secondrun = false
 
 while (ds_list_size(open_list) > 0) {
-    parent = ds_list_find_value(open_list, 0)
-    
+    var parent = pop_front(open_list)
     ds_list_add(closed_list, parent)
-    ds_list_delete(open_list, 0)
     
-    parentDist = ds_grid_get(grid, parent[0], parent[1])
-    neighbours = getNeighbours(grid, parent[0], parent[1])
+    var parentDist = getNodeValFromGrid(grid, parent)
+    var neighbours = getNeighbours(grid, parent)
     
     while (ds_list_size(neighbours) > 0) {
-        neighbour = ds_list_find_value(neighbours, 0)
-        ds_list_delete(neighbours, 0)
+        var neighbour = pop_front(neighbours)
         
-        dist = parentDist
-        if (neighbour[0] == parent[0] || neighbour[1] == parent[1]) {
-            dist++
+        if (secondrun) {
+            printNode(neighbour)
+        }
+        
+        var dist = parentDist
+        if (getX(neighbour) == getX(parent) || getY(neighbour) == getY(parent)) {
+            dist += 1
         } else {
             dist += 1.4
         }
         
-        if (dist < ds_grid_get(grid, neighbour[0], neighbour[1])) {
-            ds_grid_set(grid, neighbour[0], neighbour[1], dist)
+        if (abs(getX(neighbour) - getX(goal)) > 6 || abs(getY(neighbour) - getY(goal)) > 6) {
+            continue
+        }
+        
+        if (dist < getNodeValFromGrid(grid, neighbour)) {
+            ds_grid_set(grid, getX(neighbour), getY(neighbour), dist)
+        }
+        
+        if (!listHasNode(open_list, neighbour) && !listHasNode(closed_list, neighbour)) {
             ds_list_add(open_list, neighbour)
         }
     }
+    
+    ds_list_destroy(neighbours)
 }
 
-/*
-    while len(self.open) > 0:
-        n = self.open[0]
-        parentDist = self.mapdata[n[0]][n[1]]
-        neighbours = self._getNeighbours(n)
-        for neighbour in neighbours:
-            # if diagonal, cost is 1.4.
-            # if axis aligned, cost is 1
-            dist = parentDist + 1 if (neighbour[0] == n[0] or neighbour[1] == n[1]) else parentDist + 1.4
-            if (dist < self.mapdata[neighbour[0]][neighbour[1]]):
-                self.mapdata[neighbour[0]][neighbour[1]] = dist
-                self.open.append(neighbour)
-        self.open.remove(n)
-*/
+while (ds_list_size(open_list) > 0) {
+    var node = pop_front(open_list)
+    ds_list_destroy(node)
+}
+ds_list_destroy(open_list)

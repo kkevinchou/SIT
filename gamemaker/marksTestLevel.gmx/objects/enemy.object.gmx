@@ -255,13 +255,76 @@ if (state == "normal") {
         path_position = 0
     }
    // mp_potential_settings(30,30,200,true)
-   if (posX &gt; self.x-5 &amp;&amp; posX &lt; self.x+5 &amp;&amp; posY &gt; self.y-5 &amp;&amp; posY &lt; self.y+5){
+   /*if (posX &gt; self.x-5 &amp;&amp; posX &lt; self.x+5 &amp;&amp; posY &gt; self.y-5 &amp;&amp; posY &lt; self.y+5){
        direction += 5  
    } else {
        mp_potential_step(posX,posY,2,false);
        moving = 2
-   }
+   }*/
+
+    var pos = createNode(floor(self.x/32), floor(self.y/32))
+    var neighbours = getNeighbours(global.pathGrid, pos)
     
+    if (global.pathDebug) {
+        show_debug_message("POSITION")
+        printNode(pos)
+    }
+   
+    var closestNeighbour = pop_front(neighbours)
+    if (global.pathDebug) {
+        show_debug_message("CANDIDATE")
+        printNode(closestNeighbour)
+    }
+    var minCost = getNodeValFromGrid(global.pathGrid, closestNeighbour)
+    
+    while (ds_list_size(neighbours) &gt; 0) {
+        var tNeighbour = pop_front(neighbours)
+        if (global.pathDebug) {
+            show_debug_message("CANDIDATE")
+            printNode(tNeighbour)
+        }
+        var tCost = getNodeValFromGrid(global.pathGrid, tNeighbour)
+        
+        if (tCost &lt; minCost) {
+            minCost = tCost
+            closestNeighbour = tNeighbour
+        }
+    }
+    
+    if (global.pathDebug) {
+        show_debug_message("SELECTED")
+        printNode(closestNeighbour)
+    }
+    
+    if (global.pathDebug) {
+        global.pathDebug = false
+    
+        for (var v = 0; v &lt; ds_grid_height(global.pathGrid); v++) {
+            var rowPrint = "["
+            for (var u = 0; u &lt; ds_grid_width(global.pathGrid); u++) {
+                var newStr = string(ds_grid_get(global.pathGrid, u, v))
+                var len = string_length(newStr)
+                for (var k = 0; k &lt; 6 - len; k++) {
+                    newStr = " " + newStr
+                }
+                rowPrint +=  newStr + " "
+            }
+            show_debug_message(rowPrint + "]")
+        }
+    }
+    
+    // printNode(closestNeighbour)
+    mp_potential_step(getX(closestNeighbour) * 32, getY(closestNeighbour) * 32, 2, false);
+    moving = 2
+    
+    while (ds_list_size(neighbours) &gt; 0) {
+        var tNeighbour = pop_front(neighbours)
+        ds_list_destroy(tNeighbour)
+    }
+    ds_list_destroy(closestNeighbour)
+    
+    ds_list_destroy(neighbours)
+    ds_list_destroy(pos)
 }
 
 dir = direction - 45

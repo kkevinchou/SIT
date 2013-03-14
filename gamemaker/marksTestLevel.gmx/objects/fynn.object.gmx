@@ -34,6 +34,40 @@ facing='Front'
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var start_x = floor(fynn.x/32);
+var start_y = floor(fynn.y/32);
+
+// FILL GRID
+
+var node = createNode(start_x, start_y)
+
+//show_debug_message("WHERE IS FLYNN?")
+//show_debug_message(string(fynn.x) + ", " + string(fynn.y))
+//printNode(node)
+
+fillGrid(global.pathGrid, node)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -92,30 +126,21 @@ facing='Front'
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>start_x = floor(fynn.x/32)
-start_y = floor(fynn.y/32)
+            <string>if (alarm[0] == -1){
+    alarm[0] = 100
+}
 
-node[0] = start_x
-node[1] = start_y
-
-// FILL GRID
-
-// testscript(node)
-getNeighbours(node)
-
-/* fillGrid(global.pathGrid, node[0], node[1])
-
-if (global.pathDebug) {
+/*if (global.pathDebug) {
     global.pathDebug = false
 
     rowPrint = ""
-    for (x = 0; x &lt; ds_grid_width(global.pathGrid); x++) {
-        for (y = 0; y &lt; ds_grid_height(global.pathGrid); y++) {
-            rowPrint += string(ds_grid_get(global.pathGrid, x, y)) + " "
+    for (var i = 0; i &lt; ds_grid_width(global.pathGrid); i++) {
+        for (var j = 0; j &lt; ds_grid_height(global.pathGrid); j++) {
+            rowPrint += string(ds_grid_get(global.pathGrid, i, j)) + " "
         }
         show_debug_message(rowPrint)
     }
-} */
+}*/
 </string>
           </argument>
         </arguments>
