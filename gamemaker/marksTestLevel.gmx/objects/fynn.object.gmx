@@ -56,13 +56,19 @@ var start_y = floor(fynn.y/32);
 
 // FILL GRID
 
-var node = createNode(start_x, start_y)
+var node = createNode(start_x, start_y);
+
+var q;
+q[0] = 13;
+q[1] = 37;
+
+testscript(q);
 
 //show_debug_message("WHERE IS FLYNN?")
 //show_debug_message(string(fynn.x) + ", " + string(fynn.y))
 //printNode(node)
 
-fillGrid(global.pathGrid, node)
+fillGrid(global.pathGrid, node);
 </string>
           </argument>
         </arguments>
