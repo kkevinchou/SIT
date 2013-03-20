@@ -44,6 +44,7 @@ posY = 0
 
 drawnDirection = direction
 
+self.debugEnemy = false
 </string>
           </argument>
         </arguments>
@@ -67,6 +68,10 @@ drawnDirection = direction
           <argument>
             <kind>1</kind>
             <string>state = "normal"
+activePath = currentPath
+path_end()
+path_position = 0
+self.debugEnemy = true
 </string>
           </argument>
         </arguments>
@@ -235,14 +240,21 @@ if (state == "normal") {
     if (mode == 0) {
     
     } else if (mode == 1) {
-        if (path_position &lt;= 0){
-            if (self.x = path_get_x(currentPath,0) &amp;&amp; self.y == path_get_y(currentPath,0)){
+        if (activePath != currentPath || (activePath == currentPath &amp;&amp; path_position &lt;= 0)) {
+            if (self.x == path_get_x(currentPath,0) &amp;&amp; self.y == path_get_y(currentPath,0)){
+                activePath = currentPath
                 path_start(currentPath,1,1,1)
             } else {
                 retX = path_get_x(currentPath,0)
                 retY = path_get_y(currentPath,0)
-                mp_potential_step(retX,retY,1,false);
+                //mp_potential_step(retX,retY,1,false);
                 moving = 1
+                
+                path_end()
+                activePath = path_add()
+                mp_potential_path(activePath, retX, retY, 1, 10, 0)
+                path_start(activePath, 1, 0, 0)
+                //moving = 2
             }  
         } else {
             moving = 1
@@ -250,76 +262,50 @@ if (state == "normal") {
         
     }
 } else if (state == "chase" || state == "search") {
-    if (path_position &gt; 0){
-        path_end();
+    if (activePath == currentPath) {
+        path_end()
         path_position = 0
     }
     
-    if (posX &gt; self.x-5 &amp;&amp; posX &lt; self.x+5 &amp;&amp; posY &gt; self.y-5 &amp;&amp; posY &lt; self.y+5){
-        direction += 5  
-    } else {
-        mp_potential_step(posX,posY,2,false);
-        moving = 2
+    /*
+    if (path_position &gt; 0){
+        path_end()
+        path_position = 0
     }
+    */
     
-    /*if (collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)) {
-        var pos = createNode(floor(self.x/32), floor(self.y/32))
-        var neighbours = getNeighbours(global.pathGrid, pos)
-       
-        var closestNeighbour = pop_front(neighbours)
-        var minCost = getNodeValFromGrid(global.pathGrid, closestNeighbour)
-        
-        while (ds_list_size(neighbours) &gt; 0) {
-            var tNeighbour = pop_front(neighbours)
-            var tCost = getNodeValFromGrid(global.pathGrid, tNeighbour)
-            
-            if (tCost &lt; minCost) {
-                minCost = tCost
-                closestNeighbour = tNeighbour
-            }
-        }
-        
-        var curCost = getNodeValFromGrid(global.pathGrid, pos)
-        if (curCost &gt; minCost) {
-            mp_potential_step(getX(closestNeighbour) * 32 + 16, getY(closestNeighbour) * 32 + 16, 2, false)
-            moving = 2
-        }
-        
-        while (ds_list_size(neighbours) &gt; 0) {
-            var tNeighbour = pop_front(neighbours)
-            ds_list_destroy(tNeighbour)
-        }
-        ds_list_destroy(closestNeighbour)
-        
-        ds_list_destroy(neighbours)
-        ds_list_destroy(pos)
+    if (posX &gt; self.x-5 &amp;&amp; posX &lt; self.x+5 &amp;&amp; posY &gt; self.y-5 &amp;&amp; posY &lt; self.y+5){
+        direction += 5
     } else {
-        if (posX &gt; self.x-5 &amp;&amp; posX &lt; self.x+5 &amp;&amp; posY &gt; self.y-5 &amp;&amp; posY &lt; self.y+5){
-            direction += 5  
-        } else {
-            mp_potential_step(posX,posY,2,false);
-            moving = 2
-        }
-    }*/
-    
-    /*if (global.pathDebug) {
-        global.pathDebug = false
-    
-        for (var v = 0; v &lt; ds_grid_height(global.pathGrid); v++) {
-            var rowPrint = "["
-            for (var u = 0; u &lt; ds_grid_width(global.pathGrid); u++) {
-                var newStr = string(ds_grid_get(global.pathGrid, u, v))
-                var len = string_length(newStr)
-                for (var k = 0; k &lt; 6 - len; k++) {
-                    newStr = " " + newStr
-                }
-                rowPrint +=  newStr + " "
-            }
-            show_debug_message(rowPrint + "]")
-        }
-    }*/
-    
-    
+        /*
+        path_end()
+        activePath = path_add()
+        mp_grid_path(global.gmGrid, activePath, self.x, self.y, fynn.x, fynn.y, 1)
+        retX = path_get_x(activePath,0.1)
+        retY = path_get_y(activePath,0.1)
+        path_start(activePath, 1, 0, true)
+        moving = 2
+        
+        path_end()
+        activePath = path_add()
+        mp_grid_path(global.gmGrid, activePath, self.x, self.y, fynn.x, fynn.y, 1)
+        retX = path_get_x(activePath,0.1)
+        retY = path_get_y(activePath,0.1)
+        mp_potential_step(retX,retY,1,false);
+        moving = 2
+        */
+        
+        path_end()
+        activePath = path_add()
+        mp_potential_path(activePath, fynn.x, fynn.y, 1, 10, 0)
+        path_start(activePath, 1, 0, 0)
+        moving = 2
+
+    }
+}
+
+if (self.debugEnemy) {
+    self.debugEnemy = false
 }
 
 dir = direction - 45

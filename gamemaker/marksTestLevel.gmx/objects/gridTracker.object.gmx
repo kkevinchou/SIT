@@ -33,6 +33,7 @@ h = (room_height/32)+1
 aa = 0
 display_reset(aa,false)
 
+global.gmGridInit = true
 
 global.wallGrid = ds_grid_create(w, h)
 
@@ -55,6 +56,8 @@ for (var v = 0; v &lt; ds_grid_height(global.pathGrid); v++) {
         ds_grid_set(global.pathGrid, u, v, global.pathMaxCost);
     }
 }
+
+global.gmGrid = false
 /*
 global.cacheGrid = ds_grid_create(tw, th)
 
