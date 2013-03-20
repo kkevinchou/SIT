@@ -55,6 +55,7 @@
   <objects name="objects">
     <object>objects\wall</object>
     <object>objects\gridTracker</object>
+    <object>objects\gridCacher</object>
     <object>objects\shadow</object>
     <object>objects\fynn</object>
     <object>objects\boxes</object>

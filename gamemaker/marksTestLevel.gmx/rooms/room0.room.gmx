@@ -213,6 +213,7 @@
     <instance objName="boxes" x="832" y="512" name="inst_E75076AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="boxes" x="832" y="480" name="inst_8015681C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="boxes" x="800" y="480" name="inst_5FE07E3F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="gridCacher" x="64" y="96" name="inst_C85C95DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background0" x="-2" y="0" w="32" h="32" xo="288" yo="128" id="10000000" name="inst_997FF62D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

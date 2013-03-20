@@ -1,7 +1,7 @@
 var grid = argument0
 var goal = argument1
 
-resetGrid(grid)
+// resetGrid(grid)
 
 var open_list = ds_list_create()
 var closed_list = ds_list_create()
@@ -9,9 +9,14 @@ var closed_list = ds_list_create()
 ds_grid_set(grid, getX(goal), getY(goal), 0)
 ds_list_add(open_list, goal)
 
+var maxSize = 0
 while (ds_list_size(open_list) > 0) {
     var parent = pop_front(open_list)
     ds_list_add(closed_list, parent)
+    
+    if (ds_list_size(open_list) > maxSize) {
+        maxSize = ds_list_size(open_list)
+    }
     
     var parentDist = getNodeValFromGrid(grid, parent)
     var neighbours = getNeighbours(grid, parent)
@@ -26,7 +31,7 @@ while (ds_list_size(open_list) > 0) {
             dist += 1.4
         }
         
-        if (abs(getX(neighbour) - getX(goal)) > 10 || abs(getY(neighbour) - getY(goal)) > 10) {
+        if (abs(getX(neighbour) - getX(goal)) > 7 || abs(getY(neighbour) - getY(goal)) > 7) {
             continue
         }
         
@@ -39,11 +44,13 @@ while (ds_list_size(open_list) > 0) {
         }
     }
     
-    //ds_list_destroy(neighbours)
+    ds_list_destroy(neighbours)
 }
 
-//while (ds_list_size(open_list) > 0) {
-//    var node = pop_front(open_list)
-//    ds_list_destroy(node)
-//}
-//ds_list_destroy(open_list)
+// show_debug_message("MAX " + string(maxSize))
+
+while (ds_list_size(open_list) > 0) {
+    var node = pop_front(open_list)
+    ds_list_destroy(node)
+}
+ds_list_destroy(open_list)

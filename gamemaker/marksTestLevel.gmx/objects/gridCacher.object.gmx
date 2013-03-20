@@ -25,37 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message("GRIDTRACKER - CREATE")
+            <string>show_debug_message("GRIDCACHER - CREATE")
 
+/*
 w = (room_width/32)+1
 h = (room_height/32)+1
-
-aa = 0
-display_reset(aa,false)
-
-
-global.wallGrid = ds_grid_create(w, h)
-
-for (i = 0; i &lt; w; i++){
-    for (j = 0; j &lt; h; j++){
-        ds_grid_add(global.wallGrid,i,j,0);
-    } 
-}
 
 var tw = w
 var th = h
 
-global.pathDebug = true
-global.pathMaxCost = 1000
-
-global.pathGrid = ds_grid_create(tw, th)
-
-for (var v = 0; v &lt; ds_grid_height(global.pathGrid); v++) {
-    for (var u = 0; u &lt; ds_grid_width(global.pathGrid); u++) {
-        ds_grid_set(global.pathGrid, u, v, global.pathMaxCost);
-    }
-}
-/*
 global.cacheGrid = ds_grid_create(tw, th)
 
 for (var v = 0; v &lt; ds_grid_height(global.cacheGrid); v++) {
@@ -69,8 +47,7 @@ for (var v = 0; v &lt; ds_grid_height(global.cacheGrid); v++) {
         var newPos = createNode(u, v)
         fillGrid(newGrid, newPos)
         
-        global.pathDebug = false
-        if (global.pathDebug == true &amp;&amp; u == 5 &amp;&amp; v == 5) {
+        if (u == 5 &amp;&amp; v == 5) {
             global.pathDebug = false
             
             for (var i = 0; i &lt; ds_grid_width(newGrid); i++) {
@@ -84,7 +61,7 @@ for (var v = 0; v &lt; ds_grid_height(global.cacheGrid); v++) {
         }
         
         ds_grid_set(global.cacheGrid, u, v, newGrid)
-        show_debug_message("DONE " + string(u) + " " + string(v))
+        // show_debug_message("DONE " + string(u) + " " + string(v))
     }
 }
 */

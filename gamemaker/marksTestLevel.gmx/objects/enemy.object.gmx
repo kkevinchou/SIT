@@ -254,15 +254,15 @@ if (state == "normal") {
         path_end();
         path_position = 0
     }
-   // mp_potential_settings(30,30,200,true)
-   /*if (posX &gt; self.x-5 &amp;&amp; posX &lt; self.x+5 &amp;&amp; posY &gt; self.y-5 &amp;&amp; posY &lt; self.y+5){
-       direction += 5  
-   } else {
-       mp_potential_step(posX,posY,2,false);
-       moving = 2
-   }*/
-   
-    if (collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)) {
+    
+    if (posX &gt; self.x-5 &amp;&amp; posX &lt; self.x+5 &amp;&amp; posY &gt; self.y-5 &amp;&amp; posY &lt; self.y+5){
+        direction += 5  
+    } else {
+        mp_potential_step(posX,posY,2,false);
+        moving = 2
+    }
+    
+    /*if (collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)) {
         var pos = createNode(floor(self.x/32), floor(self.y/32))
         var neighbours = getNeighbours(global.pathGrid, pos)
        
@@ -300,7 +300,7 @@ if (state == "normal") {
             mp_potential_step(posX,posY,2,false);
             moving = 2
         }
-    }
+    }*/
     
     /*if (global.pathDebug) {
         global.pathDebug = false
