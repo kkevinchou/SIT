@@ -21,22 +21,22 @@ for (var i = -1; i < 2; i++) {
 */
 
 var neighbourRight = createNode(getX(node) + 1, getY(node) + 0)
-if (nodeIsOkay(grid, neighbour)) {
+if (nodeIsOkay(grid, neighbourRight)) {
     ds_list_add(neighbours, neighbourRight)
 }
 
 var neighbourLeft = createNode(getX(node) - 1, getY(node) + 0)
-if (nodeIsOkay(grid, neighbour)) {
+if (nodeIsOkay(grid, neighbourLeft)) {
     ds_list_add(neighbours, neighbourLeft)
 }
 
 var neighbourUp = createNode(getX(node) + 0, getY(node) + 1)
-if (nodeIsOkay(grid, neighbour)) {
+if (nodeIsOkay(grid, neighbourUp)) {
     ds_list_add(neighbours, neighbourUp)
 }
 
 var neighbourDown = createNode(getX(node) + 0, getY(node) - 1)
-if (nodeIsOkay(grid, neighbour)) {
+if (nodeIsOkay(grid, neighbourDown)) {
     ds_list_add(neighbours, neighbourDown)
 }
 
