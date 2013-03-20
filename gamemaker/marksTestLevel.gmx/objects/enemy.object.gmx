@@ -262,9 +262,11 @@ if (state == "normal") {
         
     }
 } else if (state == "chase" || state == "search") {
-    if (activePath == currentPath) {
-        path_end()
-        path_position = 0
+    if (mode == 1) {
+        if (activePath == currentPath) {
+            path_end()
+            path_position = 0
+        }
     }
     
     /*
@@ -300,7 +302,6 @@ if (state == "normal") {
         mp_potential_path(activePath, fynn.x, fynn.y, 1, 10, 0)
         path_start(activePath, 1, 0, 0)
         moving = 2
-
     }
 }
 
