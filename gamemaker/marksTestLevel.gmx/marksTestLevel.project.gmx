@@ -9,10 +9,6 @@
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite2</sprite>
     <sprite>sprites\sprite1</sprite>
-    <sprite>sprites\flynnFront</sprite>
-    <sprite>sprites\flynnLeft</sprite>
-    <sprite>sprites\flynnRight</sprite>
-    <sprite>sprites\flynnTop</sprite>
     <sprite>sprites\sprite7</sprite>
     <sprite>sprites\sprite8</sprite>
     <sprite>sprites\sprite9</sprite>
@@ -23,14 +19,14 @@
     <sprite>sprites\bodygaurdFront</sprite>
     <sprite>sprites\sprite15</sprite>
     <sprite>sprites\sprite16</sprite>
+    <sprite>sprites\flynnFront</sprite>
+    <sprite>sprites\flynnLeft</sprite>
+    <sprite>sprites\flynnRight</sprite>
+    <sprite>sprites\flynnTop</sprite>
     <sprite>sprites\flynnThrowFront</sprite>
     <sprite>sprites\flynnThrowBack</sprite>
     <sprite>sprites\flynnThrowLeft</sprite>
     <sprite>sprites\flynnThrowRight</sprite>
-    <sprite>sprites\flynnFront2</sprite>
-    <sprite>sprites\flynnLeft2</sprite>
-    <sprite>sprites\flynnRight2</sprite>
-    <sprite>sprites\flynnTop2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
