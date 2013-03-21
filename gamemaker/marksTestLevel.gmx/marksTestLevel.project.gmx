@@ -27,6 +27,7 @@
     <sprite>sprites\flynnThrowBack</sprite>
     <sprite>sprites\flynnThrowLeft</sprite>
     <sprite>sprites\flynnThrowRight</sprite>
+    <sprite>sprites\flynnFront2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
