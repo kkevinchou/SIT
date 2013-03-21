@@ -25,15 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message("GRIDTRACKER - CREATE")
-
-w = (room_width/32)+1
+            <string>w = (room_width/32)+1
 h = (room_height/32)+1
 
 aa = 0
 display_reset(aa,false)
-
-global.gmGridInit = true
 
 global.wallGrid = ds_grid_create(w, h)
 
@@ -42,55 +38,6 @@ for (i = 0; i &lt; w; i++){
         ds_grid_add(global.wallGrid,i,j,0);
     } 
 }
-
-var tw = w
-var th = h
-
-global.pathDebug = true
-global.pathMaxCost = 1000
-
-global.pathGrid = ds_grid_create(tw, th)
-
-for (var v = 0; v &lt; ds_grid_height(global.pathGrid); v++) {
-    for (var u = 0; u &lt; ds_grid_width(global.pathGrid); u++) {
-        ds_grid_set(global.pathGrid, u, v, global.pathMaxCost);
-    }
-}
-
-global.gmGrid = false
-/*
-global.cacheGrid = ds_grid_create(tw, th)
-
-for (var v = 0; v &lt; ds_grid_height(global.cacheGrid); v++) {
-    for (var u = 0; u &lt; ds_grid_width(global.cacheGrid); u++) {
-        var newGrid = ds_grid_create(tw, th)
-        for (var k = 0; k &lt; ds_grid_height(global.pathGrid); k++) {
-            for (var j = 0; j &lt; ds_grid_width(global.pathGrid); j++) {
-                ds_grid_set(newGrid, j, k, global.pathMaxCost);
-            }
-        }
-        var newPos = createNode(u, v)
-        fillGrid(newGrid, newPos)
-        
-        global.pathDebug = false
-        if (global.pathDebug == true &amp;&amp; u == 5 &amp;&amp; v == 5) {
-            global.pathDebug = false
-            
-            for (var i = 0; i &lt; ds_grid_width(newGrid); i++) {
-                rowPrint = "[ "
-                for (var j = 0; j &lt; ds_grid_height(newGrid); j++) {
-                    rowPrint += string(ds_grid_get(newGrid, i, j)) + " "
-                }
-                rowPrint += " ]"
-                show_debug_message(rowPrint)
-            }
-        }
-        
-        ds_grid_set(global.cacheGrid, u, v, newGrid)
-        show_debug_message("DONE " + string(u) + " " + string(v))
-    }
-}
-*/
 </string>
           </argument>
         </arguments>

@@ -32,8 +32,6 @@ shadowHeight = self.sprite_height
 
 ds_grid_add(global.wallGrid, x/32, y/32, 1);
 
-ds_grid_set(global.pathGrid, floor(x/32), floor(y/32), -1);
-
 wallShadow = instance_create(x , y + self.sprite_height , shadow)
 wallShadow.type = 0
 

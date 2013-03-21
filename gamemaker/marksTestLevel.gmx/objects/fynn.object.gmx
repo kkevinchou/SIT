@@ -25,80 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message("FLYNN - CREATE")
-
-image_speed=0
+            <string>image_speed=0
 
 moveSpeed=3
 facing='Front'
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (global.gmGridInit) {
-    show_debug_message("gmMapInit")
-    global.gmGridInit = false
-    global.gmGrid=mp_grid_create(0, 0, room_width/32, room_height/32, 32, 32)
-    mp_grid_add_instances(global.gmGrid, parentWallObj, 1)
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>var start_x = floor(fynn.x/32);
-var start_y = floor(fynn.y/32);
-
-// FILL GRID
-
-var node = createNode(start_x, start_y);
-
-var q;
-q[0] = 13;
-q[1] = 37;
-
-testscript(q);
-
-//show_debug_message("WHERE IS FLYNN?")
-//show_debug_message(string(fynn.x) + ", " + string(fynn.y))
-//printNode(node)
-
-fillGrid(global.pathGrid, node);
 </string>
           </argument>
         </arguments>
@@ -261,7 +191,7 @@ self.facing = 'Front'
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>self.sprite_index = flynnRight
+            <string>self.sprite_index = flynnRight2
 self.x += moveSpeed
 self.image_index = self.image_index+moveSpeed*.1
 self.facing = 'Right'
@@ -287,7 +217,7 @@ self.facing = 'Right'
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>self.sprite_index = flynnTop
+            <string>self.sprite_index = flynnTop2
 self.y -= moveSpeed
 self.image_index = self.image_index+(moveSpeed*.1)
 self.facing = 'Back'
@@ -313,7 +243,7 @@ self.facing = 'Back'
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>self.sprite_index = flynnLeft
+            <string>self.sprite_index = flynnLeft2
 self.x -= moveSpeed
 self.image_index = self.image_index+moveSpeed*.1
 self.facing = 'Left'

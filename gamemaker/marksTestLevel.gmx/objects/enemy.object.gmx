@@ -269,34 +269,9 @@ if (state == "normal") {
         }
     }
     
-    /*
-    if (path_position &gt; 0){
-        path_end()
-        path_position = 0
-    }
-    */
-    
     if (posX &gt; self.x-5 &amp;&amp; posX &lt; self.x+5 &amp;&amp; posY &gt; self.y-5 &amp;&amp; posY &lt; self.y+5){
         direction += 5
     } else {
-        /*
-        path_end()
-        activePath = path_add()
-        mp_grid_path(global.gmGrid, activePath, self.x, self.y, fynn.x, fynn.y, 1)
-        retX = path_get_x(activePath,0.1)
-        retY = path_get_y(activePath,0.1)
-        path_start(activePath, 1, 0, true)
-        moving = 2
-        
-        path_end()
-        activePath = path_add()
-        mp_grid_path(global.gmGrid, activePath, self.x, self.y, fynn.x, fynn.y, 1)
-        retX = path_get_x(activePath,0.1)
-        retY = path_get_y(activePath,0.1)
-        mp_potential_step(retX,retY,1,false);
-        moving = 2
-        */
-        
         path_end()
         activePath = path_add()
         mp_potential_path(activePath, fynn.x, fynn.y, 1, 10, 0)
