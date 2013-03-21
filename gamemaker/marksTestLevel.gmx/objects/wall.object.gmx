@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>show_debug_message("WALL - CREATE")
-
-self.depth = -(y + self.sprite_height)
+            <string>self.depth = -(y + self.sprite_height)
 shadowHeight = self.sprite_height
 
 ds_grid_add(global.wallGrid, x/32, y/32, 1);

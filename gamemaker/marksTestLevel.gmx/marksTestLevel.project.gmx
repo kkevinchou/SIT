@@ -69,6 +69,7 @@
     <object>objects\fuseBox</object>
     <object>objects\fuseBoxBlackout</object>
   </objects>
+  <timelines name="timelines"/>
   <rooms name="rooms">
     <room>rooms\room0</room>
     <room>rooms\room2</room>
