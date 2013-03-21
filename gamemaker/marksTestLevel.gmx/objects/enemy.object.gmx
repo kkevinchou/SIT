@@ -35,7 +35,7 @@ forward = true
 
 mode = 0
 state = "normal" //"normal" "search" "chase"
-currentPath = 0
+self.currentPath = 0
 
 image_speed = 0
 
@@ -68,7 +68,7 @@ self.debugEnemy = false
           <argument>
             <kind>1</kind>
             <string>state = "normal"
-activePath = currentPath
+self.activePath = self.currentPath
 path_end()
 path_position = 0
 self.debugEnemy = true
@@ -136,7 +136,8 @@ moving = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>// show_debug_message("ENEMY - VISION")
+
 if (visionRad &gt; 0) {
     if (forward == true) {
         visionRot = (visionRot+1) 
@@ -236,25 +237,27 @@ if (state == "normal") {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (state == "normal") {
+            <string>// show_debug_message("ENEMY - STEP")
+
+if (state == "normal") {
     if (mode == 0) {
     
     } else if (mode == 1) {
-        if (activePath != currentPath || (activePath == currentPath &amp;&amp; path_position &lt;= 0)) {
-            if (self.x == path_get_x(currentPath,0) &amp;&amp; self.y == path_get_y(currentPath,0)){
-                activePath = currentPath
-                path_start(currentPath,1,1,1)
+        if (self.activePath != self.currentPath || (self.activePath == self.currentPath &amp;&amp; path_position &lt;= 0)) {
+            if (self.x == path_get_x(currentPath,0) &amp;&amp; self.y == path_get_y(self.currentPath,0)){
+                self.activePath = self.currentPath
+                path_start(self.currentPath,1,1,1)
             } else {
-                retX = path_get_x(currentPath,0)
-                retY = path_get_y(currentPath,0)
-                //mp_potential_step(retX,retY,1,false);
+                retX = path_get_x(self.currentPath,0)
+                retY = path_get_y(self.currentPath,0)
+                mp_potential_step(retX,retY,1,false);
                 moving = 1
-                
+                /*
                 path_end()
-                activePath = path_add()
-                mp_potential_path(activePath, retX, retY, 1, 10, 0)
-                path_start(activePath, 1, 0, 0)
-                //moving = 2
+                self.activePath = path_add()
+                mp_potential_path(self.activePath, retX, retY, 1, 10, 0)
+                path_start(self.activePath, 1, 0, 0)
+                */
             }  
         } else {
             moving = 1
@@ -263,7 +266,7 @@ if (state == "normal") {
     }
 } else if (state == "chase" || state == "search") {
     if (mode == 1) {
-        if (activePath == currentPath) {
+        if (self.activePath == self.currentPath) {
             path_end()
             path_position = 0
         }
@@ -272,10 +275,17 @@ if (state == "normal") {
     if (posX &gt; self.x-5 &amp;&amp; posX &lt; self.x+5 &amp;&amp; posY &gt; self.y-5 &amp;&amp; posY &lt; self.y+5){
         direction += 5
     } else {
+        /*
         path_end()
-        activePath = path_add()
-        mp_potential_path(activePath, fynn.x, fynn.y, 1, 10, 0)
-        path_start(activePath, 1, 0, 0)
+        self.activePath = path_add()
+        if (mp_potential_path(self.activePath, fynn.x, fynn.y, 1, 40, 0)) {
+            path_start(self.activePath, 1, 0, 0)
+            moving = 2
+        }
+        */
+        
+        mp_potential_step(fynn.x, fynn.y, 1, 0)
+        self.activePath = path_add()
         moving = 2
     }
 }
