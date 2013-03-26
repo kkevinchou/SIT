@@ -59,6 +59,7 @@
       <script>scripts\getNextNode.gml</script>
       <script>scripts\listHasNode.gml</script>
     </scripts>
+    <script>scripts\getEnemiesInRadius.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\wall</object>

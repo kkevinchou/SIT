@@ -293,6 +293,8 @@ if (state == "normal") {
         self.activePath = path_add()
         moving = 2
     }
+} else if (state == "investigate") {
+    
 }
 
 if (self.debugEnemy) {
