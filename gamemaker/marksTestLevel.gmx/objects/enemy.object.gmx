@@ -187,7 +187,7 @@ if (state == "normal") {
     } else {
         state = "search"
         if (alarm[0] == -1){
-            alarm[0] = 200
+            alarm[0] = room_speed * 4
         }
     }
     
@@ -251,12 +251,13 @@ if (state == "normal") {
         if (self.activePath != self.currentPath || (self.activePath == self.currentPath &amp;&amp; path_position &lt;= 0)) {
             if (self.x == path_get_x(currentPath,0) &amp;&amp; self.y == path_get_y(self.currentPath,0)){
                 self.activePath = self.currentPath
+                moving = 1
                 path_start(self.currentPath,1,1,1)
             } else {
                 retX = path_get_x(self.currentPath,0)
                 retY = path_get_y(self.currentPath,0)
-                mp_potential_step(retX,retY,1,false);
                 moving = 1
+                mp_potential_step(retX,retY,1,false);
                 /*
                 path_end()
                 self.activePath = path_add()
@@ -289,12 +290,22 @@ if (state == "normal") {
         }
         */
         
-        mp_potential_step(fynn.x, fynn.y, 1, 0)
-        self.activePath = path_add()
         moving = 2
+        mp_potential_step(fynn.x, fynn.y, 2, 0)
+        self.activePath = path_add()
     }
 } else if (state == "investigate") {
+    var targetX = self.investigateTargetX
+    var targetY = self.investigateTargetY - 24
     
+    var distToTarget = point_distance(targetX, targetY, x, y)
+    if (distToTarget &lt;= 15) {
+        image_index = 0
+    } else {
+        path_end()
+        moving = 2
+        mp_potential_step(targetX, targetY, 2, 0)
+    }
 }
 
 if (self.debugEnemy) {

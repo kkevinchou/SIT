@@ -59,7 +59,6 @@
       <script>scripts\getNextNode.gml</script>
       <script>scripts\listHasNode.gml</script>
     </scripts>
-    <script>scripts\getEnemiesInRadius.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\wall</object>
@@ -75,6 +74,7 @@
     <object>objects\fuseBoxBlackout</object>
     <object>objects\belt_ui</object>
     <object>objects\obj_talking</object>
+    <object>objects\cricket</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
