@@ -27,15 +27,18 @@
             <kind>1</kind>
             <string>self_direction = 0
 
-visionRad = 30
-vision = 200
+visionRad = 0 //determines the swag of the enemies view
+visionWidth = 20 //determines the width of the vision cone
+vision = 200 // determines the distance and enemy can see
 
-visionRot = 0
+visionRot = 0 //determines the starting rotation
 forward = true
 
-mode = 0
+mode = 0 //mode 0 is standing still, mode 1 is following a path
 state = "normal" //"normal" "search" "chase"
-self.currentPath = 0
+self.currentPath = 0 
+
+talking = false //is the enmey talking
 
 image_speed = 0
 
@@ -46,7 +49,9 @@ drawnDirection = direction
 
 self.debugEnemy = false
 
-talking = false
+
+
+oldVision = vision
 </string>
           </argument>
         </arguments>
@@ -163,14 +168,23 @@ if (state == "normal") {
         dist = distance_to_object(object)
         posX = (self.x) + sin(rot) * dist
         posY = (self.y) + cos(rot) * dist
+    } else {
+        dist = vision
     }
     
-    char = collision_line(self.x,self.y,posX,posY,fynn,true,true)
-    if (char) {
-        if (!collision_line(self.x,self.y,char.x,char.y ,parentWallObj,false,true)) {
+    //char = collision_line(self.x,self.y,posX,posY,fynn,false,true)
+    lineDirection = point_direction(self.x,self.y,fynn.x,fynn.y)
+    if ((direction+visionWidth/2 &gt;= lineDirection) &amp;&amp;
+        (direction-visionWidth/2 &lt;= lineDirection) &amp;&amp;
+         distance_to_object(fynn) &lt;= dist){
+        
+        if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)) {
             state = "chase" 
         }
+    
     }
+    
+    
     
 } else if (state == "chase" || state = "search"){
 
@@ -390,7 +404,7 @@ if (moving &gt; 0) self.image_index = self.image_index+(moving*.1);
             <kind>1</kind>
             <string>draw_set_circle_precision(64)
 draw_set_alpha(0.5)
-draw_ellipse_color(self.x-12,self.y+sprite_height/2-12,self.x+12,self.y+sprite_height/2,c_black,c_black,false)
+draw_ellipse_color(self.x-12,self.y+sprite_height/2-16,self.x+12,self.y+sprite_height/2-4,c_black,c_black,false)
 draw_set_alpha(1)
 </string>
           </argument>
@@ -448,7 +462,33 @@ if (drawnDirection &gt; direction){
 }
 drawnDirection = drawnDirection mod 360
 //drawnDirection = direction
+draw_set_color(lineColor);
+draw_set_alpha(0.5)
+curve = 5
+draw_primitive_begin(pr_trianglefan)
+rot = degtorad(drawnDirection + 90 - visionRad/2 + visionRot - visionWidth/2)
+draw_vertex(self.x + sin(rot)*18, self.y + cos(rot)*18);
+for (i=0; i &lt; curve; i++) {
+    rot = degtorad(drawnDirection + 90 - visionRad/2 + visionRot - visionWidth/2 + i*visionWidth/curve)
+    drawX = (self.x) + sin(rot) * vision
+    drawY = (self.y) + cos(rot) * vision
+    object = nearest_collision_line(self.x,self.y,drawX,drawY ,parentWallObj)
+    if (object){
+        dist = distance_to_object(object)
+        drawX = (self.x) + sin(rot) * dist
+        drawY = (self.y) + cos(rot) * dist
+    } else {
+        dist = vision
+    }
+    draw_vertex(drawX,drawY);
+}
+draw_vertex(self.x + sin(rot)*18,self.y + cos(rot)*18)
+draw_primitive_end()
+draw_set_alpha(1)
+draw_set_color(c_black);
 
+
+/*
 rot = degtorad(drawnDirection + 90 - visionRad/2 + visionRot)
 drawX = (self.x) + sin(rot) * vision
 drawY = (self.y) + cos(rot) * vision
@@ -457,16 +497,42 @@ if (object){
     dist = distance_to_object(object)
     drawX = (self.x) + sin(rot) * dist
     drawY = (self.y) + cos(rot) * dist
+} else {
+    dist = vision
 }
 
+if (oldVision &lt; dist){
+    changedDistance = oldVision + min(dist - oldVision, 5)
+} else {
+    changedDistance = oldVision - min(oldVision - dist, 5)
+}
 
-draw_line_width_color(
- self.x + sin(rot)*18
-,self.y + cos(rot)*18
-,drawX
-,drawY
-,3
-,lineColor,lineColor);
+oldVision = changedDistance
+
+rot1 = degtorad(drawnDirection + 90 - visionRad/2 + visionRot - 10)
+drawX1 = (self.x) + sin(rot1) * changedDistance
+drawY1 = (self.y) + cos(rot1) * changedDistance
+rot2 = degtorad(drawnDirection + 90 - visionRad/2 + visionRot + 10)
+drawX2 = (self.x) + sin(rot2) * changedDistance
+drawY2 = (self.y) + cos(rot2) * changedDistance
+
+
+//draw_set_alpha(0.5)
+
+//draw_triangle_color(
+//self.x + sin(rot)*18
+//,self.y + cos(rot)*18
+//,drawX1,drawY1,drawX2,drawY2,lineColor,lineColor,lineColor,false);
+
+//draw_set_alpha(1)
+
+//draw_line_width_color(
+// self.x + sin(rot)*18
+//,self.y + cos(rot)*18
+//,drawX
+//,drawY
+//,3
+//,lineColor,lineColor);
 
 </string>
           </argument>
