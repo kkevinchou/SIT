@@ -1,3 +1,4 @@
+
 var myX = argument0
 var myY = argument1
 var otherX = argument2
@@ -18,4 +19,3 @@ while (blocking_object) {
     blocking_object = collision_line(myX, myY, blocking_object.x, blocking_object.y, object, false, false)
 }
 return old_blocking
-

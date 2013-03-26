@@ -60,6 +60,12 @@
       <script>scripts\getNextNode.gml</script>
       <script>scripts\listHasNode.gml</script>
     </scripts>
+    <scripts name="flynn">
+      <script>scripts\flynnMoveUp.gml</script>
+      <script>scripts\flynnMoveDown.gml</script>
+      <script>scripts\flynnMoveLeft.gml</script>
+      <script>scripts\flynnMoveRight.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\wall</object>
@@ -75,6 +81,7 @@
     <object>objects\fuseBoxBlackout</object>
     <object>objects\belt_ui</object>
     <object>objects\obj_talking</object>
+    <object>objects\cricket</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
