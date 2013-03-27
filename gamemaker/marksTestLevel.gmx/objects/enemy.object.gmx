@@ -28,11 +28,13 @@
             <string>self_direction = 0
 
 visionRad = 0 //determines the swag of the enemies view
-visionWidth = 20 //determines the width of the vision cone
+visionWidth = 60 //determines the width of the vision cone
 vision = 200 // determines the distance and enemy can see
 
 visionRot = 0 //determines the starting rotation
 forward = true
+
+movementSpeed = 1
 
 mode = 0 //mode 0 is standing still, mode 1 is following a path
 state = "normal" //"normal" "search" "chase"
@@ -176,7 +178,7 @@ if (state == "normal" || state == "investigate") {
     lineDirection = point_direction(self.x,self.y,fynn.x,fynn.y)
     if ((direction+visionWidth/2 &gt;= lineDirection) &amp;&amp;
         (direction-visionWidth/2 &lt;= lineDirection) &amp;&amp;
-         distance_to_object(fynn) &lt;= dist){
+         distance_to_object(fynn) &lt;= vision){
         
         if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)) {
             state = "chase" 
@@ -190,8 +192,8 @@ if (state == "normal" || state == "investigate") {
 
     if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)) {
         lineDirection = point_direction(self.x,self.y,fynn.x,fynn.y)
-        if ((direction+visionRad/2 &gt;= lineDirection) &amp;&amp; 
-            (direction-visionRad/2 &lt;= lineDirection) ){
+        if ((direction+visionWidth/2 &gt;= lineDirection) &amp;&amp; 
+            (direction-visionWidth/2 &lt;= lineDirection) ){
             state = "chase" 
             posX = fynn.x
             posY = fynn.y
@@ -201,7 +203,7 @@ if (state == "normal" || state == "investigate") {
     } else {
         state = "search"
         if (alarm[0] == -1){
-            alarm[0] = room_speed * 4
+            alarm[0] = room_speed * 5
         }
     }
     
@@ -256,7 +258,8 @@ if (state == "normal" || state == "investigate") {
             <string>// show_debug_message("ENEMY - STEP")
 speedMod = 1
 if (talking ==true) speedMod = 0.5
-path_speed = speedMod
+
+path_speed = movementSpeed * speedMod
 
 if (state == "normal") {
     if (mode == 0) {
@@ -265,13 +268,13 @@ if (state == "normal") {
         if (self.activePath != self.currentPath || (self.activePath == self.currentPath &amp;&amp; path_position &lt;= 0)) {
             if (self.x == path_get_x(currentPath,0) &amp;&amp; self.y == path_get_y(self.currentPath,0)){
                 self.activePath = self.currentPath
-                moving = 1
-                path_start(self.currentPath,1,1,1)
+                moving = movementSpeed * speedMod
+                path_start(self.currentPath,movementSpeed,1,1)
             } else {
                 retX = path_get_x(self.currentPath,0)
                 retY = path_get_y(self.currentPath,0)
-                moving = 1
-                mp_potential_step(retX,retY,1,false);
+                moving = movementSpeed * speedMod
+                mp_potential_step(retX,retY,movementSpeed,false);
                 /*
                 path_end()
                 self.activePath = path_add()
@@ -280,7 +283,7 @@ if (state == "normal") {
                 */
             }  
         } else {
-            moving = 1
+            moving = movementSpeed * speedMod
         }
         
     }
@@ -304,8 +307,8 @@ if (state == "normal") {
         }
         */
         
-        moving = 2
-        mp_potential_step(fynn.x, fynn.y, 2, 0)
+        moving = movementSpeed*2
+        mp_potential_step(posX, posY, movementSpeed*2, 0)
         self.activePath = path_add()
     }
 } else if (state == "investigate") {
@@ -317,8 +320,8 @@ if (state == "normal") {
         image_index = 0
     } else {
         path_end()
-        moving = 2
-        mp_potential_step(targetX, targetY, 2, 0)
+        moving = movementSpeed*2
+        mp_potential_step(targetX, targetY, movementSpeed*2, 0)
     }
 }
 
@@ -373,22 +376,33 @@ if (moving &gt; 0) self.image_index = self.image_index+(moving*.1);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (talking == false) {
+            <string>if (state=="normal") talkDistance = 80
+else talkDistance = 130
 
+
+if (talking == false &amp;&amp; random(5) &lt;= 1) {
 
     x-=10000
     nearestFriend=instance_nearest(x+10000,y,enemy)
     x+=10000
-
-    if (nearestFriend.talking == false &amp;&amp; distance_to_object(enemy) &lt; 80) {
-    
-        talking = true
-        nearestFriend.talking = true
+    if (distance_to_object(enemy) &lt; talkDistance) {
+        if (nearestFriend.talking == false ) {
         
-        talk = instance_create(x,y,obj_talking)
-        talk.first = id
-        talk.second = nearestFriend
-       
+            talking = true
+            nearestFriend.talking = true
+            
+            talk = instance_create(x,y,obj_talking)
+            talk.state = state
+            talk.first = id
+            talk.second = nearestFriend
+           
+        } else if (state != "normal") {
+            if (nearestFriend.state == "normal") {
+                nearestFriend.state = state
+                nearestFriend.posX = posX
+                nearestFriend.posY = posY
+            }
+        }
     }
 
 }
@@ -453,7 +467,8 @@ draw_set_alpha(1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>lineColor = c_green
+            <string>
+lineColor = c_green
 if (state = "search"){
     lineColor = c_yellow
 } else if (state = "chase") {
@@ -477,11 +492,11 @@ drawnDirection = drawnDirection mod 360
 //drawnDirection = direction
 draw_set_color(lineColor);
 draw_set_alpha(0.5)
-curve = 5
+curve = visionWidth/3
 draw_primitive_begin(pr_trianglefan)
 rot = degtorad(drawnDirection + 90 - visionRad/2 + visionRot - visionWidth/2)
 draw_vertex(self.x + sin(rot)*18, self.y + cos(rot)*18);
-for (i=0; i &lt; curve; i++) {
+for (i=0; i &lt;= curve; i++) {
     rot = degtorad(drawnDirection + 90 - visionRad/2 + visionRot - visionWidth/2 + i*visionWidth/curve)
     drawX = (self.x) + sin(rot) * vision
     drawY = (self.y) + cos(rot) * vision
@@ -539,13 +554,18 @@ drawY2 = (self.y) + cos(rot2) * changedDistance
 
 //draw_set_alpha(1)
 
-//draw_line_width_color(
-// self.x + sin(rot)*18
-//,self.y + cos(rot)*18
-//,drawX
-//,drawY
-//,3
-//,lineColor,lineColor);
+
+rot = degtorad(drawnDirection + 90 - visionRad/2 + visionRot)
+drawX = (self.x) + sin(rot) * vision
+drawY = (self.y) + cos(rot) * vision
+
+draw_line_width_color(
+ self.x + sin(rot)*18
+,self.y + cos(rot)*18
+,drawX
+,drawY
+,3
+,lineColor,lineColor);
 
 </string>
           </argument>

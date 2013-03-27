@@ -42,6 +42,8 @@
   <paths name="paths">
     <path>paths\path0</path>
     <path>paths\path1</path>
+    <path>paths\path2</path>
+    <path>paths\path3</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\nearest_collision_line.gml</script>
@@ -85,6 +87,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
+    <room>rooms\room4</room>
     <room>rooms\room2</room>
     <room>rooms\room1</room>
     <room>rooms\room3</room>
