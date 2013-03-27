@@ -35,6 +35,7 @@
     <sprite>sprites\securityGuardSleepBack</sprite>
     <sprite>sprites\securityGuardSleepLeft</sprite>
     <sprite>sprites\securityGuardSleepRight</sprite>
+    <sprite>sprites\sleepingDart_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
