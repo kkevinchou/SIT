@@ -62,6 +62,26 @@ oldVision = vision
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>Returning To The Normal State</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -145,68 +165,86 @@ moving = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// show_debug_message("ENEMY - VISION")
+            <string>if (state != "sleep") {
 
-if (visionRad &gt; 0) {
-    if (forward == true) {
-        visionRot = (visionRot+1) 
-        if (visionRot &gt;= visionRad) {
-            forward = false
-        }
-    } else {
-        visionRot = (visionRot-1) 
-        if (visionRot &lt;= 0) {
-            forward = true
+    if (visionRad &gt; 0) {
+        if (forward == true) {
+            visionRot = (visionRot+1) 
+            if (visionRot &gt;= visionRad) {
+                forward = false
+            }
+        } else {
+            visionRot = (visionRot-1) 
+            if (visionRot &lt;= 0) {
+                forward = true
+            }
         }
     }
-}
-if (state == "normal" || state == "investigate") {
-
-    rot = degtorad(direction + 90 - visionRad/2 + visionRot)
-    posX = (self.x) + sin(rot) * vision
-    posY = (self.y) + cos(rot) * vision
-    object = collision_line(self.x,self.y,posX,posY ,parentWallObj,false,true)
-    if (object){
-        dist = distance_to_object(object)
-        posX = (self.x) + sin(rot) * dist
-        posY = (self.y) + cos(rot) * dist
-    } else {
-        dist = vision
-    }
     
-    //char = collision_line(self.x,self.y,posX,posY,fynn,false,true)
-    lineDirection = point_direction(self.x,self.y,fynn.x,fynn.y)
-    if ((direction+visionWidth/2 &gt;= lineDirection) &amp;&amp;
-        (direction-visionWidth/2 &lt;= lineDirection) &amp;&amp;
-         distance_to_object(fynn) &lt;= vision){
-        
-        if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)) {
-            state = "chase" 
+    if (state == "normal" || state == "investigate") {
+    
+        rot = degtorad(direction + 90 - visionRad/2 + visionRot)
+        posX = (self.x) + sin(rot) * vision
+        posY = (self.y) + cos(rot) * vision
+        object = collision_line(self.x,self.y,posX,posY ,parentWallObj,false,true)
+        if (object){
+            dist = distance_to_object(object)
+            posX = (self.x) + sin(rot) * dist
+            posY = (self.y) + cos(rot) * dist
+        } else {
+            dist = vision
         }
     
-    }
-    
-    
-    
-} else if (state == "chase" || state = "search"){
-
-    if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)) {
+        //char = collision_line(self.x,self.y,posX,posY,fynn,false,true)
         lineDirection = point_direction(self.x,self.y,fynn.x,fynn.y)
-        if ((direction+visionWidth/2 &gt;= lineDirection) &amp;&amp; 
-            (direction-visionWidth/2 &lt;= lineDirection) ){
-            state = "chase" 
-            posX = fynn.x
-            posY = fynn.y
-            alarm[0] = -1
+        if ((direction+visionWidth/2 &gt;= lineDirection) &amp;&amp;
+            (direction-visionWidth/2 &lt;= lineDirection) &amp;&amp;
+            distance_to_object(fynn) &lt;= vision) {
+        
+            if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)) {
+                state = "chase" 
+                posX = fynn.x
+                posY = fynn.y
+                alarm[0] = -1
+            }
+        }
+
+        
+        
+        //char = collision_line(self.x,self.y,posX,posY,fynn,false,true)
+        
+        
+
+       /* if ((direction+visionWidth/2 &gt;= lineDirection) &amp;&amp;
+            (direction-visionWidth/2 &lt;= lineDirection) &amp;&amp;
+             distance_to_object(fynn) &lt;= dist){
+            
+            if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)) {
+                state = "chase" 
+            }
+        
+        } */
+        
+        
+        
+    } else if (state == "chase" || state = "search"){
+        lineDirection = point_direction(self.x,self.y,fynn.x,fynn.y)
+        if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)
+            &amp;&amp; (direction+visionWidth/2 &gt;= lineDirection)
+            &amp;&amp; (direction-visionWidth/2 &lt;= lineDirection) ){
+                state = "chase" 
+                posX = fynn.x
+                posY = fynn.y
+                alarm[0] = -1
+            
+        } else {
+            state = "search"
+            if (alarm[0] == -1){
+                alarm[0] = room_speed * 5
+            } 
         }
         
-    } else {
-        state = "search"
-        if (alarm[0] == -1){
-            alarm[0] = room_speed * 5
-        }
     }
-    
 }
 
 
@@ -283,59 +321,67 @@ if (state == "normal") {
                 */
             }  
         } else {
-            moving = movementSpeed * speedMod
+            moving = movementSpeed * speedMod 
         }
-        
-    }
+    } 
 } else if (state == "chase" || state == "search") {
-    if (mode == 1) {
-        if (self.activePath == self.currentPath) {
-            path_end()
-            path_position = 0
+        if (mode == 1) {
+            if (self.activePath == self.currentPath) {
+                path_end()
+                path_position = 0
+            }
         }
-    }
-    
-    if (posX &gt; self.x-5 &amp;&amp; posX &lt; self.x+5 &amp;&amp; posY &gt; self.y-5 &amp;&amp; posY &lt; self.y+5){
-        direction += 5
-    } else {
-        /*
-        path_end()
-        self.activePath = path_add()
-        if (mp_potential_path(self.activePath, fynn.x, fynn.y, 1, 40, 0)) {
-            path_start(self.activePath, 1, 0, 0)
-            moving = 2
-        }
-        */
         
-        moving = movementSpeed*2
-        mp_potential_step(posX, posY, movementSpeed*2, 0)
-        self.activePath = path_add()
-    }
+        if (posX &gt; self.x-5 &amp;&amp; posX &lt; self.x+5 &amp;&amp; posY &gt; self.y-5 &amp;&amp; posY &lt; self.y+5){
+            direction += 5
+        } else {
+            
+            moving = movementSpeed*2
+            mp_potential_step(posX, posY, movementSpeed*2, 0)
+            self.activePath = path_add()
+        }
+        
+        
 } else if (state == "investigate") {
+
     var targetX = self.investigateTargetX
     var targetY = self.investigateTargetY - 24
     
+
     var distToTarget = point_distance(targetX, targetY, x, y)
     if (distToTarget &lt;= 15) {
         image_index = 0
     } else {
         path_end()
-        moving = movementSpeed*2
+         moving = movementSpeed*2
         mp_potential_step(targetX, targetY, movementSpeed*2, 0)
     }
+    
 }
+    
+
+    //var distToTarget = point_distance(targetX, targetY, x, y)
+    //if (distToTarget &lt;= 15) {
+    //    image_index = 0
+    //} else {
+    //    path_end()
+    //    moving = movementSpeed*2
+     //   mp_potential_step(targetX, targetY, movementSpeed*2, 0)
+    //}
+    dir = direction - 45
+    if (dir &gt;0 &amp;&amp; dir &lt;= 90) sprite_index = bodygaurdTop
+    else if (dir &gt;0 &amp;&amp; dir &lt;= 180) sprite_index = bodygaurdLeft
+    else if (dir &gt;0 &amp;&amp; dir &lt;= 270) sprite_index = bodygaurdFront
+    else sprite_index = bodygaurdRight
+    
+    if (moving &gt; 0) self.image_index = self.image_index+(moving*.1);
+
 
 if (self.debugEnemy) {
     self.debugEnemy = false
 }
 
-dir = direction - 45
-if (dir &gt;0 &amp;&amp; dir &lt;= 90) sprite_index = bodygaurdTop
-else if (dir &gt;0 &amp;&amp; dir &lt;= 180) sprite_index = bodygaurdLeft
-else if (dir &gt;0 &amp;&amp; dir &lt;= 270) sprite_index = bodygaurdFront
-else sprite_index = bodygaurdRight
-
-if (moving &gt; 0) self.image_index = self.image_index+(moving*.1);
+            
 </string>
           </argument>
         </arguments>
@@ -403,8 +449,8 @@ if (talking == false &amp;&amp; random(5) &lt;= 1) {
                 nearestFriend.posY = posY
             }
         }
-    }
 
+    }
 }
 
 </string>
@@ -468,34 +514,39 @@ draw_set_alpha(1)
           <argument>
             <kind>1</kind>
             <string>
-lineColor = c_green
-if (state = "search"){
-    lineColor = c_yellow
-} else if (state = "chase") {
-    lineColor = c_red
-}
-//used to smooth out the drawing of the line
-if (drawnDirection &gt; direction){
-    if ((drawnDirection-direction) &lt; (360-drawnDirection+direction)){
-        drawnDirection -= min(5,drawnDirection-direction)
-    } else {
-        drawnDirection += min(5,(360-drawnDirection+direction))
+
+if (state != "sleep") {
+    lineColor = c_green
+    if (state = "search"){
+        lineColor = c_yellow
+    } else if (state = "chase") {
+        lineColor = c_red
     }
-} else if (direction &gt; drawnDirection){
- if ((direction-drawnDirection) &lt; (360+drawnDirection-direction)){
-        drawnDirection += min(5,direction-drawnDirection)
-    } else {
-        drawnDirection -= min(5,(360+drawnDirection-direction))
+    //used to smooth out the drawing of the line
+    if (drawnDirection &gt; direction){
+        if ((drawnDirection-direction) &lt; (360-drawnDirection+direction)){
+            drawnDirection -= min(5,drawnDirection-direction)
+        } else {
+            drawnDirection += min(5,(360-drawnDirection+direction))
+        }
+    } else if (direction &gt; drawnDirection){
+     if ((direction-drawnDirection) &lt; (360+drawnDirection-direction)){
+            drawnDirection += min(5,direction-drawnDirection)
+        } else {
+            drawnDirection -= min(5,(360+drawnDirection-direction))
+        }
     }
 }
 drawnDirection = drawnDirection mod 360
-//drawnDirection = direction
+
+
 draw_set_color(lineColor);
 draw_set_alpha(0.5)
 curve = visionWidth/3
 draw_primitive_begin(pr_trianglefan)
 rot = degtorad(drawnDirection + 90 - visionRad/2 + visionRot - visionWidth/2)
 draw_vertex(self.x + sin(rot)*18, self.y + cos(rot)*18);
+
 for (i=0; i &lt;= curve; i++) {
     rot = degtorad(drawnDirection + 90 - visionRad/2 + visionRot - visionWidth/2 + i*visionWidth/curve)
     drawX = (self.x) + sin(rot) * vision
@@ -508,9 +559,10 @@ for (i=0; i &lt;= curve; i++) {
     } else {
         dist = vision
     }
-    draw_vertex(drawX,drawY);
+    draw_vertex(drawX,drawY) 
 }
-draw_vertex(self.x + sin(rot)*18,self.y + cos(rot)*18)
+
+draw_vertex(self.x + sin(rot)*18,self.y + cos(rot)*18) 
 draw_primitive_end()
 draw_set_alpha(1)
 draw_set_color(c_black);

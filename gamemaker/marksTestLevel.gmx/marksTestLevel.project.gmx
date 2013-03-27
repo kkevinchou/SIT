@@ -27,14 +27,14 @@
     <sprite>sprites\flynnThrowBack</sprite>
     <sprite>sprites\flynnThrowLeft</sprite>
     <sprite>sprites\flynnThrowRight</sprite>
-    <sprite>sprites\flynnFront2</sprite>
-    <sprite>sprites\flynnLeft2</sprite>
-    <sprite>sprites\flynnRight2</sprite>
-    <sprite>sprites\flynnTop2</sprite>
     <sprite>sprites\belt</sprite>
     <sprite>sprites\pouch</sprite>
     <sprite>sprites\cricket_spr</sprite>
     <sprite>sprites\smokescreen_spr</sprite>
+    <sprite>sprites\securityGuardSleepFront</sprite>
+    <sprite>sprites\securityGuardSleepBack</sprite>
+    <sprite>sprites\securityGuardSleepLeft</sprite>
+    <sprite>sprites\securityGuardSleepRight</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -68,6 +68,10 @@
       <script>scripts\flynnMoveLeft.gml</script>
       <script>scripts\flynnMoveRight.gml</script>
     </scripts>
+    <scripts name="enemy">
+      <script>scripts\enemySleep.gml</script>
+      <script>scripts\enemyInvestigate.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\wall</object>
@@ -84,6 +88,7 @@
     <object>objects\belt_ui</object>
     <object>objects\obj_talking</object>
     <object>objects\cricket</object>
+    <object>objects\sleepDart</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
