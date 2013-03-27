@@ -87,7 +87,7 @@ if (self.image_index &gt; self.image_number - 1) {
         with (dart) {
             var rotAngleRad = arctan2(-(targetY - y), targetX - x);
             var rotAngleDeg = radtodeg(rotAngleRad);
-            var dartSpeed = 5;
+            var dartSpeed = 8;
             
             image_angle = rotAngleDeg - 45;
             move_towards_point(targetX, targetY, dartSpeed);
@@ -541,7 +541,15 @@ draw_set_alpha(1)
 if (self.selectedItem &gt;= 0) {
     var item = ds_list_find_value(global.items, self.selectedItem)
     var image = ds_map_find_value(item, global.ITEMIMAGE)
-    draw_sprite(image, 0, mouse_x, mouse_y)
+    
+    if (self.selectedItem == 2) { // Sleeping Dart
+        var rotAngleRad = arctan2(-(mouse_y - y), mouse_x - x);
+        var rotAngleDeg = radtodeg(rotAngleRad) - 37;
+        
+        draw_sprite_ext(image, 0, mouse_x, mouse_y, 1, 1, rotAngleDeg, c_white, 0.7);
+    } else {
+        draw_sprite_ext(image, 0, mouse_x, mouse_y, 1, 1, 0, c_white, 0.7);
+    }
 }
 </string>
           </argument>

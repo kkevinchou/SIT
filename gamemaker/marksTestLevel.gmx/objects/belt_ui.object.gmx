@@ -43,6 +43,12 @@ ds_map_add(smoke_index, global.ITEMNAME, "Smoke Bomb")
 ds_map_add(smoke_index, global.ITEMCOUNT, 3)
 ds_map_add(smoke_index, global.ITEMIMAGE, smokescreen_spr)
 ds_list_add(global.items, smoke_index)
+
+var sleepDart_index = ds_map_create()
+ds_map_add(sleepDart_index, global.ITEMNAME, "Sleeping Dart")
+ds_map_add(sleepDart_index, global.ITEMCOUNT, 3)
+ds_map_add(sleepDart_index, global.ITEMIMAGE, sleepingDart_spr)
+ds_list_add(global.items, sleepDart_index)
 </string>
           </argument>
         </arguments>
