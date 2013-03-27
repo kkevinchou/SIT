@@ -27,10 +27,6 @@
     <sprite>sprites\flynnThrowBack</sprite>
     <sprite>sprites\flynnThrowLeft</sprite>
     <sprite>sprites\flynnThrowRight</sprite>
-    <sprite>sprites\flynnFront2</sprite>
-    <sprite>sprites\flynnLeft2</sprite>
-    <sprite>sprites\flynnRight2</sprite>
-    <sprite>sprites\flynnTop2</sprite>
     <sprite>sprites\belt</sprite>
     <sprite>sprites\pouch</sprite>
     <sprite>sprites\cricket_spr</sprite>
