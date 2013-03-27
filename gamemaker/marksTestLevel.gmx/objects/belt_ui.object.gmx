@@ -30,6 +30,11 @@ global.ITEMNAME = "Name"
 global.ITEMCOUNT = "Count"
 global.ITEMIMAGE = "Image"
 
+global.itemEffectRadius[0] = 130; // Cricket
+global.itemEffectRadius[1] = 100; // Smoke Bomb
+global.itemEffectRadius[2] = 100; // Sleeping Dart
+global.itemEffectRadius[3] = 100; // Sleeping Gas
+
 global.items = ds_list_create()
 
 var cricket_index = ds_map_create()
