@@ -347,13 +347,16 @@ moving = 0
     else if (dir &gt;0 &amp;&amp; dir &lt;= 180) sprite_index = bodygaurdLeft
     else if (dir &gt;0 &amp;&amp; dir &lt;= 270) sprite_index = bodygaurdFront
     else sprite_index = bodygaurdRight
+    
+    if (moving &gt; 0) self.image_index = self.image_index+(moving*.1);
+} else { 
+    self.image_index += 0.05;
 }
 
 if (self.debugEnemy) {
     self.debugEnemy = false
 }
 
-if (moving &gt; 0) self.image_index = self.image_index+(moving*.1);
 </string>
           </argument>
         </arguments>
