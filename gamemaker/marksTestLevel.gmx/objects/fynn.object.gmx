@@ -75,8 +75,20 @@ self.selectedItem = -1
             <string>self.image_index = self.image_index+3*.1
 
 if (self.image_index &gt; self.image_number - 1) {
-    if (self.selectedItem == 0) {
+    if (self.selectedItem == 0) { // Cricket
         instance_create(self.itemTargetLocationX, self.itemTargetLocationY, cricket)
+    } else if (self.selectedItem == 1) { // Sleeping Gas
+    } else if (self.selectedItem == 2) { // Sleeping Dart
+        var dart = instance_create(self.x, self.y + 24, sleepDart);
+        
+        var targetX = self.itemTargetLocationX;
+        var targetY = self.itemTargetLocationY;
+        dart.targetX = targetX;
+        dart.targetY = targetY;
+        with (dart) {
+            move_towards_point(targetX, targetY, 4);
+        }
+    } else if (self.selectedItem == 3) { // Smoke Bomb
     }
     self.selectedItem = -1
 } else {
@@ -223,6 +235,75 @@ if (self.image_index &gt; self.image_number - 1) {
           <argument>
             <kind>1</kind>
             <string>flynnMoveLeft()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="52">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>self.selectedItem = 3
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="51">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>self.selectedItem = 2
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="50">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>self.selectedItem = 1
 </string>
           </argument>
         </arguments>

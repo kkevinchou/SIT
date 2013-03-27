@@ -82,6 +82,7 @@
     <object>objects\belt_ui</object>
     <object>objects\obj_talking</object>
     <object>objects\cricket</object>
+    <object>objects\sleepDart</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
