@@ -32,7 +32,7 @@
     
     if (collidedEnemy) {
         with (collidedEnemy) {
-            instance_destroy();
+            enemySleep();
         }
         instance_destroy();
     } else if (instance_place(x, y, parentWallObj))  {

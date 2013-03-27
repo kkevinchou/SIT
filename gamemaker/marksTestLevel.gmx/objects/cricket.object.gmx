@@ -26,13 +26,16 @@
           <argument>
             <kind>1</kind>
             <string>for (var i = 0; i &lt; instance_number(enemy); i++) {
-    var e = instance_find(enemy, i)
+    var e = instance_find(enemy, i);
     
     if (e.state != "search" &amp;&amp; e.state != "chase") {
         if (point_distance(e.x, e.y, x, y) &lt;= 100) {
-            e.investigateTargetX = x
-            e.investigateTargetY = y
-            e.state = "investigate"
+            var cricketX = x;
+            var cricketY = y;
+            
+            with (e) {
+                enemyInvestigate(cricketX, cricketY)
+            }
         }
     }
 }

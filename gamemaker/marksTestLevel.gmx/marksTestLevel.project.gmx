@@ -31,6 +31,10 @@
     <sprite>sprites\pouch</sprite>
     <sprite>sprites\cricket_spr</sprite>
     <sprite>sprites\smokescreen_spr</sprite>
+    <sprite>sprites\securityGuardSleepFront</sprite>
+    <sprite>sprites\securityGuardSleepBack</sprite>
+    <sprite>sprites\securityGuardSleepLeft</sprite>
+    <sprite>sprites\securityGuardSleepRight</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -61,6 +65,10 @@
       <script>scripts\flynnMoveDown.gml</script>
       <script>scripts\flynnMoveLeft.gml</script>
       <script>scripts\flynnMoveRight.gml</script>
+    </scripts>
+    <scripts name="enemy">
+      <script>scripts\enemySleep.gml</script>
+      <script>scripts\enemyInvestigate.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">

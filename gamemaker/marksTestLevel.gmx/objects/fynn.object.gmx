@@ -81,10 +81,8 @@ if (self.image_index &gt; self.image_number - 1) {
     } else if (self.selectedItem == 2) { // Sleeping Dart
         var dart = instance_create(self.x, self.y + 24, sleepDart);
         
-        var targetX = self.itemTargetLocationX;
-        var targetY = self.itemTargetLocationY;
-        dart.targetX = targetX;
-        dart.targetY = targetY;
+        dart.targetX = self.itemTargetLocationX;
+        dart.targetY = self.itemTargetLocationY;
         with (dart) {
             move_towards_point(targetX, targetY, 4);
         }
