@@ -410,24 +410,21 @@ if (!(keyboard_check(vk_up) || keyboard_check(vk_down) || keyboard_check(vk_left
             <string>if (self.selectedItem == -1) {
 
 } else {
-    if (!(keyboard_check(vk_up) || keyboard_check(vk_down) || keyboard_check(vk_left) || keyboard_check(vk_right))) {
-        if (self.facing == 'Back') {
-            self.sprite_index = flynnThrowBack
-        } else if (self.facing == 'Front') {
-            self.sprite_index = flynnThrowFront
-        } else if (self.facing == 'Left') {
-            self.sprite_index = flynnThrowLeft
-        } else if (self.facing == 'Right') {
-            self.sprite_index = flynnThrowRight
-        }
-        self.itemTargetLocationX = mouse_x
-        self.itemTargetLocationY = mouse_y
-        self.image_index = 0
-        alarm[0] = 1;
-    } else {
-        // Disable throwing animation
-        alarm[0] = 0
+    if (self.facing == 'Back') {
+        self.sprite_index = flynnThrowBack
+    } else if (self.facing == 'Front') {
+        self.sprite_index = flynnThrowFront
+    } else if (self.facing == 'Left') {
+        self.sprite_index = flynnThrowLeft
+    } else if (self.facing == 'Right') {
+        self.sprite_index = flynnThrowRight
     }
+    
+    self.itemTargetLocationX = mouse_x
+    self.itemTargetLocationY = mouse_y
+    
+    self.image_index = 0
+    alarm[0] = 1;
 }
 </string>
           </argument>
