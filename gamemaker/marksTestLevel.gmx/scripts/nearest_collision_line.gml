@@ -16,6 +16,7 @@ while (blocking_object) {
     newY = myY + cos(rot) * dist
 
     old_blocking = blocking_object
+    if (dist==0) break;
     blocking_object = collision_line(myX, myY, newX, newY, object, false, true)
 
 }
