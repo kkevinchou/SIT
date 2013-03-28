@@ -291,10 +291,10 @@ moving = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (state != "sleep" &amp;&amp; collision_circle(x, y, global.itemEffectRadius[global.SLEEPINGGASID], sleepingGas, false, false)) {
+            <string>if (collision_circle(x, y, global.itemEffectRadius[global.SLEEPINGGASID], sleepingGas, false, false)) {
     var sleepingGasObj = instance_nearest(x, y, sleepingGas);
     enemySleep(sleepingGasObj.alarm[0] / room_speed);
-} else if (state != "smoke" &amp;&amp; collision_circle(x, y, global.itemEffectRadius[global.SMOKEBOMBID], smokeBomb, false, false)) {
+} else if (collision_circle(x, y, global.itemEffectRadius[global.SMOKEBOMBID], smokeBomb, false, false)) {
     var smokeBombObj = instance_nearest(x, y, smokeBomb);
     enemySmoke(smokeBombObj.alarm[0] / room_speed);
 }
@@ -428,7 +428,7 @@ if (state == "normal" || state == "chase" || state == "search" || state == "inve
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (state != "sleep") {
+            <string>if (state != "sleep" &amp;&amp; state != "smoke") {
     if (state=="normal") talkDistance = 80
     else talkDistance = 130
     
@@ -437,7 +437,7 @@ if (state == "normal" || state == "chase" || state == "search" || state == "inve
         x-=10000
         nearestFriend=instance_nearest(x+10000,y,enemy)
         x+=10000
-        if (distance_to_object(enemy) &lt; talkDistance &amp;&amp; nearestFriend.state != "sleep") {
+        if (distance_to_object(enemy) &lt; talkDistance &amp;&amp; nearestFriend.state != "sleep" &amp;&amp; nearestFriend.state != "smoke") {
             if (nearestFriend.talking == false ) {
             
                 talking = true
