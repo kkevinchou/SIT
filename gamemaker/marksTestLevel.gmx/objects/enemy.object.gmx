@@ -29,7 +29,8 @@
 
 visionRad = 0 //determines the swag of the enemies view
 visionWidth = 60 //determines the width of the vision cone
-vision = 100 // determines the distance and enemy can see
+startingVision = 200 // determines the distance and enemy can see
+vision = startingVision
 
 visionRot = 0 //determines the starting rotation
 forward = true
@@ -291,12 +292,15 @@ moving = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (collision_circle(x, y, global.itemEffectRadius[global.SLEEPINGGASID], sleepingGas, false, false)) {
+            <string>self.vision = self.startingVision;
+
+if (collision_circle(x, y, global.itemEffectRadius[global.SLEEPINGGASID], sleepingGas, false, false)) {
     var sleepingGasObj = instance_nearest(x, y, sleepingGas);
     enemySleep(sleepingGasObj.alarm[0] / room_speed);
 } else if (collision_circle(x, y, global.itemEffectRadius[global.SMOKEBOMBID], smokeBomb, false, false)) {
     var smokeBombObj = instance_nearest(x, y, smokeBomb);
     enemySmoke(smokeBombObj.alarm[0] / room_speed);
+    self.vision /= 2;
 }
 
 if (state == "normal" || state == "chase" || state == "search" || state == "investigate") {
