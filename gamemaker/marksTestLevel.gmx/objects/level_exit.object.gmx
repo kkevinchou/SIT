@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>2</kind>
-            <string>LALALA</string>
+            <string>You shall not pass</string>
           </argument>
         </arguments>
       </action>
@@ -46,6 +46,29 @@
           <argument>
             <kind>11</kind>
             <room>cutscreen</room>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// setup the script file name for cut scene
+//global.script_filename = "test.txt"
+cutscene_manager.current_room = 0
+</string>
           </argument>
         </arguments>
       </action>

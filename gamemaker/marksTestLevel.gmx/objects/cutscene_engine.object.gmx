@@ -25,11 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>cut_text = ""
+            <string>// Variables
+start = false
+
+// Fade config
+fade_period = 0.3 // how many seconds to finish one fade
 
 // Init for the xml nodes
-filename = "test.txt"
-script_file = file_text_open_read(working_directory + "\" + filename)
+script_filename = ds_map_find_value(cutscene_manager.script_map, cutscene_manager.current_room)
+script_file = file_text_open_read(working_directory + "\" + script_filename)
 
 </string>
           </argument>
@@ -77,9 +81,15 @@ script_file = file_text_open_read(working_directory + "\" + filename)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(lag != 0) {
-    lag = lag - 1
+            <string>if(fade_step != 0) {
+    // add fade alpha value
+    fade_alpha += 1/(fade_period*room_speed)
+    
+    fade_step -= 1    
+    // recursively call the alarm with preset lag utill done
+    alarm[0] = 1
 }
+
 </string>
           </argument>
         </arguments>
@@ -128,6 +138,13 @@ script_file = file_text_open_read(working_directory + "\" + filename)
           <argument>
             <kind>1</kind>
             <string>cut_text = read_script_file(script_file)
+start = true
+
+// Fade effect
+fade_alpha = 0
+fade_step = fade_period * room_speed
+
+alarm[0] = 1
 </string>
           </argument>
         </arguments>
@@ -150,63 +167,32 @@ script_file = file_text_open_read(working_directory + "\" + filename)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Constants
+            <string>if(start) {
+// Constants
 box_margin = 20
 box_height = 100
 box_padding = 20
+
+// Init position for text
+text_x = box_margin+box_padding
+text_y = box_margin+box_padding
+
+// No fade effect for box
+draw_set_alpha(1)
 
 // Draw dialogue box
 draw_set_color(c_white)
 draw_roundrect(box_margin,box_margin,room_width-box_margin,box_height,false)
 draw_set_color(c_black)
 
-// init position for text
-text_x = box_margin+box_padding
-text_y = box_margin+box_padding
+// Set fade effect
+draw_set_alpha(fade_alpha)
 
-
-
-/*switch(cut_count) {
-
-    case 0:
-        cut_text = "Hello!"
-        break
-    case 1:
-        cut_text = "I guess this text could be really long."
-        break
-    case 2:
-        cut_text = "Like this: Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah BlahBlahBlahBlahBlahBlahBlah Blah Blah Blah Blah BlahBlahBlahBlahBlahBlahBlah Blah Blah Blah Blah BlahBlahBlahBlahBlahBlahBlah Blah Blah Blah Blah BlahBlahBlahBlahBlahBlahBlah"    
-        break
-    case 3:
-        cut_text = "*Press &lt;Space&gt; for fast forwarding."
-        break
-    case 4:
-        cut_text = "And let's change the background!"
-        background_visible[1] = 1
-        break
-    case 5:
-        cut_text = "And this is the Chinatown cut scene if you haven't seen it yet."
-        background_index[1] = cutscene2
-    case 6:
-        with(xml_node) {
-            if(node_name == 'scene1') {
-            }
-            if(node_name == 'text') {
-                speaker = real(child_node[0].attr_speaker)
-                cut_text = child_node[0].inner_html + " Speaker: " + speaker;
-                
-            }
-        }
-        //cut_text = "Shaking!"
-        break
-    default:
-        break
-}*/
-
-//draw_text(40,40,cut_text)
+// Draw text
+draw_set_halign(fa_left)
 draw_text_ext(text_x,text_y,cut_text,-1,room_width-2*(box_margin+box_padding))
-lag = 50
-alarm[0] = 50
+}
+
 </string>
           </argument>
         </arguments>

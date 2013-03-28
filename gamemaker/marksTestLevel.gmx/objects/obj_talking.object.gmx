@@ -189,7 +189,7 @@ if (stage &lt; ds_list_size(words)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (stage &lt; ds_list_size(words)){
+            <string>if (stage &lt; ds_list_size(words) &amp;&amp; first &amp;&amp; second){
     draw_set_halign(fa_center)
     
     if ( (stage mod 2) == 0 ) {
@@ -209,6 +209,7 @@ if (stage &lt; ds_list_size(words)) {
     draw_triangle(x-5,y-40,x+5,y-40,x,y-30,false)
     draw_set_color(c_black)
     draw_text(x,y-40-height,word)
+
 }
 </string>
           </argument>
