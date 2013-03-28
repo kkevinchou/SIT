@@ -427,7 +427,7 @@ moving = 0
         x-=10000
         nearestFriend=instance_nearest(x+10000,y,enemy)
         x+=10000
-        if (distance_to_object(enemy) &lt; talkDistance) {
+        if (distance_to_object(enemy) &lt; talkDistance &amp;&amp; nearestFriend.state != "sleep") {
             if (nearestFriend.talking == false ) {
             
                 talking = true
