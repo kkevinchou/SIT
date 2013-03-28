@@ -49,11 +49,9 @@ posY = 0
 
 drawnDirection = direction
 
-self.debugEnemy = false
-
-
-
 oldVision = vision
+
+self.smokeEffects = 0;
 </string>
           </argument>
         </arguments>
@@ -293,10 +291,17 @@ moving = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (state != "sleep") {
+            <string>if (state != "sleep" &amp;&amp; collision_circle(x, y, global.itemEffectRadius[global.SLEEPINGGASID], sleepingGas, false, false)) {
+    var sleepingGasObj = instance_nearest(x, y, sleepingGas);
+    enemySleep(sleepingGasObj.alarm[0] / room_speed);
+} else if (state != "smoke" &amp;&amp; collision_circle(x, y, global.itemEffectRadius[global.SMOKEBOMBID], smokeBomb, false, false)) {
+    var smokeBombObj = instance_nearest(x, y, smokeBomb);
+    enemySmoke(smokeBombObj.alarm[0] / room_speed);
+}
+
+if (state == "normal" || state == "chase" || state == "search" || state == "investigate") {
     speedMod = 1
     if (talking ==true) speedMod = 0.5
-    
     path_speed = movementSpeed * speedMod
     
     if (state == "normal") {
@@ -325,23 +330,21 @@ moving = 0
             }
         } 
     } else if (state == "chase" || state == "search") {
-            if (mode == 1) {
-                if (self.activePath == self.currentPath) {
-                    path_end()
-                    path_position = 0
-                }
+        if (mode == 1) {
+            if (self.activePath == self.currentPath) {
+                path_end()
+                path_position = 0
             }
+        }
+        
+        if (posX &gt; self.x-5 &amp;&amp; posX &lt; self.x+5 &amp;&amp; posY &gt; self.y-5 &amp;&amp; posY &lt; self.y+5){
+            direction += 5
+        } else {
             
-            if (posX &gt; self.x-5 &amp;&amp; posX &lt; self.x+5 &amp;&amp; posY &gt; self.y-5 &amp;&amp; posY &lt; self.y+5){
-                direction += 5
-            } else {
-                
-                moving = movementSpeed*2
-                mp_potential_step(posX, posY, movementSpeed*2, 0)
-                self.activePath = path_add()
-            }
-            
-            
+            moving = movementSpeed*2
+            mp_potential_step(posX, posY, movementSpeed*2, 0)
+            self.activePath = path_add()
+        }  
     } else if (state == "investigate") {
     
         var targetX = self.investigateTargetX
@@ -356,28 +359,35 @@ moving = 0
              moving = movementSpeed*2
             mp_potential_step(targetX, targetY, movementSpeed*2, 0)
         }
-        
     }
-        
     
-        //var distToTarget = point_distance(targetX, targetY, x, y)
-        //if (distToTarget &lt;= 15) {
-        //    image_index = 0
-        //} else {
-        //    path_end()
-        //    moving = movementSpeed*2
-         //   mp_potential_step(targetX, targetY, movementSpeed*2, 0)
-        //}
-        dir = direction - 45
-        if (dir &gt;0 &amp;&amp; dir &lt;= 90) sprite_index = bodygaurdTop
-        else if (dir &gt;0 &amp;&amp; dir &lt;= 180) sprite_index = bodygaurdLeft
-        else if (dir &gt;0 &amp;&amp; dir &lt;= 270) sprite_index = bodygaurdFront
-        else sprite_index = bodygaurdRight
-        
-        if (moving &gt; 0) self.image_index = self.image_index+(moving*.1);
-} else {
+    //var distToTarget = point_distance(targetX, targetY, x, y)
+    //if (distToTarget &lt;= 15) {
+    //    image_index = 0
+    //} else {
+    //    path_end()
+    //    moving = movementSpeed*2
+     //   mp_potential_step(targetX, targetY, movementSpeed*2, 0)
+    //}
+    dir = direction - 45
+    if (dir &gt;0 &amp;&amp; dir &lt;= 90) sprite_index = bodygaurdTop
+    else if (dir &gt;0 &amp;&amp; dir &lt;= 180) sprite_index = bodygaurdLeft
+    else if (dir &gt;0 &amp;&amp; dir &lt;= 270) sprite_index = bodygaurdFront
+    else sprite_index = bodygaurdRight
+
+    if (moving &gt; 0) self.image_index = self.image_index+(moving*.1);
+} else if (state == "sleep") {
     self.image_index += 0.05;
-}            
+} else if (state == "smoke") {
+    direction += 5;
+    dir = direction - 45
+    if (dir &gt;0 &amp;&amp; dir &lt;= 90) sprite_index = bodygaurdTop
+    else if (dir &gt;0 &amp;&amp; dir &lt;= 180) sprite_index = bodygaurdLeft
+    else if (dir &gt;0 &amp;&amp; dir &lt;= 270) sprite_index = bodygaurdFront
+    else sprite_index = bodygaurdRight
+
+    if (moving &gt; 0) self.image_index = self.image_index+(moving*.1);
+}                
 </string>
           </argument>
         </arguments>

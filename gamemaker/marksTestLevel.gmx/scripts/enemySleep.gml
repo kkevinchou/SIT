@@ -1,8 +1,7 @@
 path_end();
 
-var duration = argument0;
-
 self.state = "sleep";
+
 if (sprite_index == bodygaurdLeft) {
     sprite_index = securityGuardSleepLeft;
 } else if (sprite_index == bodygaurdRight) {
@@ -12,4 +11,6 @@ if (sprite_index == bodygaurdLeft) {
 } else if (sprite_index == bodygaurdTop) {
     sprite_index = securityGuardSleepBack;
 }
-self.alarm[0] = room_speed * duration;
+
+var sleepDuration = argument0;
+alarm[0] = room_speed * sleepDuration;

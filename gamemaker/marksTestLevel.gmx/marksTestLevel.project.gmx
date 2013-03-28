@@ -101,6 +101,7 @@
     <scripts name="enemy">
       <script>scripts\enemySleep.gml</script>
       <script>scripts\enemyInvestigate.gml</script>
+      <script>scripts\enemySmoke.gml</script>
     </scripts>
     <scripts name="cutscene">
       <script>scripts\read_script_file.gml</script>
@@ -119,9 +120,9 @@
     <object>objects\boxes</object>
     <object>objects\bar</object>
     <object>objects\shelves</object>
-    <object>objects\parentWallObj</object>
     <object>objects\enemy</object>
     <object>objects\fuseBox</object>
+    <object>objects\parentWallObj</object>
     <object>objects\fuseBoxBlackout</object>
     <object>objects\belt_ui</object>
     <object>objects\obj_talking</object>
@@ -141,6 +142,7 @@
     <object>objects\cutscene_engine</object>
     <object>objects\level_exit</object>
     <object>objects\sleepingGas</object>
+    <object>objects\smokeBomb</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

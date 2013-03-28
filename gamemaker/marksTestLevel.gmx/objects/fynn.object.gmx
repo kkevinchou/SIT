@@ -77,17 +77,18 @@ self.itemThrowRadius = 100;
             <string>self.image_index = self.image_index+3*.1
 
 if (self.image_index &gt; self.image_number - 1) {
-    if (self.selectedItem == 0) { // Cricket
+    if (self.selectedItem == global.CRICKETID) {
         instance_create(self.itemTargetLocationX, self.itemTargetLocationY, cricket)
-    } else if (self.selectedItem == 1) { // Smoke Bomb
-    } else if (self.selectedItem == 2) { // Sleeping Dart
+    } else if (self.selectedItem == global.SMOKEBOMBID) {
+        var smokeBombObj = instance_create(self.itemTargetLocationX, self.itemTargetLocationY, smokeBomb);
+    } else if (self.selectedItem == global.SLEEPINGDARTID) {
         var dartCreationY = self.y + 24;
-        var dart = instance_create(self.x, self.y + 24, sleepDart);
+        var sleepingDartObj = instance_create(self.x, self.y + 24, sleepDart);
         
-        dart.targetX = self.itemTargetLocationX;
-        dart.targetY = self.itemTargetLocationY;
+        sleepingDartObj.targetX = self.itemTargetLocationX;
+        sleepingDartObj.targetY = self.itemTargetLocationY;
         
-        with (dart) {
+        with (sleepingDartObj) {
             var rotAngleRad = arctan2(-(targetY - y), targetX - x);
             var rotAngleDeg = radtodeg(rotAngleRad);
             var dartSpeed = 8;
@@ -95,10 +96,9 @@ if (self.image_index &gt; self.image_number - 1) {
             direction = rotAngleDeg;
             speed = dartSpeed;
             image_angle = rotAngleDeg - 45;
-            //move_towards_point(targetX, targetY, dartSpeed);
         }
-    } else if (self.selectedItem == 3) { // Sleeping Gas
-        var sleepGas = instance_create(self.itemTargetLocationX, self.itemTargetLocationY, sleepingGas);
+    } else if (self.selectedItem == global.SLEEPINGGASID) {
+        var sleepGasObj = instance_create(self.itemTargetLocationX, self.itemTargetLocationY, sleepingGas);
     }
     self.selectedItem = -1
 } else {
@@ -585,7 +585,7 @@ if (self.selectedItem &gt;= 0) {
     
     if (self.selectedItem == 2) { // Sleeping Dart
         var rotAngleRad = arctan2(-(mouse_y - (y + 24)), mouse_x - x);
-        var rotAngleDeg = radtodeg(rotAngleRad) - 40;
+        var rotAngleDeg = radtodeg(rotAngleRad) - 45;
         
         draw_sprite_ext(image, 0, mouse_x, mouse_y, 1, 1, rotAngleDeg, c_white, 0.7);
     } else {
