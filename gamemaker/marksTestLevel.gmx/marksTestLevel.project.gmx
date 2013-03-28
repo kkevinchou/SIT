@@ -3,6 +3,25 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="2" name="datafiles">
+    <datafile>
+      <name>test.txt</name>
+      <exists>-1</exists>
+      <size>200</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename></filename>
+    </datafile>
+  </datafiles>
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\mainMenuMusic</sound>
@@ -41,14 +60,19 @@
     <sprite>sprites\securityGuardSleepRight</sprite>
     <sprite>sprites\buttonDefault</sprite>
     <sprite>sprites\buttonPressed</sprite>
+    <sprite>sprites\sleepingDart_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\mainMenuBackground</background>
+    <background>background\cutscene1</background>
+    <background>background\cutscene2</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path0</path>
     <path>paths\path1</path>
+    <path>paths\path2</path>
+    <path>paths\path3</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\nearest_collision_line.gml</script>
@@ -76,6 +100,10 @@
     <scripts name="enemy">
       <script>scripts\enemySleep.gml</script>
       <script>scripts\enemyInvestigate.gml</script>
+    </scripts>
+    <scripts name="cutscene">
+      <script>scripts\read_script_file.gml</script>
+      <script>scripts\string_trim.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -109,10 +137,14 @@
     <object>objects\obj_menuButtonExitPressed</object>
     <object>objects\mainMenuBackgroundMusic</object>
     <object>objects\obj_menu</object>
+    <object>objects\cutscene_engine</object>
+    <object>objects\level_exit</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
     <room>rooms\room0</room>
+    <room>rooms\cutscreen</room>
+    <room>rooms\room4</room>
     <room>rooms\room2</room>
     <room>rooms\room1</room>
     <room>rooms\room3</room>

@@ -28,11 +28,13 @@
             <string>self_direction = 0
 
 visionRad = 0 //determines the swag of the enemies view
-visionWidth = 20 //determines the width of the vision cone
+visionWidth = 60 //determines the width of the vision cone
 vision = 200 // determines the distance and enemy can see
 
 visionRot = 0 //determines the starting rotation
 forward = true
+
+movementSpeed = 1
 
 mode = 0 //mode 0 is standing still, mode 1 is following a path
 state = "normal" //"normal" "search" "chase"
@@ -164,6 +166,7 @@ moving = 0
           <argument>
             <kind>1</kind>
             <string>if (state != "sleep") {
+
     if (visionRad &gt; 0) {
         if (forward == true) {
             visionRot = (visionRot+1) 
@@ -177,6 +180,7 @@ moving = 0
             }
         }
     }
+    
     if (state == "normal" || state == "investigate") {
     
         rot = degtorad(direction + 90 - visionRad/2 + visionRot)
@@ -190,10 +194,28 @@ moving = 0
         } else {
             dist = vision
         }
-        
+    
         //char = collision_line(self.x,self.y,posX,posY,fynn,false,true)
         lineDirection = point_direction(self.x,self.y,fynn.x,fynn.y)
         if ((direction+visionWidth/2 &gt;= lineDirection) &amp;&amp;
+            (direction-visionWidth/2 &lt;= lineDirection) &amp;&amp;
+            distance_to_object(fynn) &lt;= vision) {
+        
+            if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)) {
+                state = "chase" 
+                posX = fynn.x
+                posY = fynn.y
+                alarm[0] = -1
+            }
+        }
+
+        
+        
+        //char = collision_line(self.x,self.y,posX,posY,fynn,false,true)
+        
+        
+
+       /* if ((direction+visionWidth/2 &gt;= lineDirection) &amp;&amp;
             (direction-visionWidth/2 &lt;= lineDirection) &amp;&amp;
              distance_to_object(fynn) &lt;= dist){
             
@@ -201,27 +223,25 @@ moving = 0
                 state = "chase" 
             }
         
-        }
+        } */
         
         
         
     } else if (state == "chase" || state = "search"){
-    
-        if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)) {
-            lineDirection = point_direction(self.x,self.y,fynn.x,fynn.y)
-            if ((direction+visionRad/2 &gt;= lineDirection) &amp;&amp; 
-                (direction-visionRad/2 &lt;= lineDirection) ){
+        lineDirection = point_direction(self.x,self.y,fynn.x,fynn.y)
+        if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)
+            &amp;&amp; (direction+visionWidth/2 &gt;= lineDirection)
+            &amp;&amp; (direction-visionWidth/2 &lt;= lineDirection) ){
                 state = "chase" 
                 posX = fynn.x
                 posY = fynn.y
                 alarm[0] = -1
-            }
             
         } else {
             state = "search"
             if (alarm[0] == -1){
-                alarm[0] = room_speed * 4
-            }
+                alarm[0] = room_speed * 5
+            } 
         }
         
     }
@@ -276,7 +296,8 @@ moving = 0
             <string>if (state != "sleep") {
     speedMod = 1
     if (talking ==true) speedMod = 0.5
-    path_speed = speedMod
+    
+    path_speed = movementSpeed * speedMod
     
     if (state == "normal") {
         if (mode == 0) {
@@ -285,13 +306,13 @@ moving = 0
             if (self.activePath != self.currentPath || (self.activePath == self.currentPath &amp;&amp; path_position &lt;= 0)) {
                 if (self.x == path_get_x(currentPath,0) &amp;&amp; self.y == path_get_y(self.currentPath,0)){
                     self.activePath = self.currentPath
-                    moving = 1
-                    path_start(self.currentPath,1,1,1)
+                    moving = movementSpeed * speedMod
+                    path_start(self.currentPath,movementSpeed,1,1)
                 } else {
                     retX = path_get_x(self.currentPath,0)
                     retY = path_get_y(self.currentPath,0)
-                    moving = 1
-                    mp_potential_step(retX,retY,1,false);
+                    moving = movementSpeed * speedMod
+                    mp_potential_step(retX,retY,movementSpeed,false);
                     /*
                     path_end()
                     self.activePath = path_add()
@@ -300,63 +321,63 @@ moving = 0
                     */
                 }  
             } else {
-                moving = 1
+                moving = movementSpeed * speedMod 
             }
-            
-        }
+        } 
     } else if (state == "chase" || state == "search") {
-        if (mode == 1) {
-            if (self.activePath == self.currentPath) {
-                path_end()
-                path_position = 0
+            if (mode == 1) {
+                if (self.activePath == self.currentPath) {
+                    path_end()
+                    path_position = 0
+                }
             }
-        }
-        
-        if (posX &gt; self.x-5 &amp;&amp; posX &lt; self.x+5 &amp;&amp; posY &gt; self.y-5 &amp;&amp; posY &lt; self.y+5){
-            direction += 5
-        } else {
-            /*
-            path_end()
-            self.activePath = path_add()
-            if (mp_potential_path(self.activePath, fynn.x, fynn.y, 1, 40, 0)) {
-                path_start(self.activePath, 1, 0, 0)
-                moving = 2
-            }
-            */
             
-            moving = 2
-            mp_potential_step(fynn.x, fynn.y, 2, 0)
-            self.activePath = path_add()
-        }
+            if (posX &gt; self.x-5 &amp;&amp; posX &lt; self.x+5 &amp;&amp; posY &gt; self.y-5 &amp;&amp; posY &lt; self.y+5){
+                direction += 5
+            } else {
+                
+                moving = movementSpeed*2
+                mp_potential_step(posX, posY, movementSpeed*2, 0)
+                self.activePath = path_add()
+            }
+            
+            
     } else if (state == "investigate") {
+    
         var targetX = self.investigateTargetX
         var targetY = self.investigateTargetY - 24
         
+    
         var distToTarget = point_distance(targetX, targetY, x, y)
         if (distToTarget &lt;= 15) {
             image_index = 0
         } else {
             path_end()
-            moving = 2
-            mp_potential_step(targetX, targetY, 2, 0)
+             moving = movementSpeed*2
+            mp_potential_step(targetX, targetY, movementSpeed*2, 0)
         }
+        
     }
+        
     
-    dir = direction - 45
-    if (dir &gt;0 &amp;&amp; dir &lt;= 90) sprite_index = bodygaurdTop
-    else if (dir &gt;0 &amp;&amp; dir &lt;= 180) sprite_index = bodygaurdLeft
-    else if (dir &gt;0 &amp;&amp; dir &lt;= 270) sprite_index = bodygaurdFront
-    else sprite_index = bodygaurdRight
-    
-    if (moving &gt; 0) self.image_index = self.image_index+(moving*.1);
-} else { 
+        //var distToTarget = point_distance(targetX, targetY, x, y)
+        //if (distToTarget &lt;= 15) {
+        //    image_index = 0
+        //} else {
+        //    path_end()
+        //    moving = movementSpeed*2
+         //   mp_potential_step(targetX, targetY, movementSpeed*2, 0)
+        //}
+        dir = direction - 45
+        if (dir &gt;0 &amp;&amp; dir &lt;= 90) sprite_index = bodygaurdTop
+        else if (dir &gt;0 &amp;&amp; dir &lt;= 180) sprite_index = bodygaurdLeft
+        else if (dir &gt;0 &amp;&amp; dir &lt;= 270) sprite_index = bodygaurdFront
+        else sprite_index = bodygaurdRight
+        
+        if (moving &gt; 0) self.image_index = self.image_index+(moving*.1);
+} else {
     self.image_index += 0.05;
-}
-
-if (self.debugEnemy) {
-    self.debugEnemy = false
-}
-
+}            
 </string>
           </argument>
         </arguments>
@@ -397,22 +418,37 @@ if (self.debugEnemy) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (talking == false &amp;&amp; state != "sleep") {
-    x-=10000
-    nearestFriend=instance_nearest(x+10000,y,enemy)
-    x+=10000
-
-    if (nearestFriend.talking == false &amp;&amp; nearestFriend.state != "sleep" &amp;&amp; distance_to_object(enemy) &lt; 80) {
+            <string>if (state != "sleep") {
+    if (state=="normal") talkDistance = 80
+    else talkDistance = 130
     
-        talking = true
-        nearestFriend.talking = true
-        
-        talk = instance_create(x,y,obj_talking)
-        talk.first = id
-        talk.second = nearestFriend
+    if (talking == false &amp;&amp; random(5) &lt;= 1) {
+    
+        x-=10000
+        nearestFriend=instance_nearest(x+10000,y,enemy)
+        x+=10000
+        if (distance_to_object(enemy) &lt; talkDistance &amp;&amp; nearestFriend.state != "sleep") {
+            if (nearestFriend.talking == false ) {
+            
+                talking = true
+                nearestFriend.talking = true
+                
+                talk = instance_create(x,y,obj_talking)
+                talk.state = state
+                talk.first = id
+                talk.second = nearestFriend
+               
+            } else if (state != "normal") {
+                if (nearestFriend.state == "normal") {
+                    nearestFriend.state = state
+                    nearestFriend.posX = posX
+                    nearestFriend.posY = posY
+                }
+            }
+    
+        }
     }
 }
-
 </string>
           </argument>
         </arguments>
@@ -473,7 +509,8 @@ draw_set_alpha(1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (state != "sleep") {
+            <string>
+if (state != "sleep") {
     lineColor = c_green
     if (state = "search"){
         lineColor = c_yellow
@@ -488,21 +525,23 @@ draw_set_alpha(1)
             drawnDirection += min(5,(360-drawnDirection+direction))
         }
     } else if (direction &gt; drawnDirection){
-     if ((direction-drawnDirection) &lt; (360+drawnDirection-direction)){
+        if ((direction-drawnDirection) &lt; (360+drawnDirection-direction)){
             drawnDirection += min(5,direction-drawnDirection)
         } else {
             drawnDirection -= min(5,(360+drawnDirection-direction))
         }
     }
     drawnDirection = drawnDirection mod 360
-    //drawnDirection = direction
+    
+    
     draw_set_color(lineColor);
     draw_set_alpha(0.5)
-    curve = 5
+    curve = visionWidth/3
     draw_primitive_begin(pr_trianglefan)
     rot = degtorad(drawnDirection + 90 - visionRad/2 + visionRot - visionWidth/2)
     draw_vertex(self.x + sin(rot)*18, self.y + cos(rot)*18);
-    for (i=0; i &lt; curve; i++) {
+    
+    for (i=0; i &lt;= curve; i++) {
         rot = degtorad(drawnDirection + 90 - visionRad/2 + visionRot - visionWidth/2 + i*visionWidth/curve)
         drawX = (self.x) + sin(rot) * vision
         drawY = (self.y) + cos(rot) * vision
@@ -514,15 +553,15 @@ draw_set_alpha(1)
         } else {
             dist = vision
         }
-        draw_vertex(drawX,drawY);
+        draw_vertex(drawX,drawY) 
     }
-    draw_vertex(self.x + sin(rot)*18,self.y + cos(rot)*18)
+    
+    draw_vertex(self.x + sin(rot)*18,self.y + cos(rot)*18) 
     draw_primitive_end()
     draw_set_alpha(1)
     draw_set_color(c_black);
+
 }
-
-
 /*
 rot = degtorad(drawnDirection + 90 - visionRad/2 + visionRot)
 drawX = (self.x) + sin(rot) * vision
@@ -561,13 +600,18 @@ drawY2 = (self.y) + cos(rot2) * changedDistance
 
 //draw_set_alpha(1)
 
-//draw_line_width_color(
-// self.x + sin(rot)*18
-//,self.y + cos(rot)*18
-//,drawX
-//,drawY
-//,3
-//,lineColor,lineColor);
+
+rot = degtorad(drawnDirection + 90 - visionRad/2 + visionRot)
+drawX = (self.x) + sin(rot) * vision
+drawY = (self.y) + cos(rot) * vision
+
+draw_line_width_color(
+ self.x + sin(rot)*18
+,self.y + cos(rot)*18
+,drawX
+,drawY
+,3
+,lineColor,lineColor);
 
 </string>
           </argument>
