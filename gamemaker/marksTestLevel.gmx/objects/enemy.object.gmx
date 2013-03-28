@@ -35,7 +35,8 @@ vision = startingVision
 visionRot = 0 //determines the starting rotation
 forward = true
 
-movementSpeed = 1
+baseMovementSpeed = 1
+movementSpeed = baseMovementSpeed
 
 mode = 0 //mode 0 is standing still, mode 1 is following a path
 state = "normal" //"normal" "search" "chase"
@@ -124,6 +125,15 @@ self.debugEnemy = true
             <kind>1</kind>
             <string>self.depth = -(y + self.sprite_height/2)
 moving = 0
+
+self.inSmoke = false;
+if (collision_circle(x, y, global.itemEffectRadius[global.SMOKEBOMBID], smokeBomb, false, false)) {
+    self.inSmoke = true;
+}
+
+if (self.inSmoke) {
+    movementSpeed /= 2
+}
 </string>
           </argument>
         </arguments>
@@ -165,7 +175,6 @@ moving = 0
           <argument>
             <kind>1</kind>
             <string>if (state != "sleep") {
-
     if (visionRad &gt; 0) {
         if (forward == true) {
             visionRot = (visionRot+1) 
@@ -180,8 +189,12 @@ moving = 0
         }
     }
     
-    if (state == "normal" || state == "investigate") {
+    self.vision = self.startingVision;
+    if (self.inSmoke) {
+        self.vision /= 2;
+    }
     
+    if (state == "normal" || state == "investigate" || state == "smoke") {
         rot = degtorad(direction + 90 - visionRad/2 + visionRot)
         posX = (self.x) + sin(rot) * vision
         posY = (self.y) + cos(rot) * vision
@@ -207,25 +220,6 @@ moving = 0
                 alarm[0] = -1
             }
         }
-
-        
-        
-        //char = collision_line(self.x,self.y,posX,posY,fynn,false,true)
-        
-        
-
-       /* if ((direction+visionWidth/2 &gt;= lineDirection) &amp;&amp;
-            (direction-visionWidth/2 &lt;= lineDirection) &amp;&amp;
-             distance_to_object(fynn) &lt;= dist){
-            
-            if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)) {
-                state = "chase" 
-            }
-        
-        } */
-        
-        
-        
     } else if (state == "chase" || state = "search"){
         lineDirection = point_direction(self.x,self.y,fynn.x,fynn.y)
         if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)
@@ -245,13 +239,6 @@ moving = 0
         
     }
 }
-
-
-
-
-
-
-
 </string>
           </argument>
         </arguments>
@@ -292,18 +279,20 @@ moving = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>self.vision = self.startingVision;
-
-if (collision_circle(x, y, global.itemEffectRadius[global.SLEEPINGGASID], sleepingGas, false, false)) {
+            <string>if (collision_circle(x, y, global.itemEffectRadius[global.SLEEPINGGASID], sleepingGas, false, false)) {
     var sleepingGasObj = instance_nearest(x, y, sleepingGas);
     enemySleep(sleepingGasObj.alarm[0] / room_speed);
-} else if (collision_circle(x, y, global.itemEffectRadius[global.SMOKEBOMBID], smokeBomb, false, false)) {
+} else if (state != "chase" &amp;&amp; self.inSmoke) {
     var smokeBombObj = instance_nearest(x, y, smokeBomb);
     enemySmoke(smokeBombObj.alarm[0] / room_speed);
-    self.vision /= 2;
 }
 
 if (state == "normal" || state == "chase" || state == "search" || state == "investigate") {
+    movementSpeed = baseMovementSpeed;
+    if (self.inSmoke) {
+        movementSpeed *= 0.75;
+    }
+    
     speedMod = 1
     if (talking ==true) speedMod = 0.5
     path_speed = movementSpeed * speedMod
