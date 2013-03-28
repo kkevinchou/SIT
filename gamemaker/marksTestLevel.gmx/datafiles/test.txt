@@ -1,0 +1,6 @@
+Hello!
+This is a really long script ... but not blah blah blah wdf
+Let's try multiple line script! # # You see the line changed? wdf
+...and maybe bg change as well?
+```bg_change:cutscene1
+see it?
