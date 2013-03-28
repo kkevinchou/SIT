@@ -4,7 +4,11 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\mainMenuMusic</sound>
+    <sound>sound\mainMenuNavigation</sound>
+    <sound>sound\mainMenuSelect</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite2</sprite>
@@ -35,9 +39,12 @@
     <sprite>sprites\securityGuardSleepBack</sprite>
     <sprite>sprites\securityGuardSleepLeft</sprite>
     <sprite>sprites\securityGuardSleepRight</sprite>
+    <sprite>sprites\buttonDefault</sprite>
+    <sprite>sprites\buttonPressed</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
+    <background>background\mainMenuBackground</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path0</path>
@@ -71,6 +78,10 @@
       <script>scripts\enemyInvestigate.gml</script>
     </scripts>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\Arial</font>
+    <font>fonts\Skyfall</font>
+  </fonts>
   <objects name="objects">
     <object>objects\wall</object>
     <object>objects\gridTracker</object>
@@ -87,12 +98,25 @@
     <object>objects\obj_talking</object>
     <object>objects\cricket</object>
     <object>objects\sleepDart</object>
+    <object>objects\menuNavigation</object>
+    <object>objects\obj_menuButtonLoad</object>
+    <object>objects\obj_menuButtonNew</object>
+    <object>objects\obj_menuButtonOptions</object>
+    <object>objects\obj_menuButtonExit</object>
+    <object>objects\obj_menuButtonLoadPressed</object>
+    <object>objects\obj_menuButtonNewPressed</object>
+    <object>objects\obj_menuButtonOptionsPressed</object>
+    <object>objects\obj_menuButtonExitPressed</object>
+    <object>objects\mainMenuBackgroundMusic</object>
+    <object>objects\obj_menu</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_menu</room>
     <room>rooms\room0</room>
     <room>rooms\room2</room>
     <room>rooms\room1</room>
     <room>rooms\room3</room>
+    <room>rooms\rm_options</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
