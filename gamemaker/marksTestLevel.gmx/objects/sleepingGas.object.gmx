@@ -104,7 +104,7 @@ alarm[0] = room_speed * sleepGasDuration;
           </argument>
           <argument>
             <kind>4</kind>
-            <string>1</string>
+            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -136,7 +136,7 @@ alarm[0] = room_speed * sleepGasDuration;
           </argument>
           <argument>
             <kind>4</kind>
-            <string>2</string>
+            <string>1</string>
           </argument>
           <argument>
             <kind>13</kind>

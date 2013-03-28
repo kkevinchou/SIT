@@ -81,6 +81,7 @@ if (self.image_index &gt; self.image_number - 1) {
         instance_create(self.itemTargetLocationX, self.itemTargetLocationY, cricket)
     } else if (self.selectedItem == 1) { // Smoke Bomb
     } else if (self.selectedItem == 2) { // Sleeping Dart
+        var dartCreationY = self.y + 24;
         var dart = instance_create(self.x, self.y + 24, sleepDart);
         
         dart.targetX = self.itemTargetLocationX;
@@ -583,8 +584,8 @@ if (self.selectedItem &gt;= 0) {
     var image = ds_map_find_value(item, global.ITEMIMAGE)
     
     if (self.selectedItem == 2) { // Sleeping Dart
-        var rotAngleRad = arctan2(-(mouse_y - y), mouse_x - x);
-        var rotAngleDeg = radtodeg(rotAngleRad) - 37;
+        var rotAngleRad = arctan2(-(mouse_y - (y + 24)), mouse_x - x);
+        var rotAngleDeg = radtodeg(rotAngleRad) - 40;
         
         draw_sprite_ext(image, 0, mouse_x, mouse_y, 1, 1, rotAngleDeg, c_white, 0.7);
     } else {
