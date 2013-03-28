@@ -30,6 +30,7 @@
 moveSpeed = 3;
 facing = 'Front';
 self.selectedItem = -1;
+self.validItemTarget = false;
 self.itemThrowRadius = 100;
 </string>
           </argument>
