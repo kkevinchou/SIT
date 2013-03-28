@@ -42,14 +42,14 @@
     <sprite>sprites\bodygaurdFront</sprite>
     <sprite>sprites\sprite15</sprite>
     <sprite>sprites\sprite16</sprite>
-    <sprite>sprites\flynnFront</sprite>
-    <sprite>sprites\flynnLeft</sprite>
-    <sprite>sprites\flynnRight</sprite>
-    <sprite>sprites\flynnTop</sprite>
-    <sprite>sprites\flynnThrowFront</sprite>
-    <sprite>sprites\flynnThrowBack</sprite>
-    <sprite>sprites\flynnThrowLeft</sprite>
-    <sprite>sprites\flynnThrowRight</sprite>
+    <sprite>sprites\flynnFront2</sprite>
+    <sprite>sprites\flynnLeft2</sprite>
+    <sprite>sprites\flynnRight2</sprite>
+    <sprite>sprites\flynnTop2</sprite>
+    <sprite>sprites\flynnThrowFront2</sprite>
+    <sprite>sprites\flynnThrowBack2</sprite>
+    <sprite>sprites\flynnThrowLeft2</sprite>
+    <sprite>sprites\flynnThrowRight2</sprite>
     <sprite>sprites\belt</sprite>
     <sprite>sprites\pouch</sprite>
     <sprite>sprites\cricket_spr</sprite>
@@ -62,6 +62,14 @@
     <sprite>sprites\buttonPressed</sprite>
     <sprite>sprites\sleepingDart_spr</sprite>
     <sprite>sprites\sleepingGas_spr</sprite>
+    <sprite>sprites\flynnFront</sprite>
+    <sprite>sprites\flynnLeft</sprite>
+    <sprite>sprites\flynnTop</sprite>
+    <sprite>sprites\flynnRight</sprite>
+    <sprite>sprites\flynnThrowFront</sprite>
+    <sprite>sprites\flynnThrowLeft</sprite>
+    <sprite>sprites\flynnThrowBack</sprite>
+    <sprite>sprites\flynnThrowRight</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
