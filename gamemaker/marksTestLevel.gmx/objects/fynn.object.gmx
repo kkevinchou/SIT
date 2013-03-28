@@ -91,8 +91,10 @@ if (self.image_index &gt; self.image_number - 1) {
             var rotAngleDeg = radtodeg(rotAngleRad);
             var dartSpeed = 8;
             
+            direction = rotAngleDeg;
+            speed = dartSpeed;
             image_angle = rotAngleDeg - 45;
-            move_towards_point(targetX, targetY, dartSpeed);
+            //move_towards_point(targetX, targetY, dartSpeed);
         }
     } else if (self.selectedItem == 3) { // Smoke Bomb
     }

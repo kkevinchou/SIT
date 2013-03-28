@@ -25,19 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (point_distance(x, y, self.targetX, self.targetY) &lt;= speed) {
-    instance_destroy()
-} else {
-    var collidedEnemy = instance_place(x, y, enemy);
+            <string>var collidedEnemy = instance_place(x, y, enemy);
     
-    if (collidedEnemy) {
-        with (collidedEnemy) {
-            enemySleep();
-        }
-        instance_destroy();
-    } else if (instance_place(x, y, parentWallObj))  {
-        instance_destroy();
+if (collidedEnemy) {
+    with (collidedEnemy) {
+        enemySleep();
     }
+    instance_destroy();
+} else if (instance_place(x, y, parentWallObj))  {
+    instance_destroy();
 }
 </string>
           </argument>
