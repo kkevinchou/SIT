@@ -30,11 +30,6 @@ global.ITEMNAME = "Name"
 global.ITEMCOUNT = "Count"
 global.ITEMIMAGE = "Image"
 
-global.itemEffectRadius[0] = 130; // Cricket
-global.itemEffectRadius[1] = 100; // Smoke Bomb
-global.itemEffectRadius[2] = 100; // Sleeping Dart
-global.itemEffectRadius[3] = 100; // Sleeping Gas
-
 global.items = ds_list_create()
 
 var cricket_index = ds_map_create()
@@ -42,18 +37,38 @@ ds_map_add(cricket_index, global.ITEMNAME, "Cricket")
 ds_map_add(cricket_index, global.ITEMCOUNT, 1)
 ds_map_add(cricket_index, global.ITEMIMAGE, cricket_spr)
 ds_list_add(global.items, cricket_index);
+global.CRICKETID = ds_list_size(global.items) - 1;
 
 var smoke_index = ds_map_create()
 ds_map_add(smoke_index, global.ITEMNAME, "Smoke Bomb")
 ds_map_add(smoke_index, global.ITEMCOUNT, 3)
 ds_map_add(smoke_index, global.ITEMIMAGE, smokescreen_spr)
 ds_list_add(global.items, smoke_index)
+global.SMOKEBOMBID = ds_list_size(global.items) - 1;
 
 var sleepDart_index = ds_map_create()
 ds_map_add(sleepDart_index, global.ITEMNAME, "Sleeping Dart")
 ds_map_add(sleepDart_index, global.ITEMCOUNT, 3)
 ds_map_add(sleepDart_index, global.ITEMIMAGE, sleepingDart_spr)
 ds_list_add(global.items, sleepDart_index)
+global.SLEEPINGDARTID = ds_list_size(global.items) - 1;
+
+var sleepGas_index = ds_map_create()
+ds_map_add(sleepGas_index, global.ITEMNAME, "Sleeping Gas")
+ds_map_add(sleepGas_index, global.ITEMCOUNT, 3)
+ds_map_add(sleepGas_index, global.ITEMIMAGE, sleepingGas_spr)
+ds_list_add(global.items, sleepGas_index)
+global.SLEEPINGGASID = ds_list_size(global.items) - 1;
+
+global.itemEffectRadius[global.CRICKETID] = 130;
+global.itemEffectRadius[global.SMOKEBOMBID] = 100;
+global.itemEffectRadius[global.SLEEPINGDARTID] = 100;
+global.itemEffectRadius[global.SLEEPINGGASID] = 100;
+
+global.itemEffectDuration[global.CRICKETID] = 4;
+global.itemEffectDuration[global.SMOKEBOMBID] = 4;
+global.itemEffectDuration[global.SLEEPINGDARTID] = 6;
+global.itemEffectDuration[global.SLEEPINGGASID] = 4;
 </string>
           </argument>
         </arguments>
