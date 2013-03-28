@@ -128,11 +128,11 @@ alarm[0] = room_speed * sleepGasDuration;
           </argument>
           <argument>
             <kind>0</kind>
-            <string>random(global.itemEffectRadius[3]* 2) - global.itemEffectRadius[3]</string>
+            <string>random(global.itemEffectRadius[3]/2* 2) - global.itemEffectRadius[3]/2</string>
           </argument>
           <argument>
             <kind>0</kind>
-            <string>random(global.itemEffectRadius[3]* 2) - global.itemEffectRadius[3]</string>
+            <string>random(global.itemEffectRadius[3]/2* 2) - global.itemEffectRadius[3]/2</string>
           </argument>
           <argument>
             <kind>4</kind>
