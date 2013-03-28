@@ -29,7 +29,8 @@
     
 if (collidedEnemy) {
     with (collidedEnemy) {
-        enemySleep();
+        var dartSleepDuration = 6;
+        enemySleep(dartSleepDuration);
     }
     instance_destroy();
 } else if (instance_place(x, y, parentWallObj))  {

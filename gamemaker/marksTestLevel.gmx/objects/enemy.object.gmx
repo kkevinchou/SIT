@@ -29,7 +29,7 @@
 
 visionRad = 0 //determines the swag of the enemies view
 visionWidth = 60 //determines the width of the vision cone
-vision = 200 // determines the distance and enemy can see
+vision = 100 // determines the distance and enemy can see
 
 visionRot = 0 //determines the starting rotation
 forward = true

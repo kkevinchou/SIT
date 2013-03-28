@@ -55,6 +55,7 @@
     <sprite>sprites\securityGuardSleepLeft</sprite>
     <sprite>sprites\securityGuardSleepRight</sprite>
     <sprite>sprites\sleepingDart_spr</sprite>
+    <sprite>sprites\sleepingGas_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -117,6 +118,7 @@
     <object>objects\sleepDart</object>
     <object>objects\cutscene_engine</object>
     <object>objects\level_exit</object>
+    <object>objects\sleepingGas</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

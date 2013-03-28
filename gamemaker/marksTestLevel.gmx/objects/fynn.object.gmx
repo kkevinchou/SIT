@@ -79,7 +79,7 @@ self.itemThrowRadius = 100;
 if (self.image_index &gt; self.image_number - 1) {
     if (self.selectedItem == 0) { // Cricket
         instance_create(self.itemTargetLocationX, self.itemTargetLocationY, cricket)
-    } else if (self.selectedItem == 1) { // Sleeping Gas
+    } else if (self.selectedItem == 1) { // Smoke Bomb
     } else if (self.selectedItem == 2) { // Sleeping Dart
         var dart = instance_create(self.x, self.y + 24, sleepDart);
         
@@ -96,7 +96,8 @@ if (self.image_index &gt; self.image_number - 1) {
             image_angle = rotAngleDeg - 45;
             //move_towards_point(targetX, targetY, dartSpeed);
         }
-    } else if (self.selectedItem == 3) { // Smoke Bomb
+    } else if (self.selectedItem == 3) { // Sleeping Gas
+        var sleepGas = instance_create(self.itemTargetLocationX, self.itemTargetLocationY, sleepingGas);
     }
     self.selectedItem = -1
 } else {
