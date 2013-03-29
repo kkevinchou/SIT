@@ -56,6 +56,38 @@ oldVision = vision
 self.smokeEffects = 0;
 
 self.conesStates = ds_list_create() //used for keeping the vision cones sxxxy
+
+
+alarm[2] = random(50) //used for uncommon events
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[2] = 30
+if (collision_point(x,y,fuseBoxBlackout,false,false).visible == true){
+    //visionWidth = 100
+    state = "chase" 
+    posX = fuseBox.x
+    posY = fuseBox.y +64
+}
 </string>
           </argument>
         </arguments>

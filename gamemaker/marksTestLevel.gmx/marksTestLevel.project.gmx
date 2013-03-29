@@ -172,11 +172,11 @@
     <object>objects\MissonIntro</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room2</room>
     <room>rooms\room0</room>
     <room>rooms\rm_menu</room>
     <room>rooms\cutscreen</room>
     <room>rooms\room4</room>
-    <room>rooms\room2</room>
     <room>rooms\room1</room>
     <room>rooms\room3</room>
     <room>rooms\rm_options</room>
