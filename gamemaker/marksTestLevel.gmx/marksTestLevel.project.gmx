@@ -77,6 +77,10 @@
     <sprite>sprites\flynnThrowLeft</sprite>
     <sprite>sprites\flynnThrowBack</sprite>
     <sprite>sprites\flynnThrowRight</sprite>
+    <sprite>sprites\nemesisFront</sprite>
+    <sprite>sprites\nemesisBack</sprite>
+    <sprite>sprites\nemesisLeft</sprite>
+    <sprite>sprites\nemesisRight</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -141,6 +145,7 @@
     <object>objects\bar</object>
     <object>objects\shelves</object>
     <object>objects\enemy</object>
+    <object>objects\nemesis</object>
     <object>objects\fuseBox</object>
     <object>objects\parentWallObj</object>
     <object>objects\fuseBoxBlackout</object>
@@ -172,6 +177,7 @@
     <object>objects\MissonIntro</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\nemesis_room</room>
     <room>rooms\room0</room>
     <room>rooms\rm_menu</room>
     <room>rooms\cutscreen</room>
