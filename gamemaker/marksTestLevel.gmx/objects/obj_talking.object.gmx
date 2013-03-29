@@ -154,7 +154,19 @@ if (state == "normal") {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>//prevent enemies from talking if they searching
+if (state == "normal" 
+&amp;&amp; ((first.state == "search" or first.state == "chase")
+|| (second.state == "search" or second.state == "chase"))) {
+    second.talking = false
+    first.talking = false
+    if (second.state != "search" and second.state != "chase") second.state = first.state
+    else first.state = second.state
+    instance_destroy();
+} 
+
+
+
 stage++;
 if (stage &lt; ds_list_size(words)) {
     word = ds_list_find_value(words,stage)
@@ -189,7 +201,7 @@ if (stage &lt; ds_list_size(words)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (stage &lt; ds_list_size(words) &amp;&amp; first &amp;&amp; second){
+            <string>if (stage &lt; ds_list_size(words) &amp;&amp; instance_exists(first) &amp;&amp; instance_exists(second)){
     draw_set_halign(fa_center)
     
     if ( (stage mod 2) == 0 ) {
@@ -204,6 +216,12 @@ if (stage &lt; ds_list_size(words)) {
     height = 18
     width = 60+string_length(word)*8
     
+    
+    var border = 2
+    draw_set_alpha(0.5)
+    draw_roundrect(x-width/2 - border,y-40-height -border ,x+width/2 + border,y-40 + border,false)
+    draw_triangle(x-5-border,y-40+border,x+5+border,y-40+border,x,y-30+border,false)
+    draw_set_alpha(1)
     draw_set_color(c_white)
     draw_roundrect(x-width/2,y-40-height,x+width/2,y-40,false)
     draw_triangle(x-5,y-40,x+5,y-40,x,y-30,false)

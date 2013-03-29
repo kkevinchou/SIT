@@ -132,6 +132,7 @@
     <object>objects\fuseBox</object>
     <object>objects\parentWallObj</object>
     <object>objects\fuseBoxBlackout</object>
+    <object>objects\beltclickarea</object>
     <object>objects\belt_ui</object>
     <object>objects\obj_talking</object>
     <object>objects\cricket</object>
@@ -152,6 +153,7 @@
     <object>objects\cutscene_manager</object>
     <object>objects\sleepingGas</object>
     <object>objects\smokeBomb</object>
+    <object>objects\MissonIntro</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
@@ -160,8 +162,8 @@
     <room>rooms\room4</room>
     <room>rooms\room2</room>
     <room>rooms\room1</room>
-    <room>rooms\room3</room>
     <room>rooms\rm_options</room>
+    <room>rooms\room3</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

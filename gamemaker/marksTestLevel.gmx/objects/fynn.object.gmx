@@ -78,10 +78,15 @@ self.itemThrowRadius = 100;
 
 if (self.image_index &gt; self.image_number - 1) {
     if (self.selectedItem == global.CRICKETID) {
+    
         instance_create(self.itemTargetLocationX, self.itemTargetLocationY, cricket)
+        
     } else if (self.selectedItem == global.SMOKEBOMBID) {
+    
         var smokeBombObj = instance_create(self.itemTargetLocationX, self.itemTargetLocationY, smokeBomb);
+        
     } else if (self.selectedItem == global.SLEEPINGDARTID) {
+    
         var dartCreationY = self.y + 24;
         var sleepingDartObj = instance_create(self.x, self.y + 24, sleepDart);
         
@@ -97,8 +102,13 @@ if (self.image_index &gt; self.image_number - 1) {
             speed = dartSpeed;
             image_angle = rotAngleDeg - 45;
         }
+        
     } else if (self.selectedItem == global.SLEEPINGGASID) {
-        var sleepGasObj = instance_create(self.itemTargetLocationX, self.itemTargetLocationY, sleepingGas);
+    
+        var sleepGasObj = instance_create(x, y, sleepingGas);
+        sleepGasObj.ToX = self.itemTargetLocationX
+        sleepGasObj.ToY = self.itemTargetLocationY
+    
     }
     self.selectedItem = -1
 } else {
@@ -137,6 +147,8 @@ if (self.selectedItem == 2) { // sleeping dart is always okay to be used
         self.validItemTarget = false;
     }
 }
+
+if (collision_point(mouse_x,mouse_y,beltclickarea,false,false)) self.validItemTarget = false
 </string>
           </argument>
         </arguments>

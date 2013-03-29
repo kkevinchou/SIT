@@ -11,7 +11,7 @@ blocking_object = collision_line(myX, myY, otherX, otherY, object, false, true)
 while (blocking_object) {
     
     dist = distance_to_object(blocking_object)
-    dist = max(0,dist-32)
+    dist = max(0,dist-16)
     newX = myX + sin(rot) * dist
     newY = myY + cos(rot) * dist
 
