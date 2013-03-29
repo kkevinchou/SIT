@@ -26,44 +26,87 @@
           <argument>
             <kind>1</kind>
             <string>
+state = "normal"
 stage = 0
 alarm[0] = 50
+alarm[2] = 1
 
 
 
 words = ds_list_create()
 
-story = choose(0,1,2,3,4)
 
-switch (story)
-{
- case 0:
-    ds_list_add(words,"You look tired")
-    ds_list_add(words,"I am")
-    break
- case 1: 
-    ds_list_add(words,"See the game?")
-    ds_list_add(words,"No")
-    break
- case 2:  
-    ds_list_add(words,"I'm hungry")
-    ds_list_add(words,"Me too")
-    ds_list_add(words,"Make me food?")
-    ds_list_add(words,"No")
-    break
- case 3:  
-    ds_list_add(words,"Dude")
-    ds_list_add(words,"What?")
-    ds_list_add(words,"I'm bored")
-    break
- default: 
-    ds_list_add(words,"The boss is mad")
-    ds_list_add(words,"Why?")
-    ds_list_add(words,"Someone used his washroom again")
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>story = choose(0,1,2,3,4)
+
+if (state == "normal") {
+    switch (story)
+    {
+     case 0:
+        ds_list_add(words,"You look tired")
+        ds_list_add(words,"I am")
+        break
+     case 1: 
+        ds_list_add(words,"See the game?")
+        ds_list_add(words,"No")
+        break
+     case 2:  
+        ds_list_add(words,"I'm hungry")
+        ds_list_add(words,"Me too")
+        ds_list_add(words,"Make me food?")
+        ds_list_add(words,"No")
+        break
+     case 3:  
+        ds_list_add(words,"Dude")
+        ds_list_add(words,"What?")
+        ds_list_add(words,"I'm bored")
+        break
+     default: 
+        ds_list_add(words,"The boss is mad")
+        ds_list_add(words,"Why?")
+        ds_list_add(words,"Someone used his washroom again")
+    }
+} else {
+    second.state = first.state
+    second.posX = first.posX
+    second.posY = first.posY
+    switch (story)
+    {
+     case 0:
+        ds_list_add(words,"Hey Stop")
+        break;
+     case 1: 
+        ds_list_add(words,"Help me catch this fool")
+        ds_list_add(words,"We got this")
+        break
+     default:
+        ds_list_add(words,"GET HIM")
+        ds_list_add(words,"GETTING HIM!!")
+     }
+     
 }
-
-
-
 </string>
           </argument>
         </arguments>
@@ -117,7 +160,7 @@ if (stage &lt; ds_list_size(words)) {
     word = ds_list_find_value(words,stage)
     alarm[0] = 30 + string_length(word)*2
 } else {
-    alarm[1] = 50
+    alarm[1] = 5
 
 }
 
@@ -146,7 +189,9 @@ if (stage &lt; ds_list_size(words)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (stage &lt; ds_list_size(words)){
+            <string>if (stage &lt; ds_list_size(words) &amp;&amp; first &amp;&amp; second){
+    draw_set_halign(fa_center)
+    
     if ( (stage mod 2) == 0 ) {
         x = first.x
         y = first.y
@@ -164,6 +209,7 @@ if (stage &lt; ds_list_size(words)) {
     draw_triangle(x-5,y-40,x+5,y-40,x,y-30,false)
     draw_set_color(c_black)
     draw_text(x,y-40-height,word)
+
 }
 </string>
           </argument>

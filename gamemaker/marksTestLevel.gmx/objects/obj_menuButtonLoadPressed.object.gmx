@@ -298,45 +298,75 @@
     <event eventtype="9" enumb="13">
       <action>
         <libid>1</libid>
+<<<<<<< HEAD
         <id>211</id>
+=======
+        <id>334</id>
+>>>>>>> 30c446d72e5e41c55ae5a5b04634b60b66270848
         <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>0</useapplyto>
         <exetype>1</exetype>
+<<<<<<< HEAD
         <functionname>action_sound</functionname>
+=======
+        <functionname>action_load_game</functionname>
+>>>>>>> 30c446d72e5e41c55ae5a5b04634b60b66270848
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
+<<<<<<< HEAD
             <kind>6</kind>
             <sound>mainMenuSelect</sound>
           </argument>
           <argument>
             <kind>3</kind>
             <string>0</string>
+=======
+            <kind>2</kind>
+            <string>savegame</string>
+>>>>>>> 30c446d72e5e41c55ae5a5b04634b60b66270848
           </argument>
         </arguments>
       </action>
       <action>
         <libid>1</libid>
+<<<<<<< HEAD
         <id>224</id>
+=======
+        <id>211</id>
+>>>>>>> 30c446d72e5e41c55ae5a5b04634b60b66270848
         <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>0</useapplyto>
         <exetype>1</exetype>
+<<<<<<< HEAD
         <functionname>action_another_room</functionname>
+=======
+        <functionname>action_sound</functionname>
+>>>>>>> 30c446d72e5e41c55ae5a5b04634b60b66270848
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
+<<<<<<< HEAD
             <kind>11</kind>
             <room>level_select</room>
+=======
+            <kind>6</kind>
+            <sound>mainMenuSelect</sound>
+          </argument>
+          <argument>
+            <kind>3</kind>
+            <string>0</string>
+>>>>>>> 30c446d72e5e41c55ae5a5b04634b60b66270848
           </argument>
         </arguments>
       </action>
