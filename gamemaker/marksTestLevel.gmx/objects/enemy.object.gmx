@@ -282,7 +282,7 @@ if (self.inSmoke) {
             <string>if (collision_circle(x, y, global.itemEffectRadius[global.SLEEPINGGASID], sleepingGas, false, false)) {
     var sleepingGasObj = instance_nearest(x, y, sleepingGas);
     enemySleep(sleepingGasObj.alarm[0] / room_speed);
-} else if (state != "chase" &amp;&amp; self.inSmoke) {
+} else if (state != "chase" &amp;&amp; state != "sleep" &amp;&amp; self.inSmoke) {
     var smokeBombObj = instance_nearest(x, y, smokeBomb);
     enemySmoke(smokeBombObj.alarm[0] / room_speed);
 }
