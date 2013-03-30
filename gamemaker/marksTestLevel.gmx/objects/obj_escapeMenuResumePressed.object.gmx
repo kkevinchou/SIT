@@ -3,7 +3,7 @@
   <spriteName>buttonPressed</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -113,17 +113,43 @@
       </action>
       <action>
         <libid>1</libid>
-        <id>332</id>
+        <id>601</id>
         <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
+        <useapplyto>-1</useapplyto>
         <exetype>1</exetype>
-        <functionname>action_end_game</functionname>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>pauseMenuScript</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="9" enumb="40">
@@ -143,7 +169,7 @@
         <arguments>
           <argument>
             <kind>10</kind>
-            <object>obj_menuButtonExit</object>
+            <object>obj_escapeMenuResume</object>
           </argument>
           <argument>
             <kind>4</kind>
@@ -161,13 +187,13 @@
         <exetype>1</exetype>
         <functionname>action_change_object</functionname>
         <codestring></codestring>
-        <whoName>obj_menuButtonLoad</whoName>
+        <whoName>obj_escapeMenuExit</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>10</kind>
-            <object>obj_menuButtonLoadPressed</object>
+            <object>obj_escapeMenuExitPressed</object>
           </argument>
           <argument>
             <kind>4</kind>
@@ -217,7 +243,7 @@
         <arguments>
           <argument>
             <kind>10</kind>
-            <object>obj_menuButtonExit</object>
+            <object>obj_escapeMenuResume</object>
           </argument>
           <argument>
             <kind>4</kind>
@@ -235,13 +261,13 @@
         <exetype>1</exetype>
         <functionname>action_change_object</functionname>
         <codestring></codestring>
-        <whoName>obj_menuButtonNew</whoName>
+        <whoName>obj_escapeMenuExit</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>10</kind>
-            <object>obj_menuButtonNewPressed</object>
+            <object>obj_escapeMenuExitPressed</object>
           </argument>
           <argument>
             <kind>4</kind>
@@ -274,7 +300,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="13">
+    <event eventtype="10" enumb="13">
       <action>
         <libid>1</libid>
         <id>211</id>
@@ -301,17 +327,43 @@
       </action>
       <action>
         <libid>1</libid>
-        <id>332</id>
+        <id>601</id>
         <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
+        <useapplyto>-1</useapplyto>
         <exetype>1</exetype>
-        <functionname>action_end_game</functionname>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>pauseMenuScript</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>
@@ -326,5 +378,8 @@
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>0,0</point>
+    <point>16,16</point>
+  </PhysicsShapePoints>
 </object>

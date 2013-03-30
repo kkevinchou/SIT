@@ -126,6 +126,7 @@
     <scripts name="Menu">
       <script>scripts\Mouse_enter.gml</script>
       <script>scripts\Scrollbar_draw.gml</script>
+      <script>scripts\pauseMenuScript.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -151,11 +152,9 @@
     <object>objects\menuNavigation</object>
     <object>objects\obj_menuButtonLoad</object>
     <object>objects\obj_menuButtonNew</object>
-    <object>objects\obj_menuButtonOptions</object>
     <object>objects\obj_menuButtonExit</object>
     <object>objects\obj_menuButtonLoadPressed</object>
     <object>objects\obj_menuButtonNewPressed</object>
-    <object>objects\obj_menuButtonOptionsPressed</object>
     <object>objects\obj_menuButtonExitPressed</object>
     <object>objects\mainMenuBackgroundMusic</object>
     <object>objects\obj_menu</object>
@@ -170,11 +169,16 @@
     <object>objects\smokeBomb</object>
     <object>objects\beltclickarea</object>
     <object>objects\MissonIntro</object>
+    <object>objects\escapeMenu</object>
+    <object>objects\obj_escapeMenuResume</object>
+    <object>objects\obj_escapeMenuResumePressed</object>
+    <object>objects\obj_escapeMenuExit</object>
+    <object>objects\obj_escapeMenuExitPressed</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_menu</room>
     <room>rooms\room2</room>
     <room>rooms\room0</room>
-    <room>rooms\rm_menu</room>
     <room>rooms\cutscreen</room>
     <room>rooms\room4</room>
     <room>rooms\room1</room>

@@ -50,12 +50,12 @@ if Mouse_enter(bar_x-size,bar_y-size,bar_x+size,bar_y+size){
 }
 else{
  if Mouse_enter(bar_min,bar_y-size,bar_max,bar_y+size){
-   if mouse_check_button_pressed(mb_left){
+   if mouse_check_button_pressed(mb_left){   
      if(mx>bar_x){ 
          if(bar_x<bar_max-size-pageStep){ bar_x += pageStep; }
-         else {bar_x=bar_max-size;}
+         else {bar_x=bar_max-size;}         
      }
-     if(mx<bar_x){ 
+     else if(mx<bar_x){ 
          if(bar_x>bar_min+size+pageStep){ bar_x -= pageStep; }
          else {bar_x=bar_min+size;}
      }     
@@ -129,6 +129,10 @@ for (i = 1; i <= 4; i++) {
         }
         if (x2 < 800 + scroll_x - 1) {
             draw_line_width_color(x2, y1 - 3, x2, y2 + 3, lineWidth, c_silver, c_blue);
+        }       
+        
+        if (mouse_check_button_pressed(mb_left)) {
+            room_goto(room2);
         }
     }
 }
@@ -136,9 +140,9 @@ for (i = 1; i <= 4; i++) {
 //surface_reset_target();
 
 
-draw_set_color(c_white);
+draw_set_color(c_gray);
 
-// Draw bar
+// Draw entire general bar
 draw_rectangle(bar_min - 20, bar_y - size, bar_max + 20, bar_y + size, 0);
 
 // If mouse enters bar anywhere
