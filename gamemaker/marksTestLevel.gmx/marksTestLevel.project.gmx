@@ -30,17 +30,25 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
+    <sprite>sprites\Finalsprite0</sprite>
     <sprite>sprites\sprite2</sprite>
+    <sprite>sprites\Finalsprite2</sprite>
     <sprite>sprites\sprite1</sprite>
+    <sprite>sprites\Finalsprite1</sprite>
     <sprite>sprites\sprite7</sprite>
+    <sprite>sprites\Finalsprite7</sprite>
     <sprite>sprites\sprite8</sprite>
+    <sprite>sprites\Finalsprite8</sprite>
     <sprite>sprites\sprite9</sprite>
+    <sprite>sprites\Finalsprite9</sprite>
     <sprite>sprites\sprite14</sprite>
+    <sprite>sprites\Finalsprite14</sprite>
     <sprite>sprites\bodygaurdTop</sprite>
     <sprite>sprites\bodygaurdRight</sprite>
     <sprite>sprites\bodygaurdLeft</sprite>
     <sprite>sprites\bodygaurdFront</sprite>
     <sprite>sprites\sprite15</sprite>
+    <sprite>sprites\Finalsprite15</sprite>
     <sprite>sprites\sprite16</sprite>
     <sprite>sprites\flynnFront2</sprite>
     <sprite>sprites\flynnLeft2</sprite>
@@ -81,6 +89,13 @@
     <sprite>sprites\nemesisBack</sprite>
     <sprite>sprites\nemesisLeft</sprite>
     <sprite>sprites\nemesisRight</sprite>
+    <sprite>sprites\stairsDown</sprite>
+    <sprite>sprites\stairsSide</sprite>
+    <sprite>sprites\stairsUp</sprite>
+    <sprite>sprites\couch</sprite>
+    <sprite>sprites\door</sprite>
+    <sprite>sprites\key1</sprite>
+    <sprite>sprites\key2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>

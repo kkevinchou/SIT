@@ -6,17 +6,17 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>3</bbox_left>
-  <bbox_right>95</bbox_right>
-  <bbox_top>22</bbox_top>
-  <bbox_bottom>56</bbox_bottom>
+  <bbox_left>0</bbox_left>
+  <bbox_right>74</bbox_right>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>36</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroup>0</TextureGroup>
   <For3D>0</For3D>
-  <width>100</width>
-  <height>70</height>
+  <width>75</width>
+  <height>37</height>
   <frames>
-    <frame index="0">images\back_btn_hover_0.png</frame>
+    <frame index="0">images\couch_0.png</frame>
   </frames>
 </sprite>
