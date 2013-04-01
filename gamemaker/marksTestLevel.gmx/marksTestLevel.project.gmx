@@ -194,6 +194,23 @@
     <object>objects\obj_escapeMenuResumePressed</object>
     <object>objects\obj_escapeMenuExit</object>
     <object>objects\obj_escapeMenuExitPressed</object>
+    <objects name="Final objects">
+      <object>objects\wall1</object>
+      <object>objects\wall2</object>
+      <object>objects\sprite3</object>
+      <object>objects\sprite4</object>
+      <object>objects\sprite5</object>
+      <object>objects\sprite6</object>
+      <object>objects\sprite10</object>
+      <object>objects\sprite11</object>
+      <object>objects\stairDown</object>
+      <object>objects\stairSide</object>
+      <object>objects\stairUp</object>
+      <object>objects\couchy</object>
+      <object>objects\doory</object>
+      <object>objects\keyone</object>
+      <object>objects\keytwo</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
