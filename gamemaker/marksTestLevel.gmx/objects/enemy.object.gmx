@@ -82,12 +82,7 @@ alarm[2] = random(50) //used for uncommon events
           <argument>
             <kind>1</kind>
             <string>alarm[2] = 30
-if (collision_point(x,y,fuseBoxBlackout,false,false).visible == true){
-    //visionWidth = 100
-    state = "chase" 
-    posX = fuseBox.x
-    posY = fuseBox.y +64
-}
+
 </string>
           </argument>
         </arguments>

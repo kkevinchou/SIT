@@ -32,6 +32,9 @@ facing = 'Front';
 self.selectedItem = -1;
 self.validItemTarget = false;
 self.itemThrowRadius = 100;
+
+self.hearingCircle = 30
+curCircle = 0
 </string>
           </argument>
         </arguments>
@@ -149,6 +152,13 @@ if (self.selectedItem == 2) { // sleeping dart is always okay to be used
 }
 
 if (collision_point(mouse_x,mouse_y,beltclickarea,false,false)) self.validItemTarget = false
+
+
+if (curCircle &gt; 0) {
+    curCircle--
+}
+
+
 </string>
           </argument>
         </arguments>
@@ -614,9 +624,19 @@ if (self.selectedItem &gt;= 0) {
         draw_set_alpha(itemRadiusAlpha);
         draw_circle_color(self.x, self.y, self.itemThrowRadius, c_aqua, c_blue, 0);
         draw_circle_color(mouse_x, mouse_y, global.itemEffectRadius[self.selectedItem], usageColourStart, usageColourEnd, 0);
-        draw_set_alpha(1);
+
     }
 }
+
+
+
+
+
+
+draw_set_alpha(0.2);
+draw_ellipse_color(self.x-curCircle,self.y+sprite_height/2-curCircle/2-12,self.x+curCircle,self.y+sprite_height/2+curCircle/2,c_black,c_black,false)
+///draw_circle_color(self.x, self.y+20, curCircle, c_white, c_black, 0);
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>
