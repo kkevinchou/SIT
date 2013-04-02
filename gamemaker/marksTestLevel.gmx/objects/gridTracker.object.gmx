@@ -38,6 +38,11 @@ for (i = 0; i &lt; w; i++){
         ds_grid_add(global.wallGrid,i,j,0);
     } 
 }
+
+
+//if (gridValue &gt; 1) {
+    show_message(" ZHHHHAAUCK dont make more than one grid tracker please ");
+//}
 </string>
           </argument>
         </arguments>

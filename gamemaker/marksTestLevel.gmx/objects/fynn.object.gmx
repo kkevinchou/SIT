@@ -33,7 +33,7 @@ self.selectedItem = -1;
 self.validItemTarget = false;
 self.itemThrowRadius = 100;
 
-self.hearingCircle = 30
+self.hearingCircle = 50
 curCircle = 0
 </string>
           </argument>

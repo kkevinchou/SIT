@@ -189,7 +189,6 @@
     <object>objects\fuseBox</object>
     <object>objects\parentWallObj</object>
     <object>objects\fuseBoxBlackout</object>
-    <object>objects\belt_ui</object>
     <object>objects\obj_talking</object>
     <object>objects\cricket</object>
     <object>objects\sleepDart</object>
@@ -206,19 +205,24 @@
     <object>objects\scrollbar</object>
     <object>objects\obj_menuBackBtn</object>
     <object>objects\obj_menuBackBtnHover</object>
+    <objects name="Menu">
+      <object>objects\obj_escapeMenuResume</object>
+      <object>objects\obj_escapeMenuResumePressed</object>
+      <object>objects\obj_escapeMenuExit</object>
+      <object>objects\obj_escapeMenuExitPressed</object>
+    </objects>
     <object>objects\obj_menuBackBtnDepress</object>
     <object>objects\cutscene_engine</object>
     <object>objects\level_exit</object>
     <object>objects\cutscene_manager</object>
     <object>objects\sleepingGas</object>
     <object>objects\smokeBomb</object>
-    <object>objects\beltclickarea</object>
-    <object>objects\MissonIntro</object>
+    <objects name="ui">
+      <object>objects\MissonIntro</object>
+      <object>objects\beltclickarea</object>
+      <object>objects\belt_ui</object>
+    </objects>
     <object>objects\escapeMenu</object>
-    <object>objects\obj_escapeMenuResume</object>
-    <object>objects\obj_escapeMenuResumePressed</object>
-    <object>objects\obj_escapeMenuExit</object>
-    <object>objects\obj_escapeMenuExitPressed</object>
     <objects name="Final objects">
       <object>objects\wall1</object>
       <object>objects\wall2</object>
@@ -238,10 +242,14 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\nemesis_room</room>
+    <room>rooms\rm_menu</room>
     <room>rooms\room0</room>
     <room>rooms\room2</room>
-    <room>rooms\rm_menu</room>
+    <room>rooms\Floor_1</room>
+    <room>rooms\Floor_2</room>
+    <room>rooms\Floor_3</room>
+    <room>rooms\Top_Floor</room>
+    <room>rooms\nemesis_room</room>
     <room>rooms\cutscreen</room>
     <room>rooms\room4</room>
     <room>rooms\room1</room>
@@ -249,10 +257,6 @@
     <room>rooms\rm_options</room>
     <room>rooms\level_select</room>
     <room>rooms\Basement</room>
-    <room>rooms\Floor_1</room>
-    <room>rooms\Floor_2</room>
-    <room>rooms\Floor_3</room>
-    <room>rooms\Top_Floor</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

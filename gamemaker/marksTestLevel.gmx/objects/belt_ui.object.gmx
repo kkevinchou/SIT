@@ -29,6 +29,8 @@
 global.ITEMNAME = "Name"
 global.ITEMCOUNT = "Count"
 global.ITEMIMAGE = "Image"
+global.ITEMKEY = "Key"
+
 
 global.items = ds_list_create()
 
@@ -36,6 +38,7 @@ var cricket_index = ds_map_create()
 ds_map_add(cricket_index, global.ITEMNAME, "Cricket")
 ds_map_add(cricket_index, global.ITEMCOUNT, 1)
 ds_map_add(cricket_index, global.ITEMIMAGE, cricket_spr)
+ds_map_add(cricket_index, global.ITEMKEY, "1")
 ds_list_add(global.items, cricket_index);
 global.CRICKETID = ds_list_size(global.items) - 1;
 
@@ -43,6 +46,7 @@ var smoke_index = ds_map_create()
 ds_map_add(smoke_index, global.ITEMNAME, "Smoke Bomb")
 ds_map_add(smoke_index, global.ITEMCOUNT, 3)
 ds_map_add(smoke_index, global.ITEMIMAGE, smokescreen_spr)
+ds_map_add(smoke_index, global.ITEMKEY, "2")
 ds_list_add(global.items, smoke_index)
 global.SMOKEBOMBID = ds_list_size(global.items) - 1;
 
@@ -50,6 +54,7 @@ var sleepDart_index = ds_map_create()
 ds_map_add(sleepDart_index, global.ITEMNAME, "Sleeping Dart")
 ds_map_add(sleepDart_index, global.ITEMCOUNT, 3)
 ds_map_add(sleepDart_index, global.ITEMIMAGE, sleepingDart_spr)
+ds_map_add(sleepDart_index, global.ITEMKEY, "3")
 ds_list_add(global.items, sleepDart_index)
 global.SLEEPINGDARTID = ds_list_size(global.items) - 1;
 
@@ -57,6 +62,7 @@ var sleepGas_index = ds_map_create()
 ds_map_add(sleepGas_index, global.ITEMNAME, "Sleeping Gas")
 ds_map_add(sleepGas_index, global.ITEMCOUNT, 3)
 ds_map_add(sleepGas_index, global.ITEMIMAGE, sleepingGas_spr)
+ds_map_add(sleepGas_index, global.ITEMKEY, "4")
 ds_list_add(global.items, sleepGas_index)
 global.SLEEPINGGASID = ds_list_size(global.items) - 1;
 
@@ -137,12 +143,21 @@ while (i &lt; ds_list_size(global.items)) {
     name = ds_map_find_value(item, global.ITEMNAME)
     count = ds_map_find_value(item, global.ITEMCOUNT)
     image = ds_map_find_value(item, global.ITEMIMAGE)
+    key = ds_map_find_value(item, global.ITEMKEY)
     
     draw_set_halign(fa_center)
     
     draw_sprite(pouch,0,x+i*128+64,y-6)
     draw_sprite(image,0,x+64+i*128,y+48)
     draw_text(x+i*128+64,y-20, name)
+    
+    draw_set_alpha(0.5)
+    draw_circle(x+90+i*128,y+6,10,false)
+    //draw_rectangle(x+54+i*128,y+16,x+74+i*128,y,false)
+    draw_set_alpha(1)
+    draw_set_color(c_white)
+    draw_text(x+90+i*128,y,key)
+    draw_set_color(c_black)
     
     i += 1 
 }
