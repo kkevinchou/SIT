@@ -29,18 +29,18 @@
 
 visionRad = 0 //determines the swag of the enemies view
 visionWidth = 60 //determines the width of the vision cone
-startingVision = 200 // determines the distance and enemy can see
+startingVision = 275 // determines the distance and enemy can see
 vision = startingVision
 
 visionRot = 0 //determines the starting rotation
 forward = true
 
-baseMovementSpeed = 1
+baseMovementSpeed = 4
 movementSpeed = baseMovementSpeed
 
 mode = 0 //mode 0 is standing still, mode 1 is following a path
 state = "normal" //"normal" "search" "chase"
-self.currentPath = 0 
+self.currentPath = 0
 
 talking = false //is the enmey talking
 
@@ -135,10 +135,6 @@ moving = 0
 self.inSmoke = false;
 if (collision_circle(x, y, global.itemEffectRadius[global.SMOKEBOMBID], smokeBomb, false, false)) {
     self.inSmoke = true;
-}
-
-if (self.inSmoke) {
-    movementSpeed /= 2
 }
 </string>
           </argument>
@@ -287,9 +283,9 @@ if (state == "normal" || state == "smoke") {
 }
 
 if (state == "normal" || state == "chase" || state == "search") {
-    movementSpeed = baseMovementSpeed;
+    self.movementSpeed = baseMovementSpeed;
     if (self.inSmoke) {
-        movementSpeed *= 0.75;
+        self.movementSpeed *= 0.5;
     }
     
     path_speed = movementSpeed;
@@ -301,12 +297,12 @@ if (state == "normal" || state == "chase" || state == "search") {
             if (self.activePath != self.currentPath || (self.activePath == self.currentPath &amp;&amp; path_position &lt;= 0)) {
                 if (self.x == path_get_x(currentPath,0) &amp;&amp; self.y == path_get_y(self.currentPath,0)){
                     self.activePath = self.currentPath
-                    moving = movementSpeed * speedMod
+                    moving = self.movementSpeed
                     path_start(self.currentPath,movementSpeed,1,1)
                 } else {
                     retX = path_get_x(self.currentPath,0)
                     retY = path_get_y(self.currentPath,0)
-                    moving = movementSpeed * speedMod
+                    moving = self.movementSpeed
                     mp_potential_step(retX,retY,movementSpeed,false);
                     /*
                     path_end()
@@ -316,7 +312,7 @@ if (state == "normal" || state == "chase" || state == "search") {
                     */
                 }  
             } else {
-                moving = movementSpeed * speedMod 
+                moving = movementSpeed
             }
         } 
     } else if (state == "chase" || state == "search") {
@@ -330,9 +326,8 @@ if (state == "normal" || state == "chase" || state == "search") {
         if (posX &gt; self.x-5 &amp;&amp; posX &lt; self.x+5 &amp;&amp; posY &gt; self.y-5 &amp;&amp; posY &lt; self.y+5){
             direction += 5
         } else {
-            
-            moving = movementSpeed*2
-            mp_potential_step(posX, posY, movementSpeed*2, 0)
+            moving = self.movementSpeed
+            mp_potential_step(posX, posY, self.movementSpeed, 0)
             self.activePath = path_add()
         }  
     }
