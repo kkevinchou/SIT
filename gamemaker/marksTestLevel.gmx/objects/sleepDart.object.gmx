@@ -26,13 +26,19 @@
           <argument>
             <kind>1</kind>
             <string>var collidedEnemy = instance_place(x, y, enemy);
+var collidedNemesis = instance_place(x, y, nemesis);
     
 if (collidedEnemy) {
     with (collidedEnemy) {
         enemySleep(global.itemEffectDuration[global.SLEEPINGDARTID]);
     }
     instance_destroy();
-} else if (instance_place(x, y, parentWallObj))  {
+} else if (collidedNemesis) {
+    with (collidedNemesis) {
+        nemesisHitDart();
+    }
+    instance_destroy();
+}else if (instance_place(x, y, parentWallObj))  {
     instance_destroy();
 }
 </string>

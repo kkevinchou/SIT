@@ -167,6 +167,9 @@
       <script>scripts\Scrollbar_draw.gml</script>
       <script>scripts\pauseMenuScript.gml</script>
     </scripts>
+    <scripts name="nemesis">
+      <script>scripts\nemesisHitDart.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\Arial</font>
