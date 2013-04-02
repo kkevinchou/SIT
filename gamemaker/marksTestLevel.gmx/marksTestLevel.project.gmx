@@ -244,7 +244,6 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Tutorial_1_Layout</room>
     <room>rooms\nemesis_room</room>
     <room>rooms\rm_menu</room>
     <room>rooms\room0</room>
@@ -260,7 +259,9 @@
     <room>rooms\rm_options</room>
     <room>rooms\level_select</room>
     <room>rooms\Basement</room>
+    <room>rooms\Tutorial_1_Layout</room>
     <room>rooms\Tutorial_2_Layout</room>
+    <room>rooms\Tutorial_3_Layout</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
