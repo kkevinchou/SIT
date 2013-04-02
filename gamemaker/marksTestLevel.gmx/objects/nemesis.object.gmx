@@ -211,8 +211,7 @@ if (state == "normal" || state == "smoke") {
     }
 
     lineDirection = point_direction(self.x,self.y,fynn.x,fynn.y)
-    if ((direction+visionWidth/2 &gt;= lineDirection) &amp;&amp;
-        (direction-visionWidth/2 &lt;= lineDirection) &amp;&amp;
+    if (flynnWithinVisionWidth() &amp;&amp;
         distance_to_object(fynn) &lt;= vision) {
     
         if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)) {
@@ -223,57 +222,7 @@ if (state == "normal" || state == "smoke") {
         }
     }
 } else if (state == "chase" || state = "search"){
-    /*
-        lineDirection = point_direction(self.x,self.y,fynn.x,fynn.y)
-        if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)
-            &amp;&amp; (direction+visionWidth/2 &gt;= lineDirection)
-            &amp;&amp; (direction-visionWidth/2 &lt;= lineDirection) ){
-                state = "chase" 
-                posX = fynn.x
-                posY = fynn.y
-                alarm[0] = -1
-            
-        }
-    */
-    
-    /*
-    self.angleBetween = ((fynn.x - self.x) * cos(direction * pi / 180)) + ((fynn.y - self.y) * sin(direction * pi / 180));
-    self.angleBetween /= point_distance(fynn.x, fynn.y, self.x, self.y);
-    self.angleBetween = arccos(angleBetween) * 180 / pi;
-    
-    var withinVision = (angleBetween &lt; visionWidth &amp;&amp;
-                        distance_to_object(fynn) &lt;= vision &amp;&amp;
-                        !collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true));
-    */
-    
-    var directionToFlynn = point_direction(self.x,self.y,fynn.x,fynn.y);
-    var relativeDirection = directionToFlynn - direction;
-    
-    
-    if (relativeDirection &lt; 0) {
-        relativeDirection += 360;
-    }
-    
-    
-    var rangeOkay = false;
-    
-    rangeMin = -(visionWidth / 2);
-    rangeMax = (visionWidth / 2);
-    
-    if (relativeDirection &lt;= rangeMax &amp;&amp; relativeDirection &gt;= rangeMin) {
-        rangeOkay = true;
-    }
-    
-    if (!rangeOkay) {
-        rangeMin = -(visionWidth / 2) + 360;
-        rangeMax = (visionWidth / 2) + 360;
-        
-        if (relativeDirection &lt;= rangeMax &amp;&amp; relativeDirection &gt;= rangeMin) {
-            rangeOkay = true;
-        }
-    }
-    
-    var withinVision = (rangeOkay &amp;&amp;
+    var withinVision = (flynnWithinVisionWidth() &amp;&amp;
                         distance_to_object(fynn) &lt;= vision &amp;&amp;
                         !collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true));
                                           
