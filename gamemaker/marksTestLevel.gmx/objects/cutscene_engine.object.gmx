@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>// Variables
 start = false
+speaker_avatar = false
 
 // Fade config
 fade_period = 0.3 // how many seconds to finish one fade
@@ -95,31 +96,6 @@ script_file = file_text_open_read(working_directory + "\" + script_filename)
         </arguments>
       </action>
     </event>
-    <event eventtype="5" enumb="32">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(!file_text_eof(script_file)) {
-    cut_text = file_text_readln(script_file)
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="6" enumb="56">
       <action>
         <libid>1</libid>
@@ -175,14 +151,15 @@ box_padding = 20
 
 // Init position for text
 text_x = box_margin+box_padding
-text_y = box_margin+box_padding
+//text_y = box_margin+box_padding
+text_y = room_height-box_height-box_margin+box_padding
 
 // No fade effect for box
 draw_set_alpha(1)
 
 // Draw dialogue box
 draw_set_color(c_white)
-draw_roundrect(box_margin,box_margin,room_width-box_margin,box_height,false)
+draw_roundrect(box_margin,room_height-box_height-box_margin,room_width-box_margin,room_height-box_margin,false)
 draw_set_color(c_black)
 
 // Set fade effect
@@ -191,6 +168,11 @@ draw_set_alpha(fade_alpha)
 // Draw text
 draw_set_halign(fa_left)
 draw_text_ext(text_x,text_y,cut_text,-1,room_width-2*(box_margin+box_padding))
+
+// Draw Avatar if available
+if(speaker_avatar != false) {
+    draw_sprite(speaker_avatar,0,box_margin,room_height-box_height-box_margin-sprite_get_height(speaker_avatar))
+}
 }
 
 </string>

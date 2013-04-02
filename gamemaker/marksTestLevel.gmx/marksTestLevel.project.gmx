@@ -3,11 +3,28 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="2" name="datafiles">
+  <datafiles number="3" name="datafiles">
     <datafile>
       <name>test.txt</name>
       <exists>-1</exists>
       <size>200</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename></filename>
+    </datafile>
+    <datafile>
+      <name>Chinatown.txt</name>
+      <exists>-1</exists>
+      <size>268</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -96,13 +113,15 @@
     <sprite>sprites\door</sprite>
     <sprite>sprites\key1</sprite>
     <sprite>sprites\key2</sprite>
+    <sprite>sprites\Flynn_avatar</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\mainMenuBackground</background>
     <background>background\newMainMenuBackground</background>
     <background>background\cutscene1</background>
-    <background>background\cutscene2</background>
+    <background>background\chinatownEnd</background>
+    <background>background\chinatownOpen</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path0</path>
@@ -216,8 +235,8 @@
     <room>rooms\nemesis_room</room>
     <room>rooms\room0</room>
     <room>rooms\rm_menu</room>
-    <room>rooms\room2</room>
     <room>rooms\cutscreen</room>
+    <room>rooms\room2</room>
     <room>rooms\room4</room>
     <room>rooms\room1</room>
     <room>rooms\room3</room>
