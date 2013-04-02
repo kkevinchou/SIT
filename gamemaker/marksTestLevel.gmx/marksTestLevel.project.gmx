@@ -3,11 +3,11 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="4" name="datafiles">
+  <datafiles number="9" name="datafiles">
     <datafile>
-      <name>test.txt</name>
+      <name>firstScene.txt</name>
       <exists>-1</exists>
-      <size>200</size>
+      <size>1417</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -22,9 +22,60 @@
       <filename></filename>
     </datafile>
     <datafile>
-      <name>Chinatown.txt</name>
+      <name>finalMissionConfrontation.txt</name>
       <exists>-1</exists>
-      <size>268</size>
+      <size>558</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename></filename>
+    </datafile>
+    <datafile>
+      <name>finalMissionComplete.txt</name>
+      <exists>-1</exists>
+      <size>710</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename></filename>
+    </datafile>
+    <datafile>
+      <name>chinatownStart.txt</name>
+      <exists>-1</exists>
+      <size>410</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename></filename>
+    </datafile>
+    <datafile>
+      <name>chinatownEnd.txt</name>
+      <exists>-1</exists>
+      <size>234</size>
       <exportAction>2</exportAction>
       <exportDir></exportDir>
       <overwrite>0</overwrite>
@@ -114,15 +165,21 @@
     <sprite>sprites\key1</sprite>
     <sprite>sprites\key2</sprite>
     <sprite>sprites\Flynn_avatar</sprite>
+    <sprite>sprites\Tristan_avatar</sprite>
+    <sprite>sprites\Nemesis_avatar</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\mainMenuBackground</background>
     <background>background\newMainMenuBackground</background>
+    <background>background\intro0</background>
+    <background>background\intro1</background>
+    <background>background\intro2</background>
+    <background>background\intro3</background>
+    <background>background\chinatownStart</background>
     <background>background\chinatownEnd</background>
-    <background>background\chinatownOpen</background>
-    <background>background\cutscene1</background>
-    <background>background\cutscene2</background>
+    <background>background\finalStart</background>
+    <background>background\finalEnd</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\path0</path>
@@ -244,6 +301,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\cutscreen</room>
     <room>rooms\room0</room>
     <room>rooms\nemesis_room</room>
     <room>rooms\rm_menu</room>
@@ -252,7 +310,6 @@
     <room>rooms\Floor_2</room>
     <room>rooms\Floor_3</room>
     <room>rooms\Top_Floor</room>
-    <room>rooms\cutscreen</room>
     <room>rooms\room4</room>
     <room>rooms\room1</room>
     <room>rooms\room3</room>

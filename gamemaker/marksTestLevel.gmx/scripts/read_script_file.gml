@@ -17,7 +17,11 @@ while(!file_text_eof(input_file)) {
             
             // Assign avatars
             if( 'flynn' == string_lower(speaker_name) ) {
-                speaker_avatar = Flynn_avatar;
+                speaker_avatar = Flynn_avatar
+            } else if( 'tristan' == string_lower(speaker_name) ) {
+                speaker_avatar = Tristan_avatar
+            } else if( 'nemesis' == string_lower(speaker_name) ) {
+                speaker_avatar = Nemesis_avatar
             }
         }
         
@@ -42,3 +46,7 @@ while(!file_text_eof(input_file)) {
         }
     }
 }
+
+// Else go to the next room
+var room_number = cutscene_manager.next_room
+room_goto(ds_map_find_value(cutscene_manager.level_map, real(room_number)))

@@ -30,6 +30,7 @@ global.manager = id
 
 // The level gonna go after cut scene
 current_room = 0
+next_room = 1
 
 // Init the hashmaps
 script_map = ds_map_create()
@@ -37,20 +38,25 @@ level_map = ds_map_create()
 background_map = ds_map_create()
 
 //ds_map_add(script_map, 0, 'test.txt')
-ds_map_add(script_map, 0, 'Chinatown.txt')
-ds_map_add(script_map, 1, 'script1.txt')
-ds_map_add(script_map, 2, 'script1.txt')
-ds_map_add(script_map, 3, 'script1.txt')
+ds_map_add(script_map, 0, 'firstScene.txt')
+ds_map_add(script_map, 1, 'chinatownStart.txt')
+ds_map_add(script_map, 2, 'chinatownEnd.txt')
+ds_map_add(script_map, 3, 'finalMissionConfrontation.txt')
+ds_map_add(script_map, 4, 'finalMissionComplete.txt')
 
 ds_map_add(level_map, 0, room0)
-ds_map_add(level_map, 1, room1)
+ds_map_add(level_map, 1, room2)
 ds_map_add(level_map, 2, room2) 
 ds_map_add(level_map, 3, room3)
 
-ds_map_add(background_map, 0, cutscene1)
-ds_map_add(background_map, 1, cutscene1)
+ds_map_add(background_map, 0, intro0)
+ds_map_add(background_map, 1, chinatownStart)
 ds_map_add(background_map, 2, chinatownEnd) 
-ds_map_add(background_map, 3, cutscene1)
+ds_map_add(background_map, 3, finalStart)
+ds_map_add(background_map, 4, finalEnd)
+ds_map_add(background_map, 5, intro1)
+ds_map_add(background_map, 6, intro2)
+ds_map_add(background_map, 7, intro3)
 
 </string>
           </argument>

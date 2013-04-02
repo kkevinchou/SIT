@@ -1,0 +1,5 @@
+Girl: You are not too bad. When I met you I thought you were going to get me killed.
+Flynn: Oh...well you are alive so...yeah.
+Girl: Anyways here is the information you need. I got to go now.
+```bg_change:1
+Flynn: Thanks. Hmmmm?
