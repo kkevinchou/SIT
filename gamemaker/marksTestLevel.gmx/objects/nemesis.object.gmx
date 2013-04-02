@@ -58,6 +58,8 @@ self.smokeEffects = 0;
 self.conesStates = ds_list_create() //used for keeping the vision cones sxxxy
 
 self.debugOn = true;
+
+self.numDartHits = 0;
 </string>
           </argument>
         </arguments>
@@ -336,21 +338,19 @@ if (state == "normal" || state == "chase" || state == "search") {
     }
     
     dir = direction - 45
-    if (dir &gt;0 &amp;&amp; dir &lt;= 90) sprite_index = nemesisLeft
+    if (dir &gt;0 &amp;&amp; dir &lt;= 90) sprite_index = nemesisBack
     else if (dir &gt;0 &amp;&amp; dir &lt;= 180) sprite_index = nemesisLeft
     else if (dir &gt;0 &amp;&amp; dir &lt;= 270) sprite_index = nemesisFront
     else sprite_index = nemesisRight
 
     if (moving &gt; 0) self.image_index = self.image_index+(moving*.1);
-} else if (state == "sleep") {
-    self.image_index += 0.05;
 } else if (state == "smoke") {
     direction += 5;
     dir = direction - 45
-    if (dir &gt;0 &amp;&amp; dir &lt;= 90) sprite_index = bodygaurdTop
-    else if (dir &gt;0 &amp;&amp; dir &lt;= 180) sprite_index = bodygaurdLeft
-    else if (dir &gt;0 &amp;&amp; dir &lt;= 270) sprite_index = bodygaurdFront
-    else sprite_index = bodygaurdRight
+    if (dir &gt;0 &amp;&amp; dir &lt;= 90) sprite_index = nemesisBack
+    else if (dir &gt;0 &amp;&amp; dir &lt;= 180) sprite_index = nemesisLeft
+    else if (dir &gt;0 &amp;&amp; dir &lt;= 270) sprite_index = nemesisFront
+    else sprite_index = nemesisRight
 
     if (moving &gt; 0) self.image_index = self.image_index+(moving*.1);
 }

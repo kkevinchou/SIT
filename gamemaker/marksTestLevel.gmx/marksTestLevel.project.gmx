@@ -190,6 +190,7 @@
     <object>objects\fuseBoxBlackout</object>
     <object>objects\belt_ui</object>
     <object>objects\obj_talking</object>
+    <object>objects\obj_nemesis_chat</object>
     <object>objects\cricket</object>
     <object>objects\sleepDart</object>
     <object>objects\menuNavigation</object>
@@ -237,6 +238,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\nemesis_room</room>
+    <room>rooms\Top_Floor</room>
     <room>rooms\room0</room>
     <room>rooms\rm_menu</room>
     <room>rooms\cutscreen</room>
@@ -250,7 +252,6 @@
     <room>rooms\Floor_1</room>
     <room>rooms\Floor_2</room>
     <room>rooms\Floor_3</room>
-    <room>rooms\Top_Floor</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
