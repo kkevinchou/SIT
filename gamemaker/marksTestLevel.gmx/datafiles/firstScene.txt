@@ -1,0 +1,29 @@
+Nemesis: WOW! I really didn't expect that. Seems the Luck Fairy finally comes to me! 
+Nemesis: HAHAHA!
+This is a peaceful night. Flynn doesn't know what will happen to him.
+This is a night for change.
+```bg_change:5
+Flynn: !!!
+Flynn: Dad...Dad are you alright?
+```bg_change:6
+Tristan: Yes...arrggghhh...I am fine.
+Flynn: Wait a second. I will get you some ice. 
+Tristan: Ahhhhhhhhhhhhhhhhhhhhhhhhhh!!! 
+Flynn: Hold on...it will get better. 
+```bg_change:7
+Flynn: Tell me what happened.
+Tristan: I was...on a mission when I was ambushed out of nowhere. The wound is real deep. ##Damn you "Nemesis"
+Tristan: I doubt I will be able to handle missions anytime soon. This is not good.
+Flynn: I know what we can do. I should take your place. 
+Tristan: ARE YOU OUT OF YOUR MIND!!?  No. I don't want you to do this.
+Tristan: I will not allow you to get yourself killed.
+Flynn: I know it is dangerous but I can do this. ##Please? 
+Flynn: Show me how to be a spy and let me help out.
+Tristan: I... Listen.. 
+Tristan: This is not... I do not want you to get hurt...or even killed.
+Flynn: Dad, trust me. I will listen to everything that you tell me.
+Flynn: I will take this seriously.
+Tristan: *sigh* Fine. ##I will train you but you must listen to everything I have to say and follow my instructions.
+Tristan: Then I will let you in.
+Flynn: Thank you Dad! I will not let you down!
+Tristan:I hope not.
