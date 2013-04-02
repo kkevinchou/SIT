@@ -246,6 +246,11 @@
     <room>rooms\room3</room>
     <room>rooms\rm_options</room>
     <room>rooms\level_select</room>
+    <room>rooms\Basement</room>
+    <room>rooms\Floor_1</room>
+    <room>rooms\Floor_2</room>
+    <room>rooms\Floor_3</room>
+    <room>rooms\Top_Floor</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
