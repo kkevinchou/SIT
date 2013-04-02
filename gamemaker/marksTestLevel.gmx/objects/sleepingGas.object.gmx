@@ -33,6 +33,8 @@ z = 0
 zSpeed = 6
 
 
+
+
 </string>
           </argument>
         </arguments>
@@ -56,7 +58,10 @@ zSpeed = 6
           <argument>
             <kind>1</kind>
             <string>move_towards_point(ToX,ToY,throwSpeed)
+
 distance = distance_to_point(ToX,ToY)
+distance = min(distance,fynn.itemThrowRadius)
+zSpeed = distance/15
 </string>
           </argument>
         </arguments>
@@ -111,7 +116,7 @@ if (distance &lt;= speed) friction = 1
 
 z += zSpeed
 z = max(0,z)
-if (z &gt;= 0) zSpeed--
+if (z &gt; 0) zSpeed--
 else if (abs(zSpeed) &gt; 1) zSpeed = -zSpeed/2
 else zSpeed = 0
 
@@ -299,7 +304,7 @@ else zSpeed = 0
           </argument>
           <argument>
             <kind>0</kind>
-            <string>0</string>
+            <string>-z</string>
           </argument>
           <argument>
             <kind>4</kind>
@@ -328,6 +333,32 @@ else zSpeed = 0
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="4" ename="wall">
+      <action>
+        <libid>1</libid>
+        <id>115</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_bounce</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
       </action>
     </event>
     <event eventtype="8" enumb="0">

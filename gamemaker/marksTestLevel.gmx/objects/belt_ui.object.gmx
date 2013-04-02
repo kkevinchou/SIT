@@ -136,6 +136,8 @@ while (i &lt; ds_list_size(global.items)) {
 
 draw_sprite(belt,0,x,y)
 
+selected = fynn.selectedItem
+
 i = 0
 while (i &lt; ds_list_size(global.items)) {
     
@@ -146,21 +148,32 @@ while (i &lt; ds_list_size(global.items)) {
     key = ds_map_find_value(item, global.ITEMKEY)
     
     draw_set_halign(fa_center)
-    
-    draw_sprite(pouch,0,x+i*128+64,y-6)
+    if (selected==i) {
+        draw_sprite_ext(pouch,0,x+i*128+64,y-6,1,1,0,c_yellow,1)
+    } else {
+        draw_sprite(pouch,0,x+i*128+64,y-6)
+    }
     draw_sprite(image,0,x+64+i*128,y+48)
     draw_text(x+i*128+64,y-20, name)
     
     draw_set_alpha(0.5)
-    draw_circle(x+90+i*128,y+6,10,false)
+    if (selected==i) {
+        draw_set_color(c_yellow)
+    }
+    
+    draw_circle(x+90+i*128,y+5,10,false)
     //draw_rectangle(x+54+i*128,y+16,x+74+i*128,y,false)
     draw_set_alpha(1)
     draw_set_color(c_white)
-    draw_text(x+90+i*128,y,key)
+    draw_set_valign(fa_center)
+    draw_text(x+90+i*128,y+5,key)
     draw_set_color(c_black)
+    draw_set_valign(-1)    
     
     i += 1 
 }
+
+
 </string>
           </argument>
         </arguments>

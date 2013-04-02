@@ -129,6 +129,7 @@
     <path>paths\path1</path>
     <path>paths\path2</path>
     <path>paths\path3</path>
+    <path>paths\path4</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\flynnWithinVisionWidth.gml</script>
@@ -186,6 +187,7 @@
     <object>objects\shelves</object>
     <object>objects\enemy</object>
     <object>objects\nemesis</object>
+    <object>objects\sleepingEffect</object>
     <object>objects\fuseBox</object>
     <object>objects\parentWallObj</object>
     <object>objects\fuseBoxBlackout</object>
@@ -242,6 +244,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\nemesis_room</room>
     <room>rooms\rm_menu</room>
     <room>rooms\room0</room>
     <room>rooms\room2</room>
@@ -249,7 +252,6 @@
     <room>rooms\Floor_2</room>
     <room>rooms\Floor_3</room>
     <room>rooms\Top_Floor</room>
-    <room>rooms\nemesis_room</room>
     <room>rooms\cutscreen</room>
     <room>rooms\room4</room>
     <room>rooms\room1</room>

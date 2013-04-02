@@ -39,6 +39,7 @@ if (collidedEnemy) {
     }
     instance_destroy();
 }else if (instance_place(x, y, parentWallObj))  {
+    effect_create_above(ef_spark,x,y,1,c_gray);
     instance_destroy();
 }
 </string>

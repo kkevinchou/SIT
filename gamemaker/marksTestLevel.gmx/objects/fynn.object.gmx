@@ -31,7 +31,7 @@ moveSpeed = 3;
 facing = 'Front';
 self.selectedItem = -1;
 self.validItemTarget = false;
-self.itemThrowRadius = 100;
+self.itemThrowRadius = 200;
 
 self.hearingCircle = 50
 curCircle = 0
@@ -95,6 +95,7 @@ if (self.image_index &gt; self.image_number - 1) {
         
         sleepingDartObj.targetX = self.itemTargetLocationX;
         sleepingDartObj.targetY = self.itemTargetLocationY;
+        
         
         with (sleepingDartObj) {
             var rotAngleRad = arctan2(-(targetY - y), targetX - x);
@@ -553,7 +554,7 @@ if (!(keyboard_check(vk_up) || keyboard_check(vk_down) || keyboard_check(vk_left
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (self.validItemTarget &amp;&amp; self.selectedItem &gt;= 0) {
+            <string>if ((self.selectedItem  != global.CRICKETID || self.validItemTarget) &amp;&amp; self.selectedItem &gt;= 0) {
     if (self.facing == 'Back') {
         self.sprite_index = flynnThrowBack;
     } else if (self.facing == 'Front') {
