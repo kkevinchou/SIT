@@ -1,6 +1,7 @@
 Hello!
 This is a really long script ... but not blah blah blah
-Let's try multiple line script! # # You see the line changed? wdf
+Let's try multiple line script! # # You see the line changed?
 ...and maybe bg change as well?
 ```bg_change:1
 see it?
+```room_change:2
