@@ -82,7 +82,7 @@ sleepDuration = 50
           <argument>
             <kind>1</kind>
             <string>sleepPos++;
-if (sleepPos &gt; sleepDution) {
+if (sleepPos &gt; sleepDuration) {
     instance_destroy();
 }
 </string>
