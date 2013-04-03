@@ -68,7 +68,6 @@ global.SLEEPINGGASID = ds_list_size(global.items) - 1;
 
 global.itemEffectRadius[global.CRICKETID] = 130;
 global.itemEffectRadius[global.SMOKEBOMBID] = 100;
-global.itemEffectRadius[global.SLEEPINGDARTID] = 100;
 global.itemEffectRadius[global.SLEEPINGGASID] = 100;
 
 global.itemEffectDuration[global.CRICKETID] = 4;
