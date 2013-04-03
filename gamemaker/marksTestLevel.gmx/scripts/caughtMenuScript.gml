@@ -1,3 +1,5 @@
+instance_create(0, 0, flynnFailScreen)
+
 //If the game is not paused, create the snapshot and pause the game, else delete the snapshot from memory and unpause the game.
 if(flynnFailScreen.isPaused = 0)
 {   
