@@ -82,11 +82,17 @@ curCircle = 0
 if (self.image_index &gt; self.image_number - 1) {
     if (self.selectedItem == global.CRICKETID) {
     
-        instance_create(self.itemTargetLocationX, self.itemTargetLocationY, cricket)
+       // instance_create(self.itemTargetLocationX, self.itemTargetLocationY, cricket)
+        var sleepGasObj = instance_create(x, y, cricket);
+        sleepGasObj.ToX = self.itemTargetLocationX
+        sleepGasObj.ToY = self.itemTargetLocationY
         
     } else if (self.selectedItem == global.SMOKEBOMBID) {
     
-        var smokeBombObj = instance_create(self.itemTargetLocationX, self.itemTargetLocationY, smokeBomb);
+        //var smokeBombObj = instance_create(self.itemTargetLocationX, self.itemTargetLocationY, smokeBomb);
+        var sleepGasObj = instance_create(x, y, smokeBomb);
+        sleepGasObj.ToX = self.itemTargetLocationX
+        sleepGasObj.ToY = self.itemTargetLocationY
         
     } else if (self.selectedItem == global.SLEEPINGDARTID) {
     
