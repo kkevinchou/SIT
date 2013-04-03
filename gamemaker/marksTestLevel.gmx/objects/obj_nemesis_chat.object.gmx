@@ -128,24 +128,27 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>if (!self.init) {
-    draw_set_halign(fa_center)
 
-    x = nemesis.x;
-    y = nemesis.y;
+    if (instance_exists(nemesis)) {
+        draw_set_halign(fa_center)
     
-    var height = 18
-    var width = 60+string_length(self.phrase)*8
-    var border = 2
-    
-    draw_set_alpha(0.5)
-    draw_roundrect(x-width/2 - border,y-40-height -border ,x+width/2 + border,y-40 + border,false)
-    draw_triangle(x-5-border,y-40+border,x+5+border,y-40+border,x,y-30+border,false)
-    draw_set_alpha(1)
-    draw_set_color(c_white)
-    draw_roundrect(x-width/2,y-40-height,x+width/2,y-40,false)
-    draw_triangle(x-5,y-40,x+5,y-40,x,y-30,false)
-    draw_set_color(c_black)
-    draw_text(x,y-40-height, self.phrase)
+        x = nemesis.x;
+        y = nemesis.y;
+        
+        var height = 18
+        var width = 60+string_length(self.phrase)*8
+        var border = 2
+        
+        draw_set_alpha(0.5)
+        draw_roundrect(x-width/2 - border,y-40-height -border ,x+width/2 + border,y-40 + border,false)
+        draw_triangle(x-5-border,y-40+border,x+5+border,y-40+border,x,y-30+border,false)
+        draw_set_alpha(1)
+        draw_set_color(c_white)
+        draw_roundrect(x-width/2,y-40-height,x+width/2,y-40,false)
+        draw_triangle(x-5,y-40,x+5,y-40,x,y-30,false)
+        draw_set_color(c_black)
+        draw_text(x,y-40-height, self.phrase)
+    }
 }
 
 </string>
