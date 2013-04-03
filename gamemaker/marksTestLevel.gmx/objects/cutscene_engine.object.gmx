@@ -153,7 +153,6 @@ box_padding = 20
 
 // Init position for text
 text_x = box_margin+box_padding
-//text_y = box_margin+box_padding
 text_y = room_height-box_height-box_margin+box_padding
 
 // No fade effect for box
@@ -171,6 +170,7 @@ draw_roundrect(box_margin,room_height-box_height-box_margin,room_width-box_margi
 draw_set_alpha(fade_alpha)
 
 // Draw text
+draw_set_font(-1)
 draw_set_color(c_black)
 draw_set_halign(fa_left)
 draw_text_ext(text_x,text_y,cut_text,-1,room_width-2*(box_margin+box_padding))
