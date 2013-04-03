@@ -99,6 +99,7 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
+    <sprite>sprites\sprite90</sprite>
     <sprite>sprites\Finalsprite0</sprite>
     <sprite>sprites\sprite2</sprite>
     <sprite>sprites\Finalsprite2</sprite>
@@ -196,6 +197,7 @@
       <sprite>sprites\chefFront</sprite>
     </sprites>
     <sprite>sprites\foldedClothes</sprite>
+    <sprite>sprites\food</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -218,6 +220,7 @@
     <path>paths\path4</path>
     <path>paths\bzz</path>
     <path>paths\path5</path>
+    <path>paths\path7</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\nearest_collision_line.gml</script>
@@ -282,6 +285,7 @@
     <object>objects\sleepingEffect</object>
     <object>objects\fuseBox</object>
     <object>objects\clothes</object>
+    <object>objects\food_obj</object>
     <object>objects\popUpInfo</object>
     <object>objects\parentWallObj</object>
     <object>objects\fuseBoxBlackout</object>
@@ -351,8 +355,8 @@
     <object>objects\flynnFailScreen</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Top_Floor</room>
     <room>rooms\rm_menu</room>
+    <room>rooms\Top_Floor</room>
     <room>rooms\room0</room>
     <room>rooms\room1</room>
     <room>rooms\cutscreen</room>

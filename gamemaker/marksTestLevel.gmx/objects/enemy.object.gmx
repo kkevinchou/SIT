@@ -243,11 +243,11 @@ if (self.inSmoke) {
         }
     
         lineDirection = point_direction(self.x,self.y,fynn.x,fynn.y)
-        if ((direction+visionWidth/2 &gt;= lineDirection) &amp;&amp;
+        if (((direction+visionWidth/2 &gt;= lineDirection) &amp;&amp;
             (direction-visionWidth/2 &lt;= lineDirection) &amp;&amp;
-            distance_to_object(fynn) &lt;= vision) {
+            distance_to_object(fynn) &lt;= vision) ||  distance_to_object(fynn) &lt; fynn.curCircle) {
         
-            if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)) {
+            if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true) || distance_to_object(fynn) &lt; fynn.curCircle) {
                 state = "chase" 
                 posX = fynn.x
                 posY = fynn.y
@@ -257,9 +257,9 @@ if (self.inSmoke) {
         
     } else if (state == "chase" || state = "search"){
         lineDirection = point_direction(self.x,self.y,fynn.x,fynn.y)
-        if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)
+        if ((!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)
             &amp;&amp; (direction+visionWidth/2 &gt;= lineDirection)
-            &amp;&amp; (direction-visionWidth/2 &lt;= lineDirection) ){
+            &amp;&amp; (direction-visionWidth/2 &lt;= lineDirection)) || distance_to_object(fynn) &lt; fynn.curCircle){
                 state = "chase" 
                 posX = fynn.x
                 posY = fynn.y
