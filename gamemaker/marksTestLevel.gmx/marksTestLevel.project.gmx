@@ -268,25 +268,40 @@
     <font>fonts\SkyfallBig</font>
   </fonts>
   <objects name="objects">
-    <object>objects\wall</object>
+    <objects name="Map element">
+      <object>objects\fynn</object>
+      <object>objects\nemesis</object>
+      <object>objects\tristan_hang</object>
+      <object>objects\enemy</object>
+      <object>objects\npc</object>
+      <object>objects\bodygaurd</object>
+      <object>objects\wall</object>
+      <object>objects\boxes</object>
+      <object>objects\shelves</object>
+      <object>objects\bar</object>
+      <object>objects\fuseBox</object>
+      <object>objects\clothes</object>
+    </objects>
+    <objects name="Effect">
+      <object>objects\sleepingEffect</object>
+      <object>objects\shadow</object>
+      <object>objects\parentWallObj</object>
+      <object>objects\obj_talking</object>
+      <object>objects\fuseBoxBlackout</object>
+      <object>objects\popUpInfo</object>
+      <object>objects\obj_nemesis_chat</object>
+    </objects>
+    <objects name="Menu">
+      <object>objects\obj_escapeMenuResume</object>
+      <object>objects\obj_escapeMenuResumePressed</object>
+      <object>objects\obj_escapeMenuExit</object>
+      <object>objects\obj_escapeMenuExitPressed</object>
+      <object>objects\obj_flynnCaughtRetry</object>
+      <object>objects\obj_flynnCaughtRetryPressed</object>
+      <object>objects\obj_flynnCaughtMenu</object>
+      <object>objects\obj_flynnCaughtMenuPressed</object>
+    </objects>
     <object>objects\gridTracker</object>
-    <object>objects\shadow</object>
-    <object>objects\fynn</object>
-    <object>objects\boxes</object>
-    <object>objects\bar</object>
-    <object>objects\shelves</object>
-    <object>objects\enemy</object>
-    <object>objects\npc</object>
-    <object>objects\bodygaurd</object>
-    <object>objects\nemesis</object>
-    <object>objects\sleepingEffect</object>
-    <object>objects\fuseBox</object>
-    <object>objects\clothes</object>
-    <object>objects\popUpInfo</object>
-    <object>objects\parentWallObj</object>
-    <object>objects\fuseBoxBlackout</object>
-    <object>objects\obj_talking</object>
-    <object>objects\obj_nemesis_chat</object>
     <object>objects\menuNavigation</object>
     <object>objects\obj_menuButtonLoad</object>
     <object>objects\obj_menuButtonNew</object>
@@ -298,32 +313,25 @@
     <object>objects\obj_menu</object>
     <object>objects\scrollbar</object>
     <object>objects\obj_menuBackBtn</object>
-    <object>objects\obj_menuBackBtnHover</object>
-    <objects name="Menu">
-      <object>objects\obj_escapeMenuResume</object>
-      <object>objects\obj_escapeMenuResumePressed</object>
-      <object>objects\obj_escapeMenuExit</object>
-      <object>objects\obj_escapeMenuExitPressed</object>
-      <object>objects\obj_flynnCaughtRetry</object>
-      <object>objects\obj_flynnCaughtRetryPressed</object>
-      <object>objects\obj_flynnCaughtMenu</object>
-      <object>objects\obj_flynnCaughtMenuPressed</object>
-    </objects>
     <object>objects\obj_menuBackBtnDepress</object>
-    <object>objects\cutscene_engine</object>
-    <object>objects\level_exit</object>
-    <object>objects\cutscene_manager</object>
-    <object>objects\sleepingGas</object>
-    <object>objects\sleepDart</object>
-    <object>objects\cricket</object>
-    <object>objects\throwingItemBase</object>
-    <object>objects\smokeBomb</object>
+    <object>objects\obj_menuBackBtnHover</object>
+    <objects name="Cut scene">
+      <object>objects\cutscene_engine</object>
+      <object>objects\cutscene_manager</object>
+      <object>objects\final_exit</object>
+    </objects>
+    <objects name="Tools">
+      <object>objects\sleepingGas</object>
+      <object>objects\throwingItemBase</object>
+      <object>objects\sleepDart</object>
+      <object>objects\cricket</object>
+      <object>objects\smokeBomb</object>
+    </objects>
     <objects name="ui">
       <object>objects\MissonIntro</object>
       <object>objects\beltclickarea</object>
       <object>objects\belt_ui</object>
     </objects>
-    <object>objects\escapeMenu</object>
     <objects name="Final objects">
       <object>objects\wall1</object>
       <object>objects\wall2</object>
@@ -341,13 +349,13 @@
       <object>objects\keyone</object>
       <object>objects\keytwo</object>
     </objects>
-    <object>objects\tristan_hang</object>
     <objects name="missionSelect">
       <object>objects\obj_block</object>
       <object>objects\obj_flynnFailed</object>
       <object>objects\obj_flynnRetry</object>
       <object>objects\obj_flynnSuccess</object>
     </objects>
+    <object>objects\escapeMenu</object>
     <object>objects\flynnFailScreen</object>
   </objects>
   <rooms name="rooms">
