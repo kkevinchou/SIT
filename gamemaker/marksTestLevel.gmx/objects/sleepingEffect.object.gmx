@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>sleepPos = 0
 sleepDuration = 50
+text = 'Z'
 </string>
           </argument>
         </arguments>
@@ -109,7 +110,7 @@ if (sleepPos &gt; sleepDuration) {
             <kind>1</kind>
             <string>draw_set_color(c_white)
 draw_set_alpha(1-sleepPos/sleepDuration)
-draw_text(x,y,"Z")
+draw_text(x,y,text)
 draw_set_color(c_black)
 draw_set_alpha(1)
 </string>

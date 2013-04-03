@@ -1,4 +1,8 @@
-fynn.sprite_index = flynnFront
+if (self.isChef == false) {
+fynn.sprite_index = flynnFront2
+} else {
+fynn.sprite_index = chefFront
+}
 fynn.y += moveSpeed
 fynn.image_index = fynn.image_index+(moveSpeed*.1)
 fynn.facing = 'Front'

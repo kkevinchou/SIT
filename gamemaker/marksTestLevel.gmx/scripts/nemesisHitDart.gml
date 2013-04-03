@@ -12,8 +12,6 @@ if (state == "chase") {
     self.numDartHits++;
     if (numDartHits >= 1) {
         self.state = "sleep";
-        audio_play_sound(gameOver, 1, false);
-        script_execute(caughtMenuScript);
     }
 }
 

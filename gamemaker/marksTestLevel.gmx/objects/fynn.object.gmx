@@ -35,6 +35,8 @@ self.itemThrowRadius = 200;
 
 self.hearingCircle = 50
 curCircle = 0
+
+self.isChef = false
 </string>
           </argument>
         </arguments>
@@ -82,11 +84,17 @@ curCircle = 0
 if (self.image_index &gt; self.image_number - 1) {
     if (self.selectedItem == global.CRICKETID) {
     
-        instance_create(self.itemTargetLocationX, self.itemTargetLocationY, cricket)
+       // instance_create(self.itemTargetLocationX, self.itemTargetLocationY, cricket)
+        var sleepGasObj = instance_create(x, y, cricket);
+        sleepGasObj.ToX = self.itemTargetLocationX
+        sleepGasObj.ToY = self.itemTargetLocationY
         
     } else if (self.selectedItem == global.SMOKEBOMBID) {
     
-        var smokeBombObj = instance_create(self.itemTargetLocationX, self.itemTargetLocationY, smokeBomb);
+        //var smokeBombObj = instance_create(self.itemTargetLocationX, self.itemTargetLocationY, smokeBomb);
+        var sleepGasObj = instance_create(x, y, smokeBomb);
+        sleepGasObj.ToX = self.itemTargetLocationX
+        sleepGasObj.ToY = self.itemTargetLocationY
         
     } else if (self.selectedItem == global.SLEEPINGDARTID) {
     
@@ -187,6 +195,63 @@ if (curCircle &gt; 0) {
           <argument>
             <kind>0</kind>
             <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="clothes">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (self.isChef == false) {
+    alarm[2] = 30;
+    effect_create_above(ef_smokeup,x,y-32,2,c_white);
+    effect_create_above(ef_smokeup,x,y,2,c_white);
+    effect_create_above(ef_smokeup,x,y+32,2,c_white);
+    self.isChef = true
+    other.visible = false
+    flynnMoveDown()
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="nemesis">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (other.state == "chase") {    
+    audio_play_sound(gameOver, 1, false);
+    script_execute(caughtMenuScript);
+}
+</string>
           </argument>
         </arguments>
       </action>

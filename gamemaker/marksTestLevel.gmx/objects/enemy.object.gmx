@@ -59,6 +59,12 @@ self.conesStates = ds_list_create() //used for keeping the vision cones sxxxy
 
 
 alarm[2] = random(50) //used for uncommon events
+
+
+imageTop = bodygaurdTop
+imageLeft = bodygaurdLeft
+imageRight = bodygaurdRight
+imageFront = bodygaurdFront
 </string>
           </argument>
         </arguments>
@@ -392,10 +398,10 @@ if (state == "normal" || state == "chase" || state == "search" || state == "inve
      //   mp_potential_step(targetX, targetY, movementSpeed*2, 0)
     //}
     dir = direction - 45
-    if (dir &gt;0 &amp;&amp; dir &lt;= 90) sprite_index = bodygaurdTop
-    else if (dir &gt;0 &amp;&amp; dir &lt;= 180) sprite_index = bodygaurdLeft
-    else if (dir &gt;0 &amp;&amp; dir &lt;= 270) sprite_index = bodygaurdFront
-    else sprite_index = bodygaurdRight
+    if (dir &gt;0 &amp;&amp; dir &lt;= 90) sprite_index = imageTop
+    else if (dir &gt;0 &amp;&amp; dir &lt;= 180) sprite_index = imageLeft
+    else if (dir &gt;0 &amp;&amp; dir &lt;= 270) sprite_index = imageFront
+    else sprite_index = imageRight
 
     if (moving &gt; 0) self.image_index = self.image_index+(moving*.1);
 } else if (state == "sleep") {
@@ -403,10 +409,10 @@ if (state == "normal" || state == "chase" || state == "search" || state == "inve
 } else if (state == "smoke") {
     direction += 5;
     dir = direction - 45
-    if (dir &gt;0 &amp;&amp; dir &lt;= 90) sprite_index = bodygaurdTop
-    else if (dir &gt;0 &amp;&amp; dir &lt;= 180) sprite_index = bodygaurdLeft
-    else if (dir &gt;0 &amp;&amp; dir &lt;= 270) sprite_index = bodygaurdFront
-    else sprite_index = bodygaurdRight
+    if (dir &gt;0 &amp;&amp; dir &lt;= 90) sprite_index = imageTop
+    else if (dir &gt;0 &amp;&amp; dir &lt;= 180) sprite_index = imageLeft
+    else if (dir &gt;0 &amp;&amp; dir &lt;= 270) sprite_index = imageFront
+    else sprite_index = imageRight
 
     if (moving &gt; 0) self.image_index = self.image_index+(moving*.1);
 }                
