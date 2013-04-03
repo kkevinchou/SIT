@@ -229,6 +229,14 @@ if (self.inSmoke) {
         self.vision /= 2;
     }
     
+    var cricketObj = instance_nearest(x, y, cricket);
+    if (cricketObj &amp;&amp; point_distance(x, y, cricketObj.x, cricketObj.y) &lt;= global.itemEffectRadius[global.CRICKETID]) {
+        enemyInvestigate(cricketObj.x, cricketObj.y);
+    } else if (state == "investigate") {
+        // was looking at a cricket but now it's gone
+        alarm[0] = 1;
+    }
+    
     if (state == "normal" || state == "investigate" || state == "smoke") {
         rot = degtorad(direction + 90 - visionRad/2 + visionRot)
         posX = (self.x) + sin(rot) * vision
@@ -374,11 +382,10 @@ if (state == "normal" || state == "chase" || state == "search" || state == "inve
             self.activePath = path_add()
         }  
     } else if (state == "investigate") {
-    
+        show_debug_message("MEOW");
         var targetX = self.investigateTargetX
         var targetY = self.investigateTargetY - 24
         
-    
         var distToTarget = point_distance(targetX, targetY, x, y)
         if (distToTarget &lt;= 15) {
             image_index = 0
