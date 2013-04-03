@@ -201,6 +201,7 @@
     <instance objName="wall" x="608" y="224" name="inst_C4BA9F53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="gridTracker" x="64" y="704" name="inst_441AE72B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="tristan_hang" x="352" y="64" name="inst_44E068FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="escapeMenu" x="32" y="128" name="inst_EB850B15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background0" x="0" y="288" w="32" h="32" xo="160" yo="128" id="10000000" name="inst_2B3B79C4" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

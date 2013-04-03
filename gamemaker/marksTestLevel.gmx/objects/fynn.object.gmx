@@ -206,8 +206,9 @@ if (curCircle &gt; 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (other.state == "chase") {
-    show_message("CAUGHT!");
+            <string>if (other.state == "chase") {    
+    audio_play_sound(gameOver, 1, false);
+    script_execute(caughtMenuScript);
 }
 </string>
           </argument>

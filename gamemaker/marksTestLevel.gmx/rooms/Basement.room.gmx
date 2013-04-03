@@ -50,7 +50,6 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="640" hview="480" xport="0" yport="0" wport="640" hport="480" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="keytwo" x="-32" y="96" name="inst_8127009A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall1" x="32" y="672" name="inst_78CF019F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall1" x="64" y="672" name="inst_B3058562" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall1" x="128" y="672" name="inst_8AE1D004" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -174,7 +173,6 @@
     <instance objName="sprite5" x="32" y="352" name="inst_139C9934" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="sprite5" x="160" y="352" name="inst_5F373454" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="sprite5" x="160" y="384" name="inst_187ACD2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="sprite10" x="768" y="0" name="inst_0ED4885E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="sprite4" x="32" y="320" name="inst_8FD6C188" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="sprite4" x="160" y="320" name="inst_5D7EC583" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="keyone" x="32" y="288" name="inst_B4070C57" locked="0" code="" scaleX="1" scaleY="-1" colour="4294967295" rotation="0"/>
@@ -228,7 +226,6 @@
     <instance objName="sprite5" x="352" y="576" name="inst_38F6E919" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="sprite5" x="288" y="384" name="inst_589C6ADC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="sprite5" x="480" y="352" name="inst_1AFF34F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="keytwo" x="896" y="512" name="inst_D2C5CE6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="fynn" x="64" y="640" name="inst_877D0806" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="128" y="480" name="inst_ECFD4B5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="416" y="416" name="inst_703DD91A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -237,6 +234,7 @@
     <instance objName="enemy" x="576" y="160" name="inst_7CF4CA7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="64" y="96" name="inst_403AC955" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="384" y="128" name="inst_FD1B0330" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="escapeMenu" x="96" y="96" name="inst_1DF17808" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background0" x="32" y="32" w="32" h="32" xo="192" yo="128" id="10004985" name="inst_25D3DED6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

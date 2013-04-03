@@ -95,6 +95,7 @@
     <sound>sound\mainMenuMusic</sound>
     <sound>sound\mainMenuNavigation</sound>
     <sound>sound\mainMenuSelect</sound>
+    <sound>sound\gameOver</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
@@ -170,6 +171,12 @@
     <sprite>sprites\tristan_hang_spr</sprite>
     <sprite>sprites\Tristan_avatar</sprite>
     <sprite>sprites\Nemesis_avatar</sprite>
+    <sprites name="Mission Summary">
+      <sprite>sprites\block</sprite>
+      <sprite>sprites\flynnFailed</sprite>
+      <sprite>sprites\flynnRetry</sprite>
+      <sprite>sprites\flynnSuccess</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -229,6 +236,7 @@
       <script>scripts\Mouse_enter.gml</script>
       <script>scripts\Scrollbar_draw.gml</script>
       <script>scripts\pauseMenuScript.gml</script>
+      <script>scripts\caughtMenuScript.gml</script>
     </scripts>
     <scripts name="nemesis">
       <script>scripts\nemesisHitDart.gml</script>
@@ -273,6 +281,10 @@
       <object>objects\obj_escapeMenuResumePressed</object>
       <object>objects\obj_escapeMenuExit</object>
       <object>objects\obj_escapeMenuExitPressed</object>
+      <object>objects\obj_flynnCaughtRetry</object>
+      <object>objects\obj_flynnCaughtRetryPressed</object>
+      <object>objects\obj_flynnCaughtMenu</object>
+      <object>objects\obj_flynnCaughtMenuPressed</object>
     </objects>
     <object>objects\obj_menuBackBtnDepress</object>
     <object>objects\cutscene_engine</object>
@@ -304,11 +316,18 @@
       <object>objects\keytwo</object>
     </objects>
     <object>objects\tristan_hang</object>
+    <objects name="missionSelect">
+      <object>objects\obj_block</object>
+      <object>objects\obj_flynnFailed</object>
+      <object>objects\obj_flynnRetry</object>
+      <object>objects\obj_flynnSuccess</object>
+    </objects>
+    <object>objects\flynnFailScreen</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room0</room>
     <room>rooms\Top_Floor</room>
     <room>rooms\cutscreen</room>
-    <room>rooms\room0</room>
     <room>rooms\nemesis_room</room>
     <room>rooms\rm_menu</room>
     <room>rooms\room2</room>
