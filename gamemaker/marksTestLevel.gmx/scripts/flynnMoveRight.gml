@@ -1,5 +1,5 @@
 if (self.isChef == false) {
-fynn.sprite_index = flynnRight2
+fynn.sprite_index = flynnRight
 } else {
 fynn.sprite_index = chefRight
 }
