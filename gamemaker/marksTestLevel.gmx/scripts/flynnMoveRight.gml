@@ -1,4 +1,8 @@
-self.sprite_index = flynnRight
+if (self.isChef == false) {
+fynn.sprite_index = flynnRight2
+} else {
+fynn.sprite_index = chefRight
+}
 self.x += moveSpeed
 self.image_index = self.image_index+moveSpeed*.1
 self.facing = 'Right'

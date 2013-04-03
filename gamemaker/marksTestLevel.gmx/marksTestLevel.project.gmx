@@ -189,6 +189,13 @@
       <sprite>sprites\flynnRetry</sprite>
       <sprite>sprites\flynnSuccess</sprite>
     </sprites>
+    <sprites name="chef">
+      <sprite>sprites\chefRight</sprite>
+      <sprite>sprites\chefLeft</sprite>
+      <sprite>sprites\chefBack</sprite>
+      <sprite>sprites\chefFront</sprite>
+    </sprites>
+    <sprite>sprites\foldedClothes</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -274,6 +281,8 @@
     <object>objects\nemesis</object>
     <object>objects\sleepingEffect</object>
     <object>objects\fuseBox</object>
+    <object>objects\clothes</object>
+    <object>objects\popUpInfo</object>
     <object>objects\parentWallObj</object>
     <object>objects\fuseBoxBlackout</object>
     <object>objects\obj_talking</object>

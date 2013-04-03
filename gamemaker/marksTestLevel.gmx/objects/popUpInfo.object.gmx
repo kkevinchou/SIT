@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,14 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>fadeOpacity = 1
-alarm[0] = 60
+            <string>showToolTip = false
+word = "Stealing this Chef outfit could get you into the Kitchen"
+showAlpha = 0
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -49,10 +50,13 @@ alarm[0] = 60
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>fadeOpacity-=0.01
-alarm[0] = 1
-
-if (fadeOpacity == 0 ) instance_destroy();
+            <string>if (distance_to_object(fynn) &lt; 100) {
+    showToolTip = true;
+    showAlpha = (2 - distance_to_object(fynn)/50)
+} else {
+    showToolTip = false;
+    showAlpha = 0
+}
 </string>
           </argument>
         </arguments>
@@ -75,19 +79,34 @@ if (fadeOpacity == 0 ) instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-draw_set_alpha(fadeOpacity)
-draw_rectangle(0,0,room_width,room_height,false)
-draw_set_alpha(fadeOpacity)
+            <string>if (showToolTip == true){
+    draw_set_halign(fa_center)
 
-draw_set_halign(fa_center)
-draw_set_font(Skyfall)
-draw_set_color(c_white)
-draw_text(room_width/2,room_height/2,"Mission One: The Bar")
-draw_set_font(-1)
-draw_set_alpha(1)
-draw_set_color(c_black)
+    
+    width = 200//60+string_length(word)*8
+    lines = string_height_ext(word,18,200)/string_height("X");
+    
+    height = 18*lines
+   raise = 14
 
+    
+    
+    var border = 2
+    draw_set_alpha(showAlpha)
+    draw_roundrect(x-width/2 - border,y-raise-height -border ,x+width/2 + border,y-raise + border,false)
+    draw_triangle(x-5-border,y-raise+border,x+5+border,y-raise+border,x,y-raise+10+border,false)
+   
+    draw_set_color(c_blue)
+    draw_roundrect(x-width/2,y-raise-height,x+width/2,y-raise,false)
+    draw_triangle(x-5,y-raise,x+5,y-raise,x,y-raise+10,false)
+    draw_set_alpha(1*showAlpha)
+    draw_set_color(c_white)
+    //draw_text(x,y-40-height,word)
+    draw_text_ext(x,y-raise-height+2,word,18,200)
+    draw_set_color(c_black)
+    draw_set_alpha(1)
+
+}
 </string>
           </argument>
         </arguments>

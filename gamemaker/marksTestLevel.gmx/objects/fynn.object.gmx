@@ -35,6 +35,8 @@ self.itemThrowRadius = 200;
 
 self.hearingCircle = 50
 curCircle = 0
+
+self.isChef = false
 </string>
           </argument>
         </arguments>
@@ -165,6 +167,37 @@ if (collision_point(mouse_x,mouse_y,beltclickarea,false,false)) self.validItemTa
 
 if (curCircle &gt; 0) {
     curCircle--
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="clothes">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (self.isChef == false) {
+    alarm[2] = 30;
+    effect_create_above(ef_smokeup,x,y-32,2,c_white);
+    effect_create_above(ef_smokeup,x,y,2,c_white);
+    effect_create_above(ef_smokeup,x,y+32,2,c_white);
+    self.isChef = true
+    other.visible = false
+    flynnMoveDown()
 }
 </string>
           </argument>
