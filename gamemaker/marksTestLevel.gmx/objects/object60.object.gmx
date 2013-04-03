@@ -27,9 +27,9 @@
             <kind>1</kind>
             <string>self_direction = 0
 
-visionRad = 0 //determines the swag of the enemies view
+visionRad = 360 //determines the swag of the enemies view
 visionWidth = 60 //determines the width of the vision cone
-startingVision = 200 // determines the distance and enemy can see
+startingVision = 0 // determines the distance and enemy can see
 vision = startingVision
 
 visionRot = 0 //determines the starting rotation
@@ -61,10 +61,10 @@ self.conesStates = ds_list_create() //used for keeping the vision cones sxxxy
 alarm[2] = random(50) //used for uncommon events
 
 
-imageTop = bodygaurdTop
-imageLeft = bodygaurdLeft
-imageRight = bodygaurdRight
-imageFront = bodygaurdFront
+imageTop = npc1back
+imageLeft = npc1left
+imageRight = npc1right
+imageFront = npc1front
 </string>
           </argument>
         </arguments>
