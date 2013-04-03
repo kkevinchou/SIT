@@ -192,6 +192,7 @@
     <instance objName="belt_ui" x="56" y="754" name="inst_7FC8C1AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="gridTracker" x="120" y="658" name="inst_854D579B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="escapeMenu" x="128" y="288" name="inst_365B4728" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="flynnFailScreen" x="96" y="320" name="inst_097D2CC4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background0" x="152" y="754" w="32" h="32" xo="960" yo="704" id="10003531" name="inst_A5CD04EA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

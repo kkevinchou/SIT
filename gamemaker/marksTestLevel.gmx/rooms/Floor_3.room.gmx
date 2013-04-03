@@ -193,6 +193,7 @@
     <instance objName="couchy" x="320" y="0" name="inst_91A19FD3" locked="0" code="" scaleX="1.86486482620239" scaleY="1.77777779102325" colour="4294967295" rotation="0"/>
     <instance objName="couchy" x="64" y="160" name="inst_A5E2206F" locked="0" code="" scaleX="1.72972977161407" scaleY="1.77777779102325" colour="4294967295" rotation="0"/>
     <instance objName="escapeMenu" x="96" y="288" name="inst_503651C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="flynnFailScreen" x="64" y="320" name="inst_4F339EEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background0" x="64" y="32" w="32" h="32" xo="992" yo="832" id="10004500" name="inst_F73A2A37" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

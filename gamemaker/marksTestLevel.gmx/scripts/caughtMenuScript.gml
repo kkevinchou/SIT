@@ -11,6 +11,10 @@ if(flynnFailScreen.isPaused = 0)
     col=make_color_rgb(180,180,180);
     draw_sprite_ext(tempspr,-1,0,0,1,1,0,col,0.8);
             
+    //To save the extra changes we did to the temporary snapshot, we take another
+    //snapshot of the canvas with the effects on it.
+    flynnFailScreen.m_PauseSpr=sprite_create_from_screen(0,0,room_width,room_height,0,0,0,0);
+    
     //Now that we took the final snapshot of the canvas, we can delete the temporary snapshot.
     sprite_delete(tempspr)
     
@@ -19,9 +23,7 @@ if(flynnFailScreen.isPaused = 0)
     instance_activate_object(flynnFailScreen);
     flynnFailScreen.isPaused = 1;
     
-    //To save the extra changes we did to the temporary snapshot, we take another
-    //snapshot of the canvas with the effects on it.
-    flynnFailScreen.m_PauseSpr=sprite_create_from_screen(0,0,room_width,room_height,0,0,0,0);
+
 }
 else
 {

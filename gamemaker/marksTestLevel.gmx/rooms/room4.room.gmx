@@ -75,6 +75,7 @@
     <instance objName="enemy" x="224" y="320" name="inst_58841638" locked="0" code="currentPath = path2&#xA;activePath = currentPath&#xA;mode =1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="gridTracker" x="64" y="96" name="inst_83BA587F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="escapeMenu" x="32" y="224" name="inst_6695A396" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="flynnFailScreen" x="32" y="256" name="inst_F2396839" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

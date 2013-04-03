@@ -245,6 +245,7 @@
   <fonts name="fonts">
     <font>fonts\Arial</font>
     <font>fonts\Skyfall</font>
+    <font>fonts\SkyfallBig</font>
   </fonts>
   <objects name="objects">
     <object>objects\wall</object>

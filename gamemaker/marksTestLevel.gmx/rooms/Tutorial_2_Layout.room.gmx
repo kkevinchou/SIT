@@ -435,6 +435,7 @@
     <instance objName="enemy" x="640" y="448" name="inst_FEF064ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="fynn" x="64" y="320" name="inst_016408EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="escapeMenu" x="128" y="288" name="inst_5A48280E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="flynnFailScreen" x="160" y="320" name="inst_5F88F9CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background0" x="-2" y="0" w="32" h="32" xo="288" yo="128" id="10006273" name="inst_997FF62D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

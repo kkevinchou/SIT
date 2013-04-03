@@ -25,8 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>menuInst[1] = instance_create(336,160,obj_flynnCaughtRetryPressed);
-menuInst[2] = instance_create(336,256,obj_flynnCaughtMenu);
+            <string>yHeight1 = 12 * 32;
+yHeight2 = yHeight1 + 3 * 32;
+
+menuInst[1] = instance_create(336,yHeight1,obj_flynnCaughtRetryPressed);
+menuInst[2] = instance_create(336,yHeight2,obj_flynnCaughtMenu);
 
 instance_deactivate_object(menuInst[1]);
 instance_deactivate_object(menuInst[2]);
@@ -72,12 +75,12 @@ m_PauseSpr=-100
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(Skyfall);
+            <string>draw_set_font(SkyfallBig);
 
 winWidth = window_get_width();
 winHeight = window_get_height();
 
-firstButtonYPos = 6.5 * 32;
+firstButtonYPos = 13.5 * 32;
 verticalButtonSpace = 32 * 3;
 
 firstRun = true;
@@ -89,6 +92,10 @@ if (isPaused == 1) {
     instance_activate_object(obj_flynnCaughtMenuPressed);
 
     firstRun = false;
+    
+    draw_text(winWidth/2, 100, "MISSION FAILED");
+    
+    draw_sprite(flynnFailed, -1, 71, 220);
 
     for (i = 1; i &lt;= 2 &amp;&amp; isPaused == 1; i++) {
         if ( instance_find(self.menuObj[i], 0).overButton == 1 ||
@@ -99,6 +106,8 @@ if (isPaused == 1) {
             draw_set_color(c_black);
         }
            
+        draw_set_font(Skyfall);
+        
         stringWidth = string_width(menu[i]);
         stringHeight = string_height(menu[i]);
         centerStringPosX = (winWidth) / 2;
@@ -139,8 +148,9 @@ draw_set_font(-1);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (isPaused == 1) {
+            <string>if (isPaused == 1) {    
     draw_sprite(m_PauseSpr, -1,0,0);
+    draw_sprite(block, -1, 71, 71);
 }
 </string>
           </argument>
