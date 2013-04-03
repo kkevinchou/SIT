@@ -60,6 +60,10 @@ self.conesStates = ds_list_create() //used for keeping the vision cones sxxxy
 self.debugOn = true;
 
 self.numDartHits = 0;
+
+self.seekFlynn = false;
+
+self.pathStartPosition = 0;
 </string>
           </argument>
         </arguments>
@@ -105,8 +109,9 @@ self.numDartHits = 0;
             <string>state = "normal"
 self.activePath = self.currentPath
 path_end()
-path_position = 0
 self.debugEnemy = true
+self.pathStartPosition = 0//random(1);
+path_position = pathStartPosition;
 </string>
           </argument>
         </arguments>
@@ -190,12 +195,19 @@ if (collision_circle(x, y, global.itemEffectRadius[global.SMOKEBOMBID], smokeBom
     }
 }
 
+var sleepDartObj = instance_nearest(self.x, self.y, sleepDart);
+if (sleepDartObj &amp;&amp; objWithinVision(sleepDartObj)) {
+    self.state = "investigate";
+    self.investigateTargetX = sleepDartObj.startX;
+    self.investigateTargetY = sleepDartObj.startY;
+}
+
 self.vision = self.startingVision;
 if (self.inSmoke) {
     self.vision /= 2;
 }
 
-if (state == "normal" || state == "smoke") {
+if (state == "normal" || state == "smoke" || state == "investigate") {
     rot = degtorad(direction + 90 - visionRad/2 + visionRot)
     posX = (self.x) + sin(rot) * vision
     posY = (self.y) + cos(rot) * vision
@@ -209,7 +221,7 @@ if (state == "normal" || state == "smoke") {
     }
 
     lineDirection = point_direction(self.x,self.y,fynn.x,fynn.y)
-    if (flynnWithinVisionWidth() &amp;&amp;
+    if (objWithinVision(fynn) &amp;&amp;
         distance_to_object(fynn) &lt;= vision) {
     
         if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)) {
@@ -220,7 +232,7 @@ if (state == "normal" || state == "smoke") {
         }
     }
 } else if (state == "chase" || state = "search"){
-    var withinVision = (flynnWithinVisionWidth() &amp;&amp;
+    var withinVision = (objWithinVision(fynn) &amp;&amp;
                         distance_to_object(fynn) &lt;= vision &amp;&amp;
                         !collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true));
                                           
@@ -235,7 +247,6 @@ if (state == "normal" || state == "smoke") {
             alarm[0] = room_speed * 5
         } 
     }
-    
 }
 </string>
           </argument>
@@ -282,7 +293,7 @@ if (state == "normal" || state == "smoke") {
     enemySmoke(smokeBombObj.alarm[0] / room_speed);
 }
 
-if (state == "normal" || state == "chase" || state == "search") {
+if (state == "normal" || state == "chase" || state == "search" || state == "investigate") {
     self.movementSpeed = baseMovementSpeed;
     if (self.inSmoke) {
         self.movementSpeed *= 0.5;
@@ -295,13 +306,16 @@ if (state == "normal" || state == "chase" || state == "search") {
         
         } else if (mode == 1) {
             if (self.activePath != self.currentPath || (self.activePath == self.currentPath &amp;&amp; path_position &lt;= 0)) {
-                if (self.x == path_get_x(currentPath,0) &amp;&amp; self.y == path_get_y(self.currentPath,0)){
+            //if (self.activePath != self.currentPath) {
+                if (point_distance(self.x, self.y, 
+                        path_get_x(currentPath, self.pathStartPosition),
+                        path_get_y(currentPath, self.pathStartPosition)) &lt;= self.movementSpeed) {
                     self.activePath = self.currentPath
                     moving = self.movementSpeed
-                    path_start(self.currentPath,movementSpeed,1,1)
+                    path_start(self.currentPath, movementSpeed, 1, 1)
                 } else {
-                    retX = path_get_x(self.currentPath,0)
-                    retY = path_get_y(self.currentPath,0)
+                    retX = path_get_x(self.currentPath, pathStartPosition)
+                    retY = path_get_y(self.currentPath, pathStartPosition)
                     moving = self.movementSpeed
                     mp_potential_step(retX,retY,movementSpeed,false);
                     /*
@@ -330,6 +344,19 @@ if (state == "normal" || state == "chase" || state == "search") {
             mp_potential_step(posX, posY, self.movementSpeed, 0)
             self.activePath = path_add()
         }  
+    } else if (state == "investigate") {
+        var targetX = self.investigateTargetX
+        var targetY = self.investigateTargetY - 24
+    
+        var distToTarget = point_distance(targetX, targetY, x, y)
+        if (distToTarget &lt;= 15) {
+            image_index = 0
+            alarm[0] = 1;
+        } else {
+            path_end()
+            moving = movementSpeed
+            mp_potential_step(targetX, targetY, movementSpeed, 0)
+        }
     }
     
     dir = direction - 45

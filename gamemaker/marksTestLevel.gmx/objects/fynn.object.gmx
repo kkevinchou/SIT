@@ -91,11 +91,13 @@ if (self.image_index &gt; self.image_number - 1) {
     } else if (self.selectedItem == global.SLEEPINGDARTID) {
     
         var dartCreationY = self.y + 24;
+        
         var sleepingDartObj = instance_create(self.x, self.y + 24, sleepDart);
+        sleepingDartObj.startX = sleepingDartObj.x;
+        sleepingDartObj.startY = sleepingDartObj.y;
         
         sleepingDartObj.targetX = self.itemTargetLocationX;
         sleepingDartObj.targetY = self.itemTargetLocationY;
-        
         
         with (sleepingDartObj) {
             var rotAngleRad = arctan2(-(targetY - y), targetX - x);
@@ -206,8 +208,9 @@ if (curCircle &gt; 0) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (other.state == "chase") {
-    show_message("CAUGHT!");
+            <string>if (other.state == "chase") {    
+    audio_play_sound(gameOver, 1, false);
+    script_execute(caughtMenuScript);
 }
 </string>
           </argument>
