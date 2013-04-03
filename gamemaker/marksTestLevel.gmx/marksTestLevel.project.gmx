@@ -200,7 +200,6 @@
     <path>paths\path5</path>
   </paths>
   <scripts name="scripts">
-    <script>scripts\flynnWithinVisionWidth.gml</script>
     <script>scripts\nearest_collision_line.gml</script>
     <scripts name="pathfinding">
       <script>scripts\testscript.gml</script>
@@ -240,6 +239,7 @@
     </scripts>
     <scripts name="nemesis">
       <script>scripts\nemesisHitDart.gml</script>
+      <script>scripts\objWithinVision.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
