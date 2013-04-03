@@ -351,15 +351,14 @@
     <object>objects\flynnFailScreen</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Floor_3</room>
     <room>rooms\Floor_1</room>
     <room>rooms\Floor_2</room>
+    <room>rooms\Floor_3</room>
     <room>rooms\Top_Floor</room>
     <room>rooms\room0</room>
     <room>rooms\rm_menu</room>
     <room>rooms\room1</room>
     <room>rooms\cutscreen</room>
-    <room>rooms\nemesis_room</room>
     <room>rooms\room2</room>
     <room>rooms\room4</room>
     <room>rooms\room3</room>
