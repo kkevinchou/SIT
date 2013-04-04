@@ -351,6 +351,7 @@
     <object>objects\flynnFailScreen</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\Basement</room>
     <room>rooms\Floor_1</room>
     <room>rooms\Floor_2</room>
     <room>rooms\Floor_3</room>
@@ -364,7 +365,6 @@
     <room>rooms\room3</room>
     <room>rooms\rm_options</room>
     <room>rooms\level_select</room>
-    <room>rooms\Basement</room>
     <room>rooms\Tutorial_1_Layout</room>
     <room>rooms\Tutorial_2_Layout</room>
     <room>rooms\Tutorial_3_Layout</room>
