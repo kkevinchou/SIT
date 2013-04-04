@@ -61,7 +61,10 @@ words = ds_list_create()
             <kind>1</kind>
             <string>story = choose(0,1,2,3,4)
 
-if (state == "normal") {
+if (state == "NOTCHEF"){
+     ds_list_add(words,"HEY!")
+     ds_list_add(words,"You are not the Cook!")
+} else if (state == "normal") {
     switch (story)
     {
      case 0:

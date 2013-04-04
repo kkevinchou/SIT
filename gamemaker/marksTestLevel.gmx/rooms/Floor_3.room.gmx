@@ -138,8 +138,6 @@
     <instance objName="enemy" x="544" y="160" name="inst_5F683A80" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="256" y="448" name="inst_6D5A54F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="352" y="288" name="inst_07F91BEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="enemy" x="512" y="512" name="inst_26E00125" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="enemy" x="640" y="512" name="inst_83E4FDB0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="800" y="544" name="inst_1D6CCECB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="couchy" x="448" y="64" name="inst_91A19FD3" locked="0" code="" scaleX="1.86486005783081" scaleY="1.77778005599976" colour="4294967295" rotation="0"/>
     <instance objName="couchy" x="160" y="256" name="inst_A5E2206F" locked="0" code="" scaleX="1.72973001003265" scaleY="1.77778005599976" colour="4294967295" rotation="0"/>
@@ -198,6 +196,8 @@
     <instance objName="sprite5" x="480" y="320" name="inst_D374CB90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="sprite5" x="480" y="384" name="inst_70C5EF42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="stairsLevelsSound" x="256" y="352" name="inst_EE0CD2EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="bodygaurd" x="512" y="512" name="inst_30EA04ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="bodygaurd" x="640" y="288" name="inst_BEF16E2F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background0" x="192" y="32" w="32" h="32" xo="992" yo="832" id="10001464" name="inst_F73A2A37" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

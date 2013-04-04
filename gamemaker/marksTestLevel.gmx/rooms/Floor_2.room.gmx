@@ -179,10 +179,8 @@
     <instance objName="keytwo" x="832" y="736" name="inst_FDB06505" locked="0" code="" scaleX="0" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="keytwo" x="832" y="704" name="inst_D45AE3BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="288" y="318" name="inst_19DDC469" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="enemy" x="704" y="318" name="inst_C9DF4203" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="512" y="192" name="inst_5776DAA0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="768" y="448" name="inst_DA0F42C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="enemy" x="448" y="416" name="inst_EB4DF5C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="608" y="576" name="inst_969F1D1D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="couchy" x="352" y="64" name="inst_41D18A3A" locked="0" code="" scaleX="1.85333335399628" scaleY="1.72972977161407" colour="4294967295" rotation="0"/>
     <instance objName="couchy" x="512" y="64" name="inst_D7B77305" locked="0" code="" scaleX="1.85333335399628" scaleY="1.72972977161407" colour="4294967295" rotation="0"/>
@@ -205,6 +203,8 @@
     <instance objName="sprite5" x="416" y="192" name="inst_8D2200BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="sprite5" x="352" y="192" name="inst_938F2CE1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="stairsLevelsSound" x="224" y="320" name="inst_52C9CC4E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="bodygaurd" x="448" y="416" name="inst_8DD09592" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="bodygaurd" x="736" y="320" name="inst_55BB50CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background0" x="161" y="31" w="32" h="32" xo="992" yo="704" id="10000970" name="inst_43CF7FF0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

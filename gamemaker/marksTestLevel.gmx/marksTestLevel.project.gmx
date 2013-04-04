@@ -178,6 +178,12 @@
     <sprite>sprites\tristan_hang_spr</sprite>
     <sprite>sprites\Tristan_avatar</sprite>
     <sprite>sprites\Nemesis_avatar</sprite>
+    <sprites name="npc2">
+      <sprite>sprites\npc2front</sprite>
+      <sprite>sprites\npc2back</sprite>
+      <sprite>sprites\npc2left</sprite>
+      <sprite>sprites\npc2right</sprite>
+    </sprites>
     <sprites name="npc">
       <sprite>sprites\npc1front</sprite>
       <sprite>sprites\npc1back</sprite>
@@ -189,6 +195,10 @@
       <sprite>sprites\bgLeft</sprite>
       <sprite>sprites\bgBack</sprite>
       <sprite>sprites\bgFront</sprite>
+      <sprite>sprites\bgSleepFront</sprite>
+      <sprite>sprites\bgSleepBack</sprite>
+      <sprite>sprites\bgSleepLeft</sprite>
+      <sprite>sprites\bgSleepRight</sprite>
     </sprites>
     <sprites name="Mission Summary">
       <sprite>sprites\block</sprite>
@@ -201,15 +211,13 @@
       <sprite>sprites\chefLeft</sprite>
       <sprite>sprites\chefBack</sprite>
       <sprite>sprites\chefFront</sprite>
+      <sprite>sprites\chefThrowFront</sprite>
+      <sprite>sprites\chefThrowLeft</sprite>
+      <sprite>sprites\chefThrowBack</sprite>
+      <sprite>sprites\chefThrowRight</sprite>
     </sprites>
     <sprite>sprites\foldedClothes</sprite>
     <sprite>sprites\food</sprite>
-    <sprites name="npc2">
-      <sprite>sprites\npc2front</sprite>
-      <sprite>sprites\npc2back</sprite>
-      <sprite>sprites\npc2left</sprite>
-      <sprite>sprites\npc2right</sprite>
-    </sprites>
     <sprite>sprites\fridge</sprite>
     <sprite>sprites\sprite96_sink</sprite>
     <sprite>sprites\glasses</sprite>
@@ -239,6 +247,13 @@
     <path>paths\path5</path>
     <path>paths\path7</path>
     <path>paths\barpath2</path>
+    <path>paths\basement1</path>
+    <path>paths\basement2</path>
+    <path>paths\basement3</path>
+    <path>paths\floorone1</path>
+    <path>paths\floorone2</path>
+    <path>paths\floorone3</path>
+    <path>paths\floorone4</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\nearest_collision_line.gml</script>
@@ -303,6 +318,7 @@
       <object>objects\shelves</object>
       <object>objects\bar</object>
       <object>objects\sink_obj</object>
+      <object>objects\toilet_obj</object>
       <object>objects\fuseBox</object>
       <object>objects\clothes</object>
       <object>objects\food_obj</object>
@@ -411,6 +427,7 @@
     <room>rooms\Tutorial_2_Layout</room>
     <room>rooms\Tutorial_3_Layout</room>
     <room>rooms\room17</room>
+    <room>rooms\room18</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
