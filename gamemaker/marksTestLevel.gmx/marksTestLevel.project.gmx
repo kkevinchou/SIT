@@ -250,6 +250,15 @@
     <path>paths\floorone2</path>
     <path>paths\floorone3</path>
     <path>paths\floorone4</path>
+    <path>paths\floortwo1</path>
+    <path>paths\floortwo2</path>
+    <path>paths\floortwo3</path>
+    <path>paths\floortwo4</path>
+    <path>paths\floortwo5</path>
+    <path>paths\floorthree1</path>
+    <path>paths\floorthree2</path>
+    <path>paths\floorthree3</path>
+    <path>paths\floorthree4</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\nearest_collision_line.gml</script>
@@ -401,11 +410,11 @@
     <object>objects\flynnSuccessScreen</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_menu</room>
-    <room>rooms\Basement</room>
+    <room>rooms\Floor_3</room>
     <room>rooms\Floor_1</room>
     <room>rooms\Floor_2</room>
-    <room>rooms\Floor_3</room>
+    <room>rooms\rm_menu</room>
+    <room>rooms\Basement</room>
     <room>rooms\Top_Floor</room>
     <room>rooms\room0</room>
     <room>rooms\room2</room>
