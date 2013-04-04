@@ -173,6 +173,12 @@
     <sprite>sprites\tristan_hang_spr</sprite>
     <sprite>sprites\Tristan_avatar</sprite>
     <sprite>sprites\Nemesis_avatar</sprite>
+    <sprites name="npc2">
+      <sprite>sprites\npc2front</sprite>
+      <sprite>sprites\npc2back</sprite>
+      <sprite>sprites\npc2left</sprite>
+      <sprite>sprites\npc2right</sprite>
+    </sprites>
     <sprites name="npc">
       <sprite>sprites\npc1front</sprite>
       <sprite>sprites\npc1back</sprite>
@@ -184,6 +190,10 @@
       <sprite>sprites\bgLeft</sprite>
       <sprite>sprites\bgBack</sprite>
       <sprite>sprites\bgFront</sprite>
+      <sprite>sprites\bgSleepFront</sprite>
+      <sprite>sprites\bgSleepBack</sprite>
+      <sprite>sprites\bgSleepLeft</sprite>
+      <sprite>sprites\bgSleepRight</sprite>
     </sprites>
     <sprites name="Mission Summary">
       <sprite>sprites\block</sprite>
@@ -196,15 +206,13 @@
       <sprite>sprites\chefLeft</sprite>
       <sprite>sprites\chefBack</sprite>
       <sprite>sprites\chefFront</sprite>
+      <sprite>sprites\chefThrowFront</sprite>
+      <sprite>sprites\chefThrowLeft</sprite>
+      <sprite>sprites\chefThrowBack</sprite>
+      <sprite>sprites\chefThrowRight</sprite>
     </sprites>
     <sprite>sprites\foldedClothes</sprite>
     <sprite>sprites\food</sprite>
-    <sprites name="npc2">
-      <sprite>sprites\npc2front</sprite>
-      <sprite>sprites\npc2back</sprite>
-      <sprite>sprites\npc2left</sprite>
-      <sprite>sprites\npc2right</sprite>
-    </sprites>
     <sprite>sprites\fridge</sprite>
     <sprite>sprites\sprite96_sink</sprite>
     <sprite>sprites\glasses</sprite>
@@ -298,6 +306,7 @@
       <object>objects\shelves</object>
       <object>objects\bar</object>
       <object>objects\sink_obj</object>
+      <object>objects\toilet_obj</object>
       <object>objects\fuseBox</object>
       <object>objects\clothes</object>
       <object>objects\food_obj</object>
@@ -384,10 +393,11 @@
     <object>objects\flynnSuccessScreen</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room2</room>
+    <room>rooms\room18</room>
     <room>rooms\Floor_2</room>
     <room>rooms\rm_menu</room>
     <room>rooms\room0</room>
-    <room>rooms\room2</room>
     <room>rooms\Top_Floor</room>
     <room>rooms\Basement</room>
     <room>rooms\Floor_1</room>
