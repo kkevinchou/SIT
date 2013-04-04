@@ -26,13 +26,22 @@
           <argument>
             <kind>1</kind>
             <string>self.depth = -(y + self.sprite_height)
+shadowHeight = self.sprite_height;
 image_index = 0;
 image_single = 0
 
-imageTop = npc1back
-imageLeft = npc1left
-imageRight = npc1right
-imageFront = npc1front
+type = choose(0,1)
+if (type == 0) {
+    imageTop = npc1back
+    imageLeft = npc1left
+    imageRight = npc1right
+    imageFront = npc1front
+} else {
+    imageTop = npc2back
+    imageLeft = npc2left
+    imageRight = npc2right
+    imageFront = npc2front
+}
 
 x-=10000
 nearest = instance_nearest(x+10000,y,npc)
@@ -46,9 +55,168 @@ dir = dir - 45
     else if (dir &gt;0 &amp;&amp; dir &lt;= 180) sprite_index = imageLeft
     else if (dir &gt;0 &amp;&amp; dir &lt;= 270) sprite_index = imageFront
     else sprite_index = imageRight
+    
+alarm[0] = random(100);
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+move_towards_point(x-10+random(20),y-10+random(20),3)
+friction = 1;
+
+image_index = 0;
+image_single = 0
+
+
+x-=10000
+nearest = instance_nearest(x+10000,y,npc)
+x+=10000
+
+alarm[0] = 30+random(90)
+
+dir = point_direction(x,y,nearest.x,nearest.y)
+
+dir = dir - 45
+    if (dir &gt;0 &amp;&amp; dir &lt;= 90) sprite_index = imageTop
+    else if (dir &gt;0 &amp;&amp; dir &lt;= 180) sprite_index = imageLeft
+    else if (dir &gt;0 &amp;&amp; dir &lt;= 270) sprite_index = imageFront
+    else sprite_index = imageRight
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>117</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_snap</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>1</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>self.depth = -(y + self.sprite_height)
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="parentWallObj">
+      <action>
+        <libid>1</libid>
+        <id>115</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_bounce</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_circle_precision(64)
+draw_set_alpha(0.5)
+draw_ellipse_color(self.x-12,self.y+sprite_height/2-16,self.x+12,self.y+sprite_height/2-4,c_black,c_black,false)
+draw_set_alpha(1)
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>500</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring>draw_self();</codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
   </events>

@@ -51,7 +51,6 @@
   </views>
   <instances>
     <instance objName="cutscene_engine" x="32" y="0" name="inst_2145F928" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="cutscene_manager" x="0" y="0" name="inst_DC5A45E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
