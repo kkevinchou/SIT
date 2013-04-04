@@ -40,7 +40,7 @@ sprites[1] = levelSelect1;
 sprites[2] = levelSelect2;
 sprites[3] = levelSelect3;
 sprites[4] = levelSelect4;
-sprites[5] = levelSelect4;
+sprites[5] = levelSelect5;
 
 
 surface_set_target(Sur);

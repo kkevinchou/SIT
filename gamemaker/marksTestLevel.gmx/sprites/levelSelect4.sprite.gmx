@@ -14,8 +14,6 @@
   <VTile>0</VTile>
   <TextureGroup>0</TextureGroup>
   <For3D>0</For3D>
-  <width>390</width>
-  <height>370</height>
   <frames>
     <frame index="0">images\levelSelect4_0.png</frame>
   </frames>
