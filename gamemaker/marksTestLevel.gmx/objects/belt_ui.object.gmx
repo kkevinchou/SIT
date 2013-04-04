@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//CONSTANTS
+            <string>hide = false
+
+//CONSTANTS
 global.ITEMNAME = "Name"
 global.ITEMCOUNT = "Count"
 global.ITEMIMAGE = "Image"
@@ -132,47 +134,71 @@ while (i &lt; ds_list_size(global.items)) {
           <argument>
             <kind>1</kind>
             <string>//global.items
-
-draw_sprite(belt,0,x,y)
-
-selected = fynn.selectedItem
-
-i = 0
-while (i &lt; ds_list_size(global.items)) {
+if (hide == false) {
+    draw_sprite(belt,0,x,y)
     
-    item = ds_list_find_value(global.items,i)
-    name = ds_map_find_value(item, global.ITEMNAME)
-    count = ds_map_find_value(item, global.ITEMCOUNT)
-    image = ds_map_find_value(item, global.ITEMIMAGE)
-    key = ds_map_find_value(item, global.ITEMKEY)
+    selected = fynn.selectedItem
     
-    draw_set_halign(fa_center)
-    if (selected==i) {
-        draw_sprite_ext(pouch,0,x+i*128+64,y-6,1,1,0,c_yellow,1)
-    } else {
-        draw_sprite(pouch,0,x+i*128+64,y-6)
+    i = 0
+    while (i &lt; ds_list_size(global.items)) {
+        
+        item = ds_list_find_value(global.items,i)
+        name = ds_map_find_value(item, global.ITEMNAME)
+        count = ds_map_find_value(item, global.ITEMCOUNT)
+        image = ds_map_find_value(item, global.ITEMIMAGE)
+        key = ds_map_find_value(item, global.ITEMKEY)
+        
+        draw_set_halign(fa_center)
+        if (selected==i) {
+            draw_sprite_ext(pouch,0,x+i*128+64,y-6,1,1,0,c_yellow,1)
+        } else {
+            draw_sprite(pouch,0,x+i*128+64,y-6)
+        }
+        draw_sprite(image,0,x+64+i*128,y+48)
+        draw_text(x+i*128+64,y-20, name)
+        
+        draw_set_alpha(0.5)
+        if (selected==i) {
+            draw_set_color(c_yellow)
+        }
+        
+        draw_circle(x+90+i*128,y+5,10,false)
+        //draw_rectangle(x+54+i*128,y+16,x+74+i*128,y,false)
+        draw_set_alpha(1)
+        draw_set_color(c_white)
+        draw_set_valign(fa_center)
+        draw_text(x+90+i*128,y+5,key)
+        draw_set_color(c_black)
+        draw_set_valign(-1)    
+        
+        i += 1 
     }
-    draw_sprite(image,0,x+64+i*128,y+48)
-    draw_text(x+i*128+64,y-20, name)
-    
-    draw_set_alpha(0.5)
-    if (selected==i) {
-        draw_set_color(c_yellow)
-    }
-    
-    draw_circle(x+90+i*128,y+5,10,false)
-    //draw_rectangle(x+54+i*128,y+16,x+74+i*128,y,false)
-    draw_set_alpha(1)
-    draw_set_color(c_white)
-    draw_set_valign(fa_center)
-    draw_text(x+90+i*128,y+5,key)
-    draw_set_color(c_black)
-    draw_set_valign(-1)    
-    
-    i += 1 
 }
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="72">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hide = !hide
 </string>
           </argument>
         </arguments>

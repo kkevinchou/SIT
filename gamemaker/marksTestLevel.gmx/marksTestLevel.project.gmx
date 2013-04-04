@@ -223,6 +223,7 @@
     <sprite>sprites\glasses</sprite>
     <sprite>sprites\sink</sprite>
     <sprite>sprites\toilet</sprite>
+    <sprite>sprites\theexit</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -331,6 +332,7 @@
       <object>objects\fuseBox</object>
       <object>objects\clothes</object>
       <object>objects\food_obj</object>
+      <object>objects\barexit</object>
     </objects>
     <objects name="Effect">
       <object>objects\sleepingEffect</object>

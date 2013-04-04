@@ -11,6 +11,20 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -28,7 +42,7 @@
             <string>self_direction = 0
 
 visionRad = 0 //determines the swag of the enemies view
-visionWidth = 60 //determines the width of the vision cone
+visionWidth = 50 //determines the width of the vision cone
 startingVision = 200 // determines the distance and enemy can see
 vision = startingVision
 
@@ -50,6 +64,8 @@ posX = 0
 posY = 0
 
 drawnDirection = direction
+
+self.talkRandom = 12
 
 oldVision = vision
 

@@ -53,10 +53,14 @@ drawnDirection = direction
 
 oldVision = vision
 
+self.talkRandom = 6 //chance to talk
+self.panSpeed = 1
+
 self.smokeEffects = 0;
 
 self.conesStates = ds_list_create() //used for keeping the vision cones sxxxy
 
+outfitaffectivness = 45
 
 alarm[2] = random(50) //used for uncommon events
 
@@ -259,12 +263,12 @@ if (self.inSmoke) {
             <string>if (state != "sleep") {
     if (visionRad &gt; 0) {
         if (forward == true) {
-            visionRot = (visionRot+1) 
+            visionRot = (visionRot+self.panSpeed) 
             if (visionRot &gt;= visionRad) {
                 forward = false
             }
         } else {
-            visionRot = (visionRot-1) 
+            visionRot = (visionRot-self.panSpeed) 
             if (visionRot &lt;= 0) {
                 forward = true
             }
@@ -301,7 +305,7 @@ if (self.inSmoke) {
                     posY = fynn.y
                     alarm[0] = -1
                 } else {
-                    if (alarm[10] &lt; 0) alarm[10] = 60
+                    if (alarm[10] &lt; 0) alarm[10] = outfitaffectivness
                 }
                 
             } else {
@@ -404,7 +408,10 @@ if (state == "normal" || state == "chase" || state == "search" || state == "inve
     
     if (state == "normal") {
         if (mode == 0) {
-            direction += 5;
+            //direction =
+            //direction += 5;
+        } else if (mode == 2) {
+            direction += 3;
         } else if (mode == 1) {
             if (self.activePath != self.currentPath || (self.activePath == self.currentPath &amp;&amp; path_position &lt;= 0)) {
                 if (self.x == path_get_x(currentPath,0) &amp;&amp; self.y == path_get_y(self.currentPath,0)){
@@ -528,7 +535,7 @@ if (state == "normal" || state == "chase" || state == "search" || state == "inve
     if (state=="normal") talkDistance = 80
     else talkDistance = 130
     
-    if (talking == false &amp;&amp; random(5) &lt;= 1) {
+    if (talking == false &amp;&amp; random(talkRandom) &lt;= 1) {
     
         x-=10000
         nearestFriend=instance_nearest(x+10000,y,enemy)
@@ -669,7 +676,7 @@ if (state != "sleep") {
     
     if (alarm[10] != -1) {
         
-        lineColor = make_color_rgb(255 * (1 - alarm[10]/80),color_get_green(c_green),0)
+        lineColor = make_color_rgb(255 * (1 - alarm[10]/outfitaffectivness),color_get_green(c_green),0)
     }   
     
     //used to smooth out the drawing of the line
