@@ -254,6 +254,15 @@
     <path>paths\floorone2</path>
     <path>paths\floorone3</path>
     <path>paths\floorone4</path>
+    <path>paths\floortwo1</path>
+    <path>paths\floortwo2</path>
+    <path>paths\floortwo3</path>
+    <path>paths\floortwo4</path>
+    <path>paths\floortwo5</path>
+    <path>paths\floorthree1</path>
+    <path>paths\floorthree2</path>
+    <path>paths\floorthree3</path>
+    <path>paths\floorthree4</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\nearest_collision_line.gml</script>
