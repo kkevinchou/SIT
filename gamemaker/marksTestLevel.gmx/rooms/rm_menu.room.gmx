@@ -55,6 +55,7 @@
     <instance objName="obj_menuButtonNew" x="352" y="288" name="inst_1AD72A79" locked="0" code="" scaleX="0.914286017417908" scaleY="0.959999978542328" colour="4294967295" rotation="0"/>
     <instance objName="obj_menuButtonLoadPressed" x="352" y="192" name="inst_73F484ED" locked="0" code="" scaleX="0.914286017417908" scaleY="0.959999978542328" colour="4294967295" rotation="0"/>
     <instance objName="obj_menuButtonExit" x="352" y="384" name="inst_711119A4" locked="0" code="" scaleX="0.914286017417908" scaleY="0.959999978542328" colour="4294967295" rotation="0"/>
+    <instance objName="cutscene_manager" x="64" y="64" name="inst_37859C35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

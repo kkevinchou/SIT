@@ -54,7 +54,7 @@
     <instance objName="obj_menuBackBtn" x="448" y="640" name="inst_3C58492C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
-    <tile bgName="newMainMenuBackground" x="0" y="0" w="1024" h="768" xo="0" yo="0" id="10004995" name="inst_27A2DF22" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="newMainMenuBackground" x="0" y="0" w="1024" h="768" xo="0" yo="0" id="10004500" name="inst_27A2DF22" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

@@ -132,7 +132,25 @@ for (i = 1; i <= 4; i++) {
         }       
         
         if (mouse_check_button_pressed(mb_left)) {
-            room_goto(room2);
+            switch(i) {
+                case 1:
+                case 2:
+                case 3:
+                    room_goto(room2);
+                    break;
+                // Bar level
+                /*case 4:
+                    cutscene_manager.current_room = 1
+                    cutscene_manager.next_room = 2
+                    room_goto(cutscreen)
+                    break;*/
+                // Final level
+                case 4:
+                    cutscene_manager.current_room = 3
+                    cutscene_manager.next_room = 3
+                    room_goto(cutscreen)
+                    break;
+            }
         }
     }
 }
