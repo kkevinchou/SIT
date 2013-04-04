@@ -103,7 +103,7 @@ draw_surface_part(argument4,part_xi,part_yi,surw,surh,scroll_x,scroll_y);
 //surface_set_target(argument4);
 
 // Add rectangle on mouseover
-for (i = 1; i <= 4; i++) {
+for (i = 1; i <= 5; i++) {
     x1 = scrollbar.xStart + (i-1) * (scrollbar.xDelta + scrollbar.spriteWidth) - part_xi + scroll_x;
     y1 = scrollbar.yStart - part_yi + scroll_y;
     x2 = x1 + scrollbar.spriteWidth;
@@ -136,19 +136,17 @@ for (i = 1; i <= 4; i++) {
                 case 1:
                 case 2:
                 case 3:
-                    room_goto(room2);
+                    room_goto(room0);
                     break;
                 // Bar level
-                /*case 4:
-                    cutscene_manager.current_room = 1
-                    cutscene_manager.next_room = 2
-                    room_goto(cutscreen)
-                    break;*/
-                // Final level
                 case 4:
-                    cutscene_manager.current_room = 3
-                    cutscene_manager.next_room = 3
+                    cutscene_manager.current_room = 1
+                    cutscene_manager.next_room = 1
                     room_goto(cutscreen)
+                    break;
+                // Final level
+                case 5:
+                    room_goto(Basement)
                     break;
             }
         }

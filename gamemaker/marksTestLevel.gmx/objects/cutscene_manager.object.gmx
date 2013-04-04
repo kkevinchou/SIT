@@ -30,7 +30,7 @@ global.manager = id
 
 // The level gonna go after cut scene
 current_room = 0
-next_room = 1
+next_room = 0
 
 // Init the hashmaps
 script_map = ds_map_create()
@@ -45,10 +45,11 @@ ds_map_add(script_map, 3, 'finalMissionConfrontation.txt')
 ds_map_add(script_map, 4, 'finalMissionComplete.txt')
 
 // Rooms after cut scene
-ds_map_add(level_map, 0, Tutorial_1_Layout)
-ds_map_add(level_map, 1, room0)
-ds_map_add(level_map, 2, room2)
+ds_map_add(level_map, 0, room0)
+ds_map_add(level_map, 1, room2)
+ds_map_add(level_map, 2, Basement)
 ds_map_add(level_map, 3, Top_Floor)
+ds_map_add(level_map, 4, rm_menu)
 
 // cut scene arts
 ds_map_add(background_map, 0, intro0)

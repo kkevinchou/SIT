@@ -128,7 +128,7 @@
           <argument>
             <kind>1</kind>
             <string>cutscene_manager.current_room = 0
-cutscene_manager.next_room = 1
+cutscene_manager.next_room = 0
 room_goto(cutscreen)
 </string>
           </argument>
