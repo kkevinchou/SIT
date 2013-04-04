@@ -427,7 +427,6 @@ if (state == "normal" || state == "chase" || state == "search" || state == "inve
             self.activePath = path_add()
         }  
     } else if (state == "investigate") {
-        show_debug_message("MEOW");
         var targetX = self.investigateTargetX
         var targetY = self.investigateTargetY - 24
         

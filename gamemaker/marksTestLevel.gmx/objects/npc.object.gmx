@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>self.depth = -(y + self.sprite_height)
+shadowHeight = self.sprite_height;
 image_index = 0;
 image_single = 0
 
