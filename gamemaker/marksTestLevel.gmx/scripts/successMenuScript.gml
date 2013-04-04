@@ -23,6 +23,7 @@ if(flynnSuccessScreen.isPaused = 0)
     //Deactivate everything except yourself and pause the game.
     instance_deactivate_all(false);
     instance_activate_object(flynnSuccessScreen);
+    instance_activate_object(cutscene_manager);
     flynnSuccessScreen.isPaused = 1;
     
 
