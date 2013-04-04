@@ -103,7 +103,7 @@ draw_surface_part(argument4,part_xi,part_yi,surw,surh,scroll_x,scroll_y);
 //surface_set_target(argument4);
 
 // Add rectangle on mouseover
-for (i = 1; i <= 4; i++) {
+for (i = 1; i <= 5; i++) {
     x1 = scrollbar.xStart + (i-1) * (scrollbar.xDelta + scrollbar.spriteWidth) - part_xi + scroll_x;
     y1 = scrollbar.yStart - part_yi + scroll_y;
     x2 = x1 + scrollbar.spriteWidth;
