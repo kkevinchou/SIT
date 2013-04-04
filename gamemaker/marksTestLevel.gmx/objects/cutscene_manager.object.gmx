@@ -60,6 +60,7 @@ ds_map_add(background_map, 4, finalEnd)
 ds_map_add(background_map, 5, intro1)
 ds_map_add(background_map, 6, intro2)
 ds_map_add(background_map, 7, intro3)
+ds_map_add(background_map, 8, finalTorment)
 
 </string>
           </argument>
