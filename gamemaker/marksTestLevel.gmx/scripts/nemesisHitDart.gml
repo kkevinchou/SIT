@@ -10,8 +10,12 @@ if (state == "chase") {
 } else {
     dartHit = true;
     self.numDartHits++;
-    if (numDartHits >= 1) {
+    if (numDartHits >= 3) {
         self.state = "sleep";
+        cutscene_manager.current_room = 4
+        cutscene_manager.next_room = 4
+        room_goto(cutscreen)
+
     }
 }
 

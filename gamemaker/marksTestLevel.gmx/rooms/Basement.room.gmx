@@ -195,7 +195,6 @@
     <instance objName="fynn" x="192" y="640" name="inst_877D0806" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="256" y="480" name="inst_ECFD4B5C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="544" y="416" name="inst_703DD91A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="enemy" x="768" y="448" name="inst_98095C8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="736" y="576" name="inst_BAEA573D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="704" y="160" name="inst_7CF4CA7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="320" y="160" name="inst_403AC955" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
