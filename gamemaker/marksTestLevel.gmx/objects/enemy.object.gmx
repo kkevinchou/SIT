@@ -388,7 +388,7 @@ if (state == "normal" || state == "chase" || state == "search" || state == "inve
     
     if (state == "normal") {
         if (mode == 0) {
-        
+            direction += 5;
         } else if (mode == 1) {
             if (self.activePath != self.currentPath || (self.activePath == self.currentPath &amp;&amp; path_position &lt;= 0)) {
                 if (self.x == path_get_x(currentPath,0) &amp;&amp; self.y == path_get_y(self.currentPath,0)){
