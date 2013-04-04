@@ -164,7 +164,7 @@
     <instance objName="couchy" x="408" y="82" name="inst_A682DC4E" locked="0" code="" scaleX="0.864864885807037" scaleY="0" colour="4294967295" rotation="0"/>
     <instance objName="couchy" x="408" y="82" name="inst_C7F67017" locked="0" code="" scaleX="0.864864885807037" scaleY="0" colour="4294967295" rotation="0"/>
     <instance objName="couchy" x="280" y="50" name="inst_59A130C0" locked="0" code="" scaleX="1.86486005783081" scaleY="1.77778005599976" colour="4294967295" rotation="0"/>
-    <instance objName="stairSide" x="88" y="50" name="inst_70100645" locked="0" code="" scaleX="1" scaleY="1.5" colour="4294967295" rotation="0"/>
+    <instance objName="stairSide" x="96" y="32" name="inst_70100645" locked="0" code="" scaleX="1" scaleY="1.5" colour="4294967295" rotation="0"/>
     <instance objName="wall1" x="88" y="146" name="inst_9D168B88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall1" x="184" y="146" name="inst_A9648C76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall1" x="216" y="146" name="inst_9C5A7AE6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
