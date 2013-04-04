@@ -10,4 +10,4 @@ Flynn: Thanks Dad. Listen, this might be a feel good moment but this place is gi
 Tristan: Yeah...this place has not been the most hospitable.
 Flynn: I will call in a couple Shadows to collect him.
 <Thank you for playing!>
-<Team Shadow: ##Chi Ming Chou, Dante Yan, Jennifer Qiao, #Mark Hetherington, Mike Petrashko, Yufei Guo, Zach Gungl>
+<Team Shadow> ##Chi Ming Chou, Dante Yan, Jennifer Qiao, #Mark Hetherington, Mike Petrashko, Yufei Guo, Zach Gungl
