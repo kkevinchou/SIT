@@ -193,9 +193,6 @@
     <instance objName="sprite5" x="480" y="352" name="inst_75E2B8AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="sprite5" x="480" y="320" name="inst_D374CB90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="sprite5" x="480" y="384" name="inst_70C5EF42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="stairsLevelsSound" x="256" y="352" name="inst_EE0CD2EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="bodygaurd" x="512" y="512" name="inst_30EA04ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="bodygaurd" x="640" y="288" name="inst_BEF16E2F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="bodygaurd" x="224" y="384" name="inst_30EA04ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="bodygaurd" x="800" y="352" name="inst_BEF16E2F" locked="0" code="currentPath = floorthree4&#xA;activePath = currentPath&#xA;mode =1&#xA;visionRad = 0" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
