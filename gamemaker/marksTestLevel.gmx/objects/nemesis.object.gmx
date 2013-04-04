@@ -196,7 +196,7 @@ if (collision_circle(x, y, global.itemEffectRadius[global.SMOKEBOMBID], smokeBom
 }
 
 var sleepDartObj = instance_nearest(self.x, self.y, sleepDart);
-if (sleepDartObj &amp;&amp; objWithinVision(sleepDartObj)) {
+if (sleepDartObj &amp;&amp; objWithinVision(sleepDartObj.x, sleepDartObj.y)) {
     self.state = "investigate";
     self.investigateTargetX = sleepDartObj.startX;
     self.investigateTargetY = sleepDartObj.startY;
@@ -221,7 +221,7 @@ if (state == "normal" || state == "smoke" || state == "investigate") {
     }
 
     lineDirection = point_direction(self.x,self.y,fynn.x,fynn.y)
-    if (objWithinVision(fynn) &amp;&amp;
+    if (objWithinVision(fynn.x, fynn.y) &amp;&amp;
         distance_to_object(fynn) &lt;= vision) {
     
         if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true)) {
@@ -232,7 +232,7 @@ if (state == "normal" || state == "smoke" || state == "investigate") {
         }
     }
 } else if (state == "chase" || state = "search"){
-    var withinVision = (objWithinVision(fynn) &amp;&amp;
+    var withinVision = (objWithinVision(fynn.x, fynn.y) &amp;&amp;
                         distance_to_object(fynn) &lt;= vision &amp;&amp;
                         !collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true));
                                           

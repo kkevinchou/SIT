@@ -1,10 +1,7 @@
-var targetObj = argument0;
+var targetX = argument0;
+var targetY = argument1;
 
-if (!targetObj) {
-    return false;
-}
-
-var directionToFlynn = point_direction(self.x,self.y,targetObj.x,targetObj.y);
+var directionToFlynn = point_direction(self.x,self.y,targetX,targetY);
 var relativeDirection = directionToFlynn - direction;
 
 if (relativeDirection < 0) {
