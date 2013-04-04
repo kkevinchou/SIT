@@ -100,6 +100,7 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
+    <sprite>sprites\barwall</sprite>
     <sprite>sprites\Finalsprite0</sprite>
     <sprite>sprites\sprite2</sprite>
     <sprite>sprites\Finalsprite2</sprite>
@@ -205,6 +206,11 @@
       <sprite>sprites\npc2left</sprite>
       <sprite>sprites\npc2right</sprite>
     </sprites>
+    <sprite>sprites\fridge</sprite>
+    <sprite>sprites\sprite96_sink</sprite>
+    <sprite>sprites\glasses</sprite>
+    <sprite>sprites\sink</sprite>
+    <sprite>sprites\toilet</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -228,6 +234,7 @@
     <path>paths\bzz</path>
     <path>paths\path5</path>
     <path>paths\path7</path>
+    <path>paths\barpath2</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\nearest_collision_line.gml</script>
@@ -288,8 +295,10 @@
       <object>objects\bodygaurd</object>
       <object>objects\wall</object>
       <object>objects\boxes</object>
+      <object>objects\object80</object>
       <object>objects\shelves</object>
       <object>objects\bar</object>
+      <object>objects\sink_obj</object>
       <object>objects\fuseBox</object>
       <object>objects\clothes</object>
       <object>objects\food_obj</object>
@@ -379,11 +388,11 @@
     <room>rooms\rm_menu</room>
     <room>rooms\room0</room>
     <room>rooms\room2</room>
+    <room>rooms\Top_Floor</room>
     <room>rooms\Basement</room>
     <room>rooms\Floor_1</room>
     <room>rooms\Floor_2</room>
     <room>rooms\Floor_3</room>
-    <room>rooms\Top_Floor</room>
     <room>rooms\room1</room>
     <room>rooms\cutscreen</room>
     <room>rooms\room4</room>
@@ -393,6 +402,7 @@
     <room>rooms\Tutorial_1_Layout</room>
     <room>rooms\Tutorial_2_Layout</room>
     <room>rooms\Tutorial_3_Layout</room>
+    <room>rooms\room17</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
