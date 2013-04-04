@@ -162,7 +162,8 @@ if (self.selectedItem == 2) { // sleeping dart is always okay to be used
     }
 }
 
-if (collision_point(mouse_x,mouse_y,beltclickarea,false,false)) self.validItemTarget = false
+self.touchingUI = false
+if (belt_ui.hide == false &amp;&amp; collision_point(mouse_x,mouse_y,beltclickarea,false,false)) self.touchingUI = true
 
 
 if (curCircle &gt; 0) {
@@ -645,7 +646,7 @@ if (!(keyboard_check(vk_up) || keyboard_check(vk_down) || keyboard_check(vk_left
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if ((self.selectedItem  != global.CRICKETID || self.validItemTarget) &amp;&amp; self.selectedItem &gt;= 0) {
+            <string>if ((self.touchingUI  != true) &amp;&amp; self.selectedItem &gt;= 0) {
         if (self.isChef == true) {
             if (self.facing == 'Back') {
             self.sprite_index = chefThrowBack;
@@ -677,6 +678,56 @@ if (!(keyboard_check(vk_up) || keyboard_check(vk_down) || keyboard_check(vk_left
     // Play error sound?
 }
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>105</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_move_point</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>room_width/2</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>room_height/2</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>5</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>108</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_friction</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>1</string>
           </argument>
         </arguments>
       </action>
