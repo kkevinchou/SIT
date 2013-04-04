@@ -200,6 +200,7 @@
     <instance objName="flynnFailScreen" x="160" y="224" name="inst_65F2A84E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="flynnSuccessScreen" x="192" y="160" name="inst_C4807D03" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="cutscene_manager" x="64" y="640" name="inst_32C2A7FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="nemesisLevelSound" x="192" y="256" name="inst_9E13F7D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background0" x="128" y="288" w="32" h="32" xo="160" yo="128" id="10001948" name="inst_2B3B79C4" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -134,9 +134,13 @@ for (i = 1; i <= 5; i++) {
         if (mouse_check_button_pressed(mb_left)) {
             switch(i) {
                 case 1:
+                    room_goto(Tutorial_1_Layout);
+                    break;
                 case 2:
+                    room_goto(Tutorial_2_Layout);
+                    break;
                 case 3:
-                    room_goto(room0);
+                    room_goto(Tutorial_3_Layout);
                     break;
                 // Bar level
                 case 4:
