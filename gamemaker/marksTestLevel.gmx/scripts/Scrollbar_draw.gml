@@ -136,7 +136,7 @@ for (i = 1; i <= 4; i++) {
                 case 1:
                 case 2:
                 case 3:
-                    room_goto(room2);
+                    room_goto(room0);
                     break;
                 // Bar level
                 /*case 4:
@@ -146,9 +146,7 @@ for (i = 1; i <= 4; i++) {
                     break;*/
                 // Final level
                 case 4:
-                    cutscene_manager.current_room = 3
-                    cutscene_manager.next_room = 3
-                    room_goto(cutscreen)
+                    room_goto(Basement)
                     break;
             }
         }
