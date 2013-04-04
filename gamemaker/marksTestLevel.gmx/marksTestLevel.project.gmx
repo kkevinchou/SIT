@@ -99,7 +99,6 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
-    <sprite>sprites\sprite90</sprite>
     <sprite>sprites\Finalsprite0</sprite>
     <sprite>sprites\sprite2</sprite>
     <sprite>sprites\Finalsprite2</sprite>

@@ -1,7 +1,9 @@
-Nemesis: WOW! I really didn't expect that. Seems the Luck Fairy finally comes to me! 
-Nemesis: HAHAHA!
-This is a peaceful night. Flynn doesn't know what will happen to him.
-This is a night for change.
+Nemesis: He finally got what he deserved. 
+Nemesis: To my friend, a toast. To your ultimate failure. 
+Nemesis: HAHAHAHAHA!
+In a single moment, a person's life can be altered permanently.
+Tonight, the lives of Tristan and his son, Flynn, will never be the same.
+Tonight, a new story will begin.
 ```bg_change:5
 Flynn: !!!
 Flynn: Dad...Dad are you alright?
