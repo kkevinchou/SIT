@@ -646,14 +646,26 @@ if (!(keyboard_check(vk_up) || keyboard_check(vk_down) || keyboard_check(vk_left
           <argument>
             <kind>1</kind>
             <string>if ((self.selectedItem  != global.CRICKETID || self.validItemTarget) &amp;&amp; self.selectedItem &gt;= 0) {
-    if (self.facing == 'Back') {
-        self.sprite_index = flynnThrowBack;
-    } else if (self.facing == 'Front') {
-        self.sprite_index = flynnThrowFront;
-    } else if (self.facing == 'Left') {
-        self.sprite_index = flynnThrowLeft;
-    } else if (self.facing == 'Right') {
-        self.sprite_index = flynnThrowRight;
+        if (self.isChef == true) {
+            if (self.facing == 'Back') {
+            self.sprite_index = chefThrowBack;
+        } else if (self.facing == 'Front') {
+            self.sprite_index = chefThrowFront;
+        } else if (self.facing == 'Left') {
+            self.sprite_index = chefThrowLeft;
+        } else if (self.facing == 'Right') {
+            self.sprite_index = chefThrowRight;
+        }
+    } else {
+        if (self.facing == 'Back') {
+            self.sprite_index = flynnThrowBack;
+        } else if (self.facing == 'Front') {
+            self.sprite_index = flynnThrowFront;
+        } else if (self.facing == 'Left') {
+            self.sprite_index = flynnThrowLeft;
+        } else if (self.facing == 'Right') {
+            self.sprite_index = flynnThrowRight;
+        }
     }
     
     self.itemTargetLocationX = mouse_x;
@@ -702,6 +714,11 @@ if (self.selectedItem &gt;= 0) {
         var rotAngleDeg = radtodeg(rotAngleRad) - 45;
         
         draw_sprite_ext(image, 0, mouse_x, mouse_y, 1, 1, rotAngleDeg, c_white, 0.7);
+        draw_set_alpha(itemRadiusAlpha);
+        draw_line_width_color(x,y,mouse_x,mouse_y,3, c_white, c_blue)
+        draw_set_alpha(itemRadiusAlpha*2);
+        draw_line_color(x,y,mouse_x,mouse_y, c_white, c_blue)
+
     } else {
         draw_sprite_ext(image, 0, mouse_x, mouse_y, 1, 1, 0, c_white, 0.7);
         

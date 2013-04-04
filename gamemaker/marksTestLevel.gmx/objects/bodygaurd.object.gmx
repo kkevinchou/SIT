@@ -65,6 +65,11 @@ imageTop = bgBack
 imageLeft = bgLeft
 imageRight = bgRight
 imageFront = bgFront
+
+imageTopSleep = bgSleepBack
+imageLeftSleep = bgSleepLeft
+imageRightSleep = bgSleepRight
+imageFrontSleep = bgSleepFront
 </string>
           </argument>
         </arguments>

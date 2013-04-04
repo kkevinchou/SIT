@@ -65,6 +65,11 @@ imageTop = bodygaurdTop
 imageLeft = bodygaurdLeft
 imageRight = bodygaurdRight
 imageFront = bodygaurdFront
+
+imageTopSleep = securityGuardSleepBack
+imageLeftSleep = securityGuardSleepLeft
+imageRightSleep = securityGuardSleepRight
+imageFrontSleep = securityGuardSleepFront
 </string>
           </argument>
         </arguments>
@@ -97,6 +102,14 @@ imageFront = bodygaurdFront
         
             if (!collision_line(self.x,self.y,fynn.x,fynn.y ,parentWallObj,false,true) || distance_to_object(fynn) &lt; fynn.curCircle) {
                 fynn.isChef = false
+                if (talking == false) {
+
+                    
+                    talk = instance_create(x,y,obj_talking)
+                    talk.state = "NOTCHEF"
+                    talk.first = id
+                    talk.second = id
+                }
             }
         }
 </string>
