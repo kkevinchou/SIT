@@ -198,6 +198,12 @@
     </sprites>
     <sprite>sprites\foldedClothes</sprite>
     <sprite>sprites\food</sprite>
+    <sprites name="npc2">
+      <sprite>sprites\npc2front</sprite>
+      <sprite>sprites\npc2back</sprite>
+      <sprite>sprites\npc2left</sprite>
+      <sprite>sprites\npc2right</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
