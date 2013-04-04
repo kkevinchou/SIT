@@ -30,10 +30,9 @@ cutscene_manager.next_room = 1
 // Change room to cut-scene engine
 //room_goto(cutscreen)
 
-if (other.state == "chase") {    
-    audio_play_sound(success, 1, false);
-    script_execute(successMenuScript);
-}
+audio_play_sound(success, 1, false);
+script_execute(successMenuScript);
+
 
 
 
