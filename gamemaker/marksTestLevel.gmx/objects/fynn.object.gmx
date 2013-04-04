@@ -163,8 +163,9 @@ if (self.selectedItem == 2) { // sleeping dart is always okay to be used
 }
 
 self.touchingUI = false
-if (belt_ui.hide == false &amp;&amp; collision_point(mouse_x,mouse_y,beltclickarea,false,false)) self.touchingUI = true
-
+if (instance_exists(belt_ui)){
+    if (belt_ui.hide == false &amp;&amp; collision_point(mouse_x,mouse_y,beltclickarea,false,false)) self.touchingUI = true
+}
 
 if (curCircle &gt; 0) {
     curCircle--

@@ -32,6 +32,8 @@ visionWidth = 60 //determines the width of the vision cone
 startingVision = 200 // determines the distance and enemy can see
 vision = startingVision
 
+direction = random(360)
+
 visionRot = 0 //determines the starting rotation
 forward = true
 
