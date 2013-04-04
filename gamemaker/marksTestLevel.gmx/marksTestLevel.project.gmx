@@ -97,6 +97,10 @@
     <sound>sound\mainMenuSelect</sound>
     <sound>sound\gameOver</sound>
     <sound>sound\success</sound>
+    <sound>sound\nemesisLevel</sound>
+    <sound>sound\barBackground</sound>
+    <sound>sound\stairsLevels</sound>
+    <sound>sound\tutorialLevels</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
@@ -383,6 +387,10 @@
     <object>objects\escapeMenu</object>
     <object>objects\flynnFailScreen</object>
     <object>objects\flynnSuccessScreen</object>
+    <object>objects\tutorialLevelsSound</object>
+    <object>objects\stairsLevelsSound</object>
+    <object>objects\barLevelSound</object>
+    <object>objects\nemesisLevelSound</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>

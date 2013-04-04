@@ -206,6 +206,7 @@
     <instance objName="sprite5" x="544" y="288" name="inst_34DC33B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="sprite5" x="544" y="320" name="inst_B9AE463F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="sprite5" x="544" y="256" name="inst_DB8BE95F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="stairsLevelsSound" x="224" y="288" name="inst_44A81857" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background0" x="224" y="754" w="32" h="32" xo="960" yo="704" id="10000485" name="inst_A5CD04EA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
