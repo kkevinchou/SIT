@@ -244,6 +244,13 @@
     <path>paths\path5</path>
     <path>paths\path7</path>
     <path>paths\barpath2</path>
+    <path>paths\basement1</path>
+    <path>paths\basement2</path>
+    <path>paths\basement3</path>
+    <path>paths\floorone1</path>
+    <path>paths\floorone2</path>
+    <path>paths\floorone3</path>
+    <path>paths\floorone4</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\nearest_collision_line.gml</script>
