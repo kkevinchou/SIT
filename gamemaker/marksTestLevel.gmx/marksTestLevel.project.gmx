@@ -143,6 +143,7 @@
     <sprite>sprites\levelSelect2</sprite>
     <sprite>sprites\levelSelect3</sprite>
     <sprite>sprites\levelSelect4</sprite>
+    <sprite>sprites\levelSelect5</sprite>
     <sprite>sprites\back_btn</sprite>
     <sprite>sprites\back_btn_depress</sprite>
     <sprite>sprites\back_btn_hover</sprite>
