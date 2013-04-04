@@ -401,10 +401,10 @@
     <object>objects\flynnSuccessScreen</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\Floor_2</room>
     <room>rooms\rm_menu</room>
     <room>rooms\Basement</room>
     <room>rooms\Floor_1</room>
-    <room>rooms\Floor_2</room>
     <room>rooms\Floor_3</room>
     <room>rooms\Top_Floor</room>
     <room>rooms\room0</room>

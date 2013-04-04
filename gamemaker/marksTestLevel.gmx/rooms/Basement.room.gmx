@@ -195,10 +195,8 @@
     <instance objName="fynn" x="192" y="640" name="inst_877D0806" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="256" y="480" name="inst_ECFD4B5C" locked="0" code="currentPath = basement1&#xA;activePath = currentPath&#xA;mode =1&#xA;visionRad = 0" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="544" y="416" name="inst_703DD91A" locked="0" code="currentPath = basement2&#xA;activePath = currentPath&#xA;mode =1&#xA;visionRad = 0" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="enemy" x="672" y="512" name="inst_BAEA573D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="704" y="160" name="inst_7CF4CA7F" locked="0" code="currentPath = basement3&#xA;activePath = currentPath&#xA;mode =1&#xA;visionRad = 0" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="320" y="160" name="inst_403AC955" locked="0" code="currentPath = basement3&#xA;activePath = currentPath&#xA;mode =1&#xA;visionRad = 0" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="enemy" x="512" y="160" name="inst_FD1B0330" locked="0" code="currentPath = basement3&#xA;activePath = currentPath&#xA;mode =1&#xA;visionRad = 0" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="escapeMenu" x="224" y="96" name="inst_1DF17808" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="832" y="0" name="inst_E869B21F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="wall" x="800" y="0" name="inst_889F0655" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -224,6 +222,8 @@
     <instance objName="wall" x="384" y="0" name="inst_15519149" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="belt_ui" x="0" y="704" name="inst_A2E13323" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="gridTracker" x="160" y="672" name="inst_70FD7934" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="bodygaurd" x="544" y="160" name="inst_A9C56E3B" locked="0" code="currentPath = basement3&#xA;activePath = currentPath&#xA;mode =1&#xA;visionRad = 0" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="bodygaurd" x="736" y="512" name="inst_7FB3BCDD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background0" x="160" y="32" w="32" h="32" xo="192" yo="128" id="10000485" name="inst_25D3DED6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
